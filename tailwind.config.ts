@@ -9,8 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brand: {
+          yellow: "#FFC107",
+          paper: "#F1F5F9",
+          grey: "#64748B",
+          ink: "#111827",
+        },
+      },
+      fontFamily: {
+        sans: ["var(--font-plex-sans)", "sans-serif"],
+        heading: ["var(--font-sora)", "sans-serif"],
+        mono: ["var(--font-plex-mono)", "monospace"],
       },
     },
   },

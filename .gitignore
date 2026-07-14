@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code local tool config (not part of the project)
+.claude/
+
+# unused source assets superseded by optimized versions actually used in code
+public/videos/video 2 fondo pag web.mp4
+public/videos/hero-road.mp4
+public/images/logo vias mejorado.png

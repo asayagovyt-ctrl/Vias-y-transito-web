@@ -1,0 +1,170 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+import { company } from "@/constants/company";
+import { useScrollReveal } from "@/lib/useScrollReveal";
+
+export function Contacto() {
+  const contentRef = useScrollReveal<HTMLDivElement>();
+  const [status, setStatus] = useState<"idle" | "sent">("idle");
+
+  // TODO(fase 4): conectar con POST /api/contacto una vez existan las
+  // cuentas de GitHub/Vercel/Turso — por ahora solo confirma en pantalla,
+  // no guarda ni envía nada todavía.
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sent");
+  }
+
+  return (
+    <section id="contacto" className="relative px-6 py-20 sm:px-10 sm:py-28">
+      <div
+        ref={contentRef}
+        className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+      >
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
+          <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+            Contacto
+          </p>
+          <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+            Hablemos de tu proyecto
+          </h2>
+          <p className="mb-10 max-w-md text-base leading-relaxed text-slate-700">
+            Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico.
+          </p>
+
+          <div className="flex flex-col gap-6">
+            <div>
+              <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                Teléfonos
+              </div>
+              <div className="flex flex-col gap-2">
+                {company.phones.map((phone) => (
+                  <a
+                    key={phone}
+                    href={`tel:+57${phone}`}
+                    className="group flex items-center gap-3 font-mono text-lg font-semibold text-brand-ink hover:text-brand-yellow"
+                  >
+                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
+                      <PhoneIcon />
+                    </span>
+                    {phone}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                Correo
+              </div>
+              <div className="flex flex-col gap-2">
+                {company.emails.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="group flex items-center gap-3 text-base font-medium text-brand-ink hover:text-brand-yellow"
+                  >
+                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
+                      <MailIcon />
+                    </span>
+                    {email}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
+          {status === "sent" ? (
+            <div className="flex h-full flex-col items-center justify-center py-12 text-center">
+              <p className="mb-2 font-heading text-xl font-bold text-brand-ink">
+                ¡Listo!
+              </p>
+              <p className="max-w-xs text-sm text-slate-600">
+                Ya recibimos tu mensaje. Te contactamos en menos de 24 horas hábiles.
+              </p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <Field label="Nombre" name="name" type="text" required />
+              <Field label="Correo" name="email" type="email" required />
+              <Field label="Teléfono" name="phone" type="tel" />
+              <div>
+                <label
+                  htmlFor="message"
+                  className="mb-1.5 block text-sm font-medium text-brand-ink"
+                >
+                  Mensaje
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
+                />
+              </div>
+              <button
+                type="submit"
+                className="mt-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink"
+              >
+                Solicitar cotización
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-brand-ink">
+      <path
+        d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-brand-ink">
+      <path
+        d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1.4 2L12 12.5 19.6 7H4.4zM20 8.4l-7.4 5.3a1 1 0 01-1.2 0L4 8.4V17h16V8.4z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type,
+  required,
+}: {
+  label: string;
+  name: string;
+  type: string;
+  required?: boolean;
+}) {
+  return (
+    <div>
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-brand-ink">
+        {label}
+      </label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
+      />
+    </div>
+  );
+}
