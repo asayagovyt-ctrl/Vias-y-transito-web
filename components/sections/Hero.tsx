@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { heroSlides } from "@/constants/heroSlides";
 import { company } from "@/constants/company";
 import { useFadeInUp } from "@/lib/useFadeInUp";
@@ -66,18 +67,18 @@ export function Hero() {
             {slide.sub}
           </p>
           <div className="flex flex-wrap items-center gap-3.5">
-            <a
-              href="#contacto"
+            <Link
+              href="/contacto"
               className="rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink"
             >
               Cotiza tu proyecto
-            </a>
-            <a
-              href="#servicios"
+            </Link>
+            <Link
+              href="/servicios"
               className="rounded-full border border-brand-ink/30 px-5 py-3.5 text-sm font-semibold text-brand-ink"
             >
               Ver servicios
-            </a>
+            </Link>
           </div>
         </div>
 
