@@ -42,13 +42,15 @@ export function Clientes() {
               className="flex min-h-[220px] items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
             >
               {client.logo ? (
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={320}
-                  height={160}
-                  className="h-auto max-h-36 w-auto max-w-full object-contain"
-                />
+                <div className="relative h-32 w-full max-w-[260px]">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    fill
+                    sizes="260px"
+                    className="object-contain"
+                  />
+                </div>
               ) : (
                 <span className="text-lg font-semibold leading-snug text-brand-ink">
                   {client.name}
