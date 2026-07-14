@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { company } from "@/constants/company";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -32,35 +31,6 @@ export function Nosotros() {
         </div>
 
         <div className="relative flex min-h-[340px] items-center justify-center rounded-2xl border border-slate-200 bg-white p-10 shadow-md sm:p-12">
-          <Image
-            src="/images/sign-stop.png"
-            alt="Señal de PARE"
-            width={609}
-            height={600}
-            className="absolute left-4 top-4 h-11 w-auto -rotate-6 drop-shadow-md sm:h-12"
-          />
-          <Image
-            src="/images/sign-semaforo.png"
-            alt="Señal de semáforo"
-            width={365}
-            height={365}
-            className="absolute right-4 top-4 h-11 w-auto rotate-3 drop-shadow-md sm:h-12"
-          />
-          <Image
-            src="/images/sign-flechas.png"
-            alt="Señal de doble vía"
-            width={366}
-            height={365}
-            className="absolute bottom-4 left-4 h-11 w-auto rotate-6 drop-shadow-md sm:h-12"
-          />
-          <Image
-            src="/images/sign-no-giro-u.png"
-            alt="Señal de prohibido giro en U"
-            width={430}
-            height={429}
-            className="absolute bottom-4 right-4 h-11 w-auto -rotate-3 drop-shadow-md sm:h-12"
-          />
-
           <p className="text-balance px-6 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
             “{company.differentiator}”
           </p>
