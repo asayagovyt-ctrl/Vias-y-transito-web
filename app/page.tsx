@@ -29,7 +29,6 @@ const roadTrees = [
 ];
 
 export default function Home() {
-  const featuredServices = services.slice(0, 3);
   const featuredProject = projects[0];
 
   return (
@@ -53,7 +52,7 @@ export default function Home() {
             </p>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-              {featuredServices.map((service, index) => (
+              {services.map((service, index) => (
                 <div
                   key={service.id}
                   className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
