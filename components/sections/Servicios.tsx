@@ -38,10 +38,10 @@ export function Servicios() {
                   <p className="mb-6 max-w-2xl text-base leading-relaxed text-slate-600">
                     {service.details}
                   </p>
-                  <div className="max-w-2xl border-t border-slate-200 pt-5">
+                  <div className="max-w-2xl border-t border-slate-200 pt-6">
                     <Link
                       href="/contacto"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:text-brand-yellow"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-brand-ink/30 px-5 py-3 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-yellow hover:bg-brand-yellow"
                     >
                       Cotizar este servicio
                       <span aria-hidden="true">→</span>
