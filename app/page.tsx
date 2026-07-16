@@ -114,37 +114,39 @@ export default function Home() {
         </section>
 
         {/* Nosotros — resumen */}
-        <section className="relative px-6 py-20 sm:px-10 sm:py-28">
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-            <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-md sm:p-9">
-              <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
-                Quiénes somos
-              </p>
-              <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-                {company.yearsOfExperience} años acompañando la movilidad del país
-              </h2>
-              <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
-                {company.aboutIntro}
-              </p>
+        <section className="relative px-6 pb-20 pt-6 sm:px-10 sm:pb-28 sm:pt-10">
+          <div className="relative mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-7 shadow-md sm:p-10">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+              <div>
+                <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+                  Quiénes somos
+                </p>
+                <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+                  {company.yearsOfExperience} años acompañando la movilidad del país
+                </h2>
+                <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
+                  {company.aboutIntro}
+                </p>
 
-              <div className="mb-8 flex flex-wrap gap-10">
-                <Stat value={String(company.yearsOfExperience)} label="Años de experiencia" />
-                <Stat value={company.projectsCompleted} label="Proyectos realizados" />
-                <Stat value="Nacional" label="e internacional" />
+                <div className="mb-8 flex flex-wrap gap-10">
+                  <Stat value={String(company.yearsOfExperience)} label="Años de experiencia" />
+                  <Stat value={company.projectsCompleted} label="Proyectos realizados" />
+                  <Stat value="Nacional" label="e internacional" />
+                </div>
+
+                <Link
+                  href="/nosotros"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black"
+                >
+                  Conócenos →
+                </Link>
               </div>
 
-              <Link
-                href="/nosotros"
-                className="inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black"
-              >
-                Conócenos →
-              </Link>
-            </div>
-
-            <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-slate-200 bg-white p-10 shadow-md sm:p-12">
-              <p className="text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
-                “{company.differentiator}”
-              </p>
+              <div className="flex min-h-[220px] items-center justify-center rounded-xl bg-brand-paper p-10 sm:p-12">
+                <p className="text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
+                  “{company.differentiator}”
+                </p>
+              </div>
             </div>
           </div>
         </section>
