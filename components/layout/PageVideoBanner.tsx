@@ -21,7 +21,15 @@ export function PageVideoBanner({ eyebrow, title, description }: PageVideoBanner
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(180deg, rgba(10,15,10,0.55) 0%, rgba(10,15,10,0.15) 40%, rgba(195,230,208,0.85) 85%, rgba(195,230,208,1) 100%)",
+            "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.8) 35%, rgba(250,250,248,0.4) 60%, rgba(250,250,248,0.5) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-x-0 top-0 h-40 sm:h-36"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(10,15,10,0.6) 0%, rgba(10,15,10,0.28) 55%, transparent 100%)",
         }}
       />
       {(eyebrow || title) && (
