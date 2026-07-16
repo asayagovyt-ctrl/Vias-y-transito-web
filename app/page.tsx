@@ -52,13 +52,13 @@ export default function Home() {
             </p>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-              {services.map((service, index) => (
+              {services.map((service) => (
                 <div
                   key={service.id}
                   className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm"
                 >
-                  <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow font-mono text-sm font-semibold text-brand-ink">
-                    {String(index + 1).padStart(2, "0")}
+                  <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
+                    <service.icon className="h-5 w-5" strokeWidth={2.25} />
                   </span>
                   <h3 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                     {service.title}

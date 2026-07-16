@@ -47,8 +47,8 @@ export function Servicios() {
               onClick={() => setSelected(index)}
               className="group rounded-2xl border-2 border-transparent bg-white p-7 text-left shadow-sm outline-none transition-all hover:border-brand-yellow hover:shadow-md focus-visible:border-brand-yellow"
             >
-              <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow font-mono text-sm font-semibold text-brand-ink">
-                {String(index + 1).padStart(2, "0")}
+              <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
+                <service.icon className="h-5 w-5" strokeWidth={2.25} />
               </span>
               <h3 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                 {service.title}
@@ -89,8 +89,11 @@ export function Servicios() {
               >
                 ✕
               </button>
-              <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow font-mono text-sm font-semibold text-brand-ink">
-                {String(selected + 1).padStart(2, "0")}
+              <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
+                {(() => {
+                  const SelectedIcon = services[selected].icon;
+                  return <SelectedIcon className="h-5 w-5" strokeWidth={2.25} />;
+                })()}
               </span>
               <h3
                 id="servicio-modal-title"
