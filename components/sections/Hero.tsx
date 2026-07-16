@@ -40,7 +40,7 @@ export function Hero() {
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.8) 35%, rgba(250,250,248,0.4) 60%, rgba(250,250,248,0.5) 100%)",
+            "linear-gradient(0deg, rgba(195,230,208,0.97) 0%, rgba(250,250,248,0.8) 35%, rgba(250,250,248,0.4) 60%, rgba(250,250,248,0.5) 100%)",
         }}
       />
       <div
