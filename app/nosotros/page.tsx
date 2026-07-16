@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { RoadBackground } from "@/components/layout/RoadBackground";
+import { PageVideoBanner } from "@/components/layout/PageVideoBanner";
 import { Nosotros } from "@/components/sections/Nosotros";
 
 export const metadata: Metadata = {
@@ -24,7 +25,8 @@ export default function NosotrosPage() {
   return (
     <main className="relative">
       <Navbar />
-      <div className="relative overflow-hidden pt-24 sm:pt-28">
+      <PageVideoBanner />
+      <div className="relative overflow-hidden">
         <RoadBackground trees={roadTrees} />
         <Nosotros />
         <Footer />
