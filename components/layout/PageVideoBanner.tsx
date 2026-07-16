@@ -6,7 +6,7 @@ interface PageVideoBannerProps {
 
 export function PageVideoBanner({ eyebrow, title, description }: PageVideoBannerProps) {
   return (
-    <div className="relative h-[360px] w-full overflow-hidden sm:h-[440px]">
+    <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src="/videos/hero-road-2.mp4"
@@ -49,7 +49,7 @@ export function PageVideoBanner({ eyebrow, title, description }: PageVideoBanner
               </h1>
             )}
             {description && (
-              <p className="max-w-md text-base leading-relaxed text-slate-700 sm:text-[17px]">
+              <p className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-[17px]">
                 {description}
               </p>
             )}
