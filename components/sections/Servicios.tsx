@@ -29,8 +29,8 @@ export function Servicios() {
                 </div>
 
                 <div className={reversed ? "sm:order-1" : "sm:order-2"}>
-                  <span className="mb-2 block font-mono text-sm font-semibold text-brand-grey">
-                    {String(index + 1).padStart(2, "0")}
+                  <span className="mb-3 block font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+                    Servicio {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mb-3 text-balance font-heading text-2xl font-bold text-brand-ink sm:text-3xl">
                     {service.title}
@@ -38,13 +38,15 @@ export function Servicios() {
                   <p className="mb-6 max-w-2xl text-base leading-relaxed text-slate-600">
                     {service.details}
                   </p>
-                  <Link
-                    href="/contacto"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:text-brand-yellow"
-                  >
-                    Cotizar este servicio
-                    <span aria-hidden="true">→</span>
-                  </Link>
+                  <div className="max-w-2xl border-t border-slate-200 pt-5">
+                    <Link
+                      href="/contacto"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:text-brand-yellow"
+                    >
+                      Cotizar este servicio
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
