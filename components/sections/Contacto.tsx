@@ -5,6 +5,14 @@ import { company } from "@/constants/company";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function Contacto() {
+  return (
+    <section id="contacto" className="relative px-6 py-20 sm:px-10 sm:py-28">
+      <ContactoForm />
+    </section>
+  );
+}
+
+export function ContactoForm() {
   const contentRef = useScrollReveal<HTMLDivElement>();
   const [status, setStatus] = useState<"idle" | "sent">("idle");
 
@@ -17,11 +25,10 @@ export function Contacto() {
   }
 
   return (
-    <section id="contacto" className="relative px-6 py-20 sm:px-10 sm:py-28">
-      <div
-        ref={contentRef}
-        className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
-      >
+    <div
+      ref={contentRef}
+      className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+    >
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
           <div className="flex flex-col gap-6">
             <div>
@@ -106,7 +113,6 @@ export function Contacto() {
           )}
         </div>
       </div>
-    </section>
   );
 }
 

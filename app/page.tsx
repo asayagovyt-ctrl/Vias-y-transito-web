@@ -8,6 +8,7 @@ import { RoadBackground } from "@/components/layout/RoadBackground";
 import { Hero } from "@/components/sections/Hero";
 import { Clientes } from "@/components/sections/Clientes";
 import { ServiceCards } from "@/components/sections/ServiceCards";
+import { ContactoForm } from "@/components/sections/Contacto";
 import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
@@ -151,24 +152,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contacto — llamado a la acción */}
+        {/* Contacto */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
-          <div className="relative mx-auto max-w-4xl rounded-2xl border border-slate-200 bg-white p-10 text-center shadow-md sm:p-14">
+          <div className="relative mx-auto max-w-6xl">
             <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
               Contacto
             </p>
             <h2 className="mb-4 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Hablemos de tu proyecto
             </h2>
-            <p className="mx-auto mb-8 max-w-md text-base leading-relaxed text-slate-700">
+            <p className="mb-14 max-w-md text-base leading-relaxed text-slate-700">
               Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico.
             </p>
-            <Link
-              href="/contacto"
-              className="inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
-            >
-              Contáctanos →
-            </Link>
+            <ContactoForm />
           </div>
         </section>
 
