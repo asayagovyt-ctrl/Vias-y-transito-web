@@ -13,12 +13,6 @@ export function Nosotros() {
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
       >
         <div className="rounded-2xl border border-slate-200 bg-white p-7 shadow-md sm:p-9">
-          <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
-            Quiénes somos
-          </p>
-          <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-            {company.yearsOfExperience} años acompañando la movilidad del país
-          </h2>
           <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
             {company.aboutIntro}
           </p>

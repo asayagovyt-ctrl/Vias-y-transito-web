@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { RoadBackground } from "@/components/layout/RoadBackground";
 import { PageVideoBanner } from "@/components/layout/PageVideoBanner";
 import { Nosotros } from "@/components/sections/Nosotros";
+import { company } from "@/constants/company";
 
 export const metadata: Metadata = {
   title: "Nosotros | Vías y Tránsito SAS",
@@ -25,7 +26,10 @@ export default function NosotrosPage() {
   return (
     <main className="relative">
       <Navbar />
-      <PageVideoBanner />
+      <PageVideoBanner
+        eyebrow="Quiénes somos"
+        title={`${company.yearsOfExperience} años acompañando la movilidad del país`}
+      />
       <div className="relative overflow-hidden">
         <RoadBackground trees={roadTrees} />
         <Nosotros />

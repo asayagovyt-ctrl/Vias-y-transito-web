@@ -29,7 +29,11 @@ export default function ProyectosPage() {
   return (
     <main className="relative">
       <Navbar />
-      <PageVideoBanner />
+      <PageVideoBanner
+        eyebrow="Nuestro trabajo"
+        title="Proyectos destacados"
+        description="Así resolvimos la movilidad en proyectos reales."
+      />
       <div className="relative overflow-hidden">
         <RoadBackground trees={roadTrees} />
         <Proyectos />

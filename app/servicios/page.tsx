@@ -30,7 +30,11 @@ export default function ServiciosPage() {
   return (
     <main className="relative">
       <Navbar />
-      <PageVideoBanner />
+      <PageVideoBanner
+        eyebrow="Lo que hacemos"
+        title="Nuestros servicios"
+        description="Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación."
+      />
       <div className="relative overflow-hidden">
         <RoadBackground trees={roadTrees} />
         <Servicios />

@@ -23,16 +23,6 @@ export function Contacto() {
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
       >
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
-          <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
-            Contacto
-          </p>
-          <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-            Hablemos de tu proyecto
-          </h2>
-          <p className="mb-10 max-w-md text-base leading-relaxed text-slate-700">
-            Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico.
-          </p>
-
           <div className="flex flex-col gap-6">
             <div>
               <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">

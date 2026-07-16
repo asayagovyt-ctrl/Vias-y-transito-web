@@ -23,7 +23,11 @@ export default function ContactoPage() {
   return (
     <main className="relative">
       <Navbar />
-      <PageVideoBanner />
+      <PageVideoBanner
+        eyebrow="Contacto"
+        title="Hablemos de tu proyecto"
+        description="Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico."
+      />
       <div className="relative overflow-hidden">
         <RoadBackground trees={roadTrees} />
         <Contacto />
