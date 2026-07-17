@@ -10,13 +10,13 @@ export function Servicios() {
   return (
     <section id="servicios" className="relative px-6 py-20 sm:px-10 sm:py-28">
       <div className="relative mx-auto max-w-6xl">
-        <div ref={listRef} className="flex flex-col divide-y divide-slate-200">
+        <div ref={listRef} className="flex flex-col gap-6">
           {services.map((service, index) => {
             const reversed = index % 2 === 1;
             return (
               <div
                 key={service.id}
-                className={`grid items-center gap-10 py-14 first:pt-0 last:pb-0 sm:gap-16 ${
+                className={`grid items-center gap-10 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm sm:gap-16 sm:p-10 ${
                   reversed ? "sm:grid-cols-[1fr_240px]" : "sm:grid-cols-[240px_1fr]"
                 }`}
               >
