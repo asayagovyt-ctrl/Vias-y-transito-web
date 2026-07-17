@@ -13,25 +13,6 @@ import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
 
-// Posiciones en % de la altura combinada de las secciones resumen + Clientes + Footer,
-// para que el fondo de vía sea uno solo y continuo (sin cortes entre secciones).
-const roadTrees = [
-  { top: "1%", left: "4%", size: 26 },
-  { top: "2%", left: "94%", size: 30 },
-  { top: "10%", left: "3%", size: 20 },
-  { top: "18%", left: "6%", size: 32 },
-  { top: "16%", left: "96%", size: 24 },
-  { top: "30%", left: "3%", size: 22 },
-  { top: "38%", left: "93%", size: 20 },
-  { top: "50%", left: "5%", size: 28 },
-  { top: "48%", left: "96%", size: 30 },
-  { top: "62%", left: "3%", size: 20 },
-  { top: "70%", left: "92%", size: 22 },
-  { top: "80%", left: "4%", size: 22 },
-  { top: "88%", left: "96%", size: 26 },
-  { top: "95%", left: "5%", size: 20 },
-];
-
 export default function Home() {
   const featuredProject = projects[0];
 
@@ -39,8 +20,8 @@ export default function Home() {
     <main className="relative">
       <Navbar />
       <Hero />
-      <div className="relative overflow-hidden">
-        <RoadBackground trees={roadTrees} />
+      <div className="relative overflow-hidden bg-white">
+        <RoadBackground />
 
         {/* Servicios — resumen */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
