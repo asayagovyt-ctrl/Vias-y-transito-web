@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { company } from "@/constants/company";
+import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function Contacto() {
@@ -15,6 +16,15 @@ export function Contacto() {
 export function ContactoForm() {
   const contentRef = useScrollReveal<HTMLDivElement>();
   const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [servicio, setServicio] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const servicioParam = params.get("servicio");
+    if (servicioParam && services.some((service) => service.id === servicioParam)) {
+      setServicio(servicioParam);
+    }
+  }, []);
 
   // TODO(fase 4): conectar con POST /api/contacto una vez existan las
   // cuentas de GitHub/Vercel/Turso — por ahora solo confirma en pantalla,
@@ -88,6 +98,29 @@ export function ContactoForm() {
               <Field label="Nombre" name="name" type="text" required />
               <Field label="Correo" name="email" type="email" required />
               <Field label="Teléfono" name="phone" type="tel" />
+              <div>
+                <label
+                  htmlFor="servicio"
+                  className="mb-1.5 block text-sm font-medium text-brand-ink"
+                >
+                  Servicio de interés
+                </label>
+                <select
+                  id="servicio"
+                  name="servicio"
+                  value={servicio}
+                  onChange={(event) => setServicio(event.target.value)}
+                  className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
+                >
+                  <option value="">Selecciona un servicio</option>
+                  {services.map((service) => (
+                    <option key={service.id} value={service.id}>
+                      {service.title}
+                    </option>
+                  ))}
+                  <option value="otro">Otro / no estoy seguro</option>
+                </select>
+              </div>
               <div>
                 <label
                   htmlFor="message"

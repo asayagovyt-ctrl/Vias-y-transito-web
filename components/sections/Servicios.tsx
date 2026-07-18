@@ -67,7 +67,7 @@ export function Servicios() {
                   </ul>
                   <div className="max-w-2xl border-t border-slate-200 pt-6">
                     <Link
-                      href="/contacto"
+                      href={`/contacto?servicio=${service.id}`}
                       className="inline-flex items-center gap-1.5 rounded-full border border-brand-ink/30 px-5 py-3 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-yellow hover:bg-brand-yellow"
                     >
                       Cotizar este servicio
