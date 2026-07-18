@@ -31,38 +31,36 @@ export function Nosotros() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-        <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="p-7 sm:p-9">
-            <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
-              Visítanos
-            </p>
-            <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">
-              {company.address}
-            </h3>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                company.address
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:text-brand-yellow"
-            >
-              Cómo llegar (Google Maps)
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div className="relative h-[280px] lg:h-auto lg:min-h-[280px]">
-            <iframe
-              title="Ubicación de Vías y Tránsito SAS"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(
-                company.address
-              )}&output=embed`}
-              className="absolute inset-0 h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+      <div className="relative mx-auto mt-12 max-w-6xl">
+        <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+          Visítanos
+        </p>
+        <h3 className="mb-6 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+          {company.address}
+        </h3>
+
+        <div className="relative h-[420px] overflow-hidden rounded-2xl border border-slate-200 shadow-md sm:h-[520px]">
+          <iframe
+            title="Ubicación de Vías y Tránsito SAS"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(
+              company.address
+            )}&output=embed`}
+            className="absolute inset-0 h-full w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              company.address
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-6 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-6 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink shadow-lg transition-colors hover:bg-[#E0A800]"
+          >
+            Cómo llegar
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </section>

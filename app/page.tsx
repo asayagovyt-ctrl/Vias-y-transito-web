@@ -13,6 +13,23 @@ import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
 
+const roadTrees = [
+  { top: "1%", left: "4%", size: 26 },
+  { top: "2%", left: "94%", size: 30 },
+  { top: "10%", left: "3%", size: 20 },
+  { top: "18%", left: "6%", size: 32 },
+  { top: "16%", left: "96%", size: 24 },
+  { top: "30%", left: "3%", size: 22 },
+  { top: "38%", left: "93%", size: 20 },
+  { top: "50%", left: "5%", size: 28 },
+  { top: "48%", left: "96%", size: 30 },
+  { top: "62%", left: "3%", size: 20 },
+  { top: "70%", left: "92%", size: 22 },
+  { top: "80%", left: "4%", size: 22 },
+  { top: "88%", left: "96%", size: 26 },
+  { top: "95%", left: "5%", size: 20 },
+];
+
 export default function Home() {
   const featuredProject = projects[0];
 
@@ -20,8 +37,8 @@ export default function Home() {
     <main className="relative">
       <Navbar />
       <Hero />
-      <div className="relative overflow-hidden bg-white">
-        <RoadBackground />
+      <div className="relative overflow-hidden">
+        <RoadBackground trees={roadTrees} />
 
         {/* Servicios — resumen */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
@@ -128,6 +145,41 @@ export default function Home() {
                 <p className="text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
                   “{company.differentiator}”
                 </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+            <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="p-7 sm:p-9">
+                <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+                  Visítanos
+                </p>
+                <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">
+                  {company.address}
+                </h3>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    company.address
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink hover:text-brand-yellow"
+                >
+                  Cómo llegar (Google Maps)
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div className="relative h-[280px] lg:h-auto lg:min-h-[280px]">
+                <iframe
+                  title="Ubicación de Vías y Tránsito SAS"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    company.address
+                  )}&output=embed`}
+                  className="absolute inset-0 h-full w-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>
