@@ -39,13 +39,19 @@ export function ServiceBento({ services }: ServiceBentoProps) {
 const VARIANT_CLASSES: Record<"featured" | "tall" | "wide", string> = {
   featured: "sm:col-span-4 sm:row-span-3",
   tall: "sm:col-span-2 sm:row-span-3",
-  wide: "sm:col-span-3 sm:row-span-2",
+  wide: "sm:col-span-3 sm:row-span-3",
 };
 
 const VARIANT_ASPECT: Record<"featured" | "tall" | "wide", string> = {
   featured: "aspect-[4/3]",
-  tall: "aspect-[4/3]",
-  wide: "aspect-[16/9]",
+  tall: "aspect-[3/4]",
+  wide: "aspect-[4/3]",
+};
+
+const VARIANT_BULLET_COUNT: Record<"featured" | "tall" | "wide", number> = {
+  featured: 4,
+  tall: 4,
+  wide: 3,
 };
 
 function PhotoTile({
@@ -67,7 +73,7 @@ function PhotoTile({
         className="object-cover transition-transform duration-500 group-hover:scale-105"
         sizes="(min-width: 640px) 55vw, 100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/90 via-brand-ink/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink from-25% via-brand-ink/60 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-6">
         {variant === "featured" && (
           <span className="mb-2 w-fit rounded-full bg-brand-yellow px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-ink">
@@ -75,26 +81,23 @@ function PhotoTile({
           </span>
         )}
         <h3
-          className={`font-heading font-bold text-white ${
-            variant === "featured" ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
+          className={`font-heading font-extrabold text-brand-yellow ${
+            variant === "featured" ? "text-2xl sm:text-3xl" : "text-xl"
           }`}
         >
           {service.title}
         </h3>
-        {variant !== "tall" && (
-          <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-200">
-            {service.description}
-          </p>
-        )}
-        {variant === "featured" && (
-          <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5">
-            {service.highlights.slice(0, 3).map((highlight) => (
-              <li key={highlight} className="text-xs font-medium text-slate-200">
-                • {highlight}
-              </li>
-            ))}
-          </ul>
-        )}
+        <p className="mt-2 max-w-md text-sm leading-relaxed text-slate-200">
+          {service.description}
+        </p>
+        <ul className="mt-4 flex flex-col gap-1.5">
+          {service.highlights.slice(0, VARIANT_BULLET_COUNT[variant]).map((highlight) => (
+            <li key={highlight} className="flex items-start gap-2 text-xs font-medium text-slate-200">
+              <span className="mt-1 h-1 w-1 flex-none rounded-full bg-brand-yellow" />
+              {highlight}
+            </li>
+          ))}
+        </ul>
         <span className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-white transition-colors group-hover:text-brand-yellow">
           Ver más
           <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
@@ -110,15 +113,29 @@ function CompactTile({ service }: { service: Service }) {
   return (
     <Link
       href={`/servicios#${service.id}`}
-      className="group rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:col-span-3 sm:row-span-1 sm:flex sm:items-center sm:gap-4"
+      className="group flex flex-col rounded-2xl border-2 border-transparent bg-brand-ink p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:col-span-3 sm:row-span-2"
     >
-      <span className="mb-3 flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-brand-yellow text-brand-ink sm:mb-0">
+      <span className="mb-3 flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
         <service.icon className="h-5 w-5" strokeWidth={2.25} />
       </span>
-      <div>
-        <h3 className="mb-1 font-heading text-base font-bold text-brand-ink">{service.title}</h3>
-        <p className="text-sm leading-relaxed text-slate-600">{service.description}</p>
-      </div>
+      <h3 className="mb-1.5 font-heading text-xl font-extrabold text-brand-yellow">
+        {service.title}
+      </h3>
+      <p className="mb-3 text-sm leading-relaxed text-slate-300">{service.description}</p>
+      <ul className="flex flex-col gap-1.5">
+        {service.highlights.slice(0, 3).map((highlight) => (
+          <li key={highlight} className="flex items-start gap-2 text-xs font-medium text-slate-300">
+            <span className="mt-1 h-1 w-1 flex-none rounded-full bg-brand-yellow" />
+            {highlight}
+          </li>
+        ))}
+      </ul>
+      <span className="mt-auto inline-flex w-fit items-center gap-1.5 pt-4 text-sm font-semibold text-white transition-colors group-hover:text-brand-yellow">
+        Ver más
+        <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+          →
+        </span>
+      </span>
     </Link>
   );
 }
