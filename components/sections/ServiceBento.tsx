@@ -113,7 +113,7 @@ function CompactTile({ service }: { service: Service }) {
   return (
     <Link
       href={`/servicios#${service.id}`}
-      className="group flex flex-col rounded-2xl border-2 border-transparent bg-brand-ink p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:col-span-3 sm:row-span-2"
+      className="group flex flex-col rounded-2xl border-2 border-transparent bg-brand-ink p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:col-span-3 sm:row-span-3"
     >
       <span className="mb-3 flex h-10 w-10 flex-none items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
         <service.icon className="h-5 w-5" strokeWidth={2.25} />
