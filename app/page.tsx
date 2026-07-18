@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { RoadBackground } from "@/components/layout/RoadBackground";
 import { Hero } from "@/components/sections/Hero";
 import { Clientes } from "@/components/sections/Clientes";
-import { ServiceCards } from "@/components/sections/ServiceCards";
+import { ServiceBento } from "@/components/sections/ServiceBento";
 import { ContactoForm } from "@/components/sections/Contacto";
 import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
@@ -53,7 +53,7 @@ export default function Home() {
               Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación.
             </p>
 
-            <ServiceCards services={services} />
+            <ServiceBento services={services} />
 
             <Link
               href="/servicios"
