@@ -29,7 +29,7 @@ export function ContactoForm() {
       ref={contentRef}
       className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
     >
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
+        <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-lg sm:p-10">
           <div className="flex flex-col gap-6">
             <div>
               <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
@@ -73,7 +73,7 @@ export function ContactoForm() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md sm:p-10">
+        <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-lg sm:p-10">
           {status === "sent" ? (
             <div className="flex h-full flex-col items-center justify-center py-12 text-center">
               <p className="mb-2 font-heading text-xl font-bold text-brand-ink">

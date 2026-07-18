@@ -16,7 +16,7 @@ export function Servicios() {
             return (
               <div
                 key={service.id}
-                className={`grid items-center gap-10 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm sm:gap-16 sm:p-10 ${
+                className={`grid items-center gap-10 rounded-2xl border border-slate-100 bg-white p-8 shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl sm:gap-16 sm:p-10 ${
                   reversed ? "sm:grid-cols-[1fr_240px]" : "sm:grid-cols-[240px_1fr]"
                 }`}
               >

@@ -39,7 +39,7 @@ export function Clientes() {
           {visible.map((client) => (
             <div
               key={client.name}
-              className="flex min-h-[220px] items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+              className="flex min-h-[220px] items-center justify-center rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
             >
               {client.logo ? (
                 <div className="relative h-32 w-full max-w-[260px]">
