@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { Check } from "lucide-react";
 import type { Service } from "@/types/service";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -44,6 +45,14 @@ export function ServiceCards({ services }: ServiceCardsProps) {
               {service.title}
             </h3>
             <p className="mb-4 text-sm leading-relaxed text-slate-600">{service.description}</p>
+            <ul className="mb-5 flex flex-col gap-1.5">
+              {service.highlights.map((highlight) => (
+                <li key={highlight} className="flex items-start gap-2 text-sm text-slate-600">
+                  <Check className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2.5} />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-ink transition-colors group-hover:text-brand-yellow">
               Ver más
               <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">

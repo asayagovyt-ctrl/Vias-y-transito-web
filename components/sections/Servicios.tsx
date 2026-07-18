@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Check } from "lucide-react";
 import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
@@ -53,9 +54,17 @@ export function Servicios() {
                   <h3 className="mb-3 text-balance font-heading text-2xl font-bold text-brand-ink sm:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mb-6 max-w-2xl text-base leading-relaxed text-slate-600">
+                  <p className="mb-5 max-w-2xl text-base leading-relaxed text-slate-600">
                     {service.details}
                   </p>
+                  <ul className="mb-6 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+                    {service.highlights.map((highlight) => (
+                      <li key={highlight} className="flex items-start gap-2 text-sm text-slate-600">
+                        <Check className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2.5} />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <div className="max-w-2xl border-t border-slate-200 pt-6">
                     <Link
                       href="/contacto"
