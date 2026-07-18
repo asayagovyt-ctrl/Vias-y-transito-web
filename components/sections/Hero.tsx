@@ -40,7 +40,7 @@ export function Hero() {
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.8) 35%, rgba(250,250,248,0.4) 60%, rgba(250,250,248,0.5) 100%)",
+            "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.94) 50%, rgba(250,250,248,0.75) 75%, rgba(250,250,248,0.55) 100%)",
         }}
       />
       <div
@@ -60,10 +60,16 @@ export function Hero() {
           >
             {slide.eyebrow}
           </p>
-          <h1 className="mb-4 text-balance font-heading text-4xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-5xl">
+          <h1
+            className="mb-4 text-balance font-heading text-4xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-5xl"
+            style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 16px rgba(250,250,248,0.9)" }}
+          >
             {slide.headline}
           </h1>
-          <p className="mb-7 max-w-md text-base leading-relaxed text-slate-700 sm:text-[17px]">
+          <p
+            className="mb-7 max-w-md text-base leading-relaxed text-slate-700 sm:text-[17px]"
+            style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
+          >
             {slide.sub}
           </p>
           <div className="flex flex-wrap items-center gap-3.5">
