@@ -18,6 +18,7 @@ export const services: Service[] = [
     details:
       "Definimos trazado, perfiles longitudinales y transversales, y plataformas viales conforme a la normativa vigente. El resultado: un diseño que pasa revisión sin retrasos y funciona igual de bien en una vía urbana que en un corredor interurbano.",
     icon: Route,
+    image: "/images/servicios/diseno-geometrico-vias.jpg",
   },
   {
     id: "planes-manejo-transito",
@@ -42,6 +43,7 @@ export const services: Service[] = [
     details:
       "Hacemos conteos vehiculares y peatonales, análisis de capacidad y niveles de servicio. Con esto, cada decisión de diseño, operación o gestión vial queda respaldada por datos, no por suposiciones.",
     icon: BarChart3,
+    image: "/images/servicios/estudios-transito.jpg",
   },
   {
     id: "estudios-movilidad",
@@ -50,6 +52,7 @@ export const services: Service[] = [
     details:
       "Diagnosticamos las condiciones actuales de movilidad urbana y proponemos mejoras concretas para vehículos, peatones y ciclistas, articuladas con la planeación urbana de la zona.",
     icon: Footprints,
+    image: "/images/servicios/estudios-movilidad.jpg",
   },
   {
     id: "diseno-explanaciones",
@@ -66,6 +69,7 @@ export const services: Service[] = [
     details:
       "Modelamos escenarios de tráfico actuales y futuros con herramientas especializadas, para que el diseño responda al tránsito real y no a una estimación aproximada.",
     icon: Activity,
+    image: "/images/servicios/modelaciones-trafico.jpg",
   },
   {
     id: "diseno-semaforizacion",
