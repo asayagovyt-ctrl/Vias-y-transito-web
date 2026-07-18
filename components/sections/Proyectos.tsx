@@ -14,7 +14,7 @@ export function Proyectos() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl"
+              className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
             >
               <div className="p-7 sm:p-9">
                 <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
