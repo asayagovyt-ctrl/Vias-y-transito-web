@@ -81,7 +81,7 @@ export function Hero() {
             </Link>
             <Link
               href="/servicios"
-              className="rounded-full border border-brand-ink/30 px-5 py-3.5 text-sm font-semibold text-brand-ink"
+              className="rounded-full border border-brand-ink/30 px-5 py-3.5 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-yellow hover:bg-brand-yellow"
             >
               Ver servicios
             </Link>
