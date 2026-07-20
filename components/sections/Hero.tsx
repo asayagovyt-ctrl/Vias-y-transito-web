@@ -54,10 +54,7 @@ export function Hero() {
 
       <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-28 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
         <div ref={contentRef} className="max-w-2xl">
-          <p
-            className="mb-5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-2xl"
-            style={{ textShadow: "0 1px 6px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.7)" }}
-          >
+          <p className="mb-5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-2xl">
             {slide.eyebrow}
           </p>
           <h1
