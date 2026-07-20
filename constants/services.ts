@@ -26,6 +26,7 @@ export const services: Service[] = [
     ],
     icon: Route,
     image: "/images/servicios/diseno-geometrico-vias.jpg",
+    pageImage: "/images/servicios-iconos/diseno-geometrico-vias.jpeg",
   },
   {
     id: "planes-manejo-transito",
@@ -41,6 +42,8 @@ export const services: Service[] = [
       "Aprobación ante la autoridad competente.",
     ],
     icon: Construction,
+    image: "/images/servicios/planes-manejo-transito.jpeg",
+    pageImage: "/images/servicios-iconos/planes-manejo-transito.jpeg",
   },
   {
     id: "senalizacion-vial",
@@ -56,6 +59,8 @@ export const services: Service[] = [
       "Planos y especificaciones técnicas.",
     ],
     icon: SignpostBig,
+    image: "/images/servicios/senalizacion-vial.jpeg",
+    pageImage: "/images/servicios-iconos/senalizacion-vial.jpeg",
   },
   {
     id: "estudios-transito",
@@ -73,6 +78,7 @@ export const services: Service[] = [
     ],
     icon: BarChart3,
     image: "/images/servicios/estudios-transito.jpg",
+    pageImage: "/images/servicios-iconos/estudios-transito.jpeg",
   },
   {
     id: "estudios-movilidad",
@@ -89,6 +95,7 @@ export const services: Service[] = [
     ],
     icon: Footprints,
     image: "/images/servicios/estudios-movilidad.jpg",
+    pageImage: "/images/servicios-iconos/estudios-movilidad.jpeg",
   },
   {
     id: "diseno-explanaciones",
@@ -104,6 +111,8 @@ export const services: Service[] = [
       "Integración con el diseño vial.",
     ],
     icon: Mountain,
+    image: "/images/servicios/diseno-explanaciones.jpeg",
+    pageImage: "/images/servicios-iconos/diseno-explanaciones.jpeg",
   },
   {
     id: "modelaciones-trafico",
@@ -120,6 +129,7 @@ export const services: Service[] = [
     ],
     icon: Activity,
     image: "/images/servicios/modelaciones-trafico.jpg",
+    pageImage: "/images/servicios-iconos/modelaciones-trafico.jpeg",
   },
   {
     id: "diseno-semaforizacion",
@@ -135,5 +145,6 @@ export const services: Service[] = [
       "Mejora de la seguridad vial.",
     ],
     icon: Rows3,
+    pageImage: "/images/servicios-iconos/diseno-semaforizacion.jpeg",
   },
 ];

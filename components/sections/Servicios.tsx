@@ -14,38 +14,25 @@ export function Servicios() {
       <div className="relative mx-auto max-w-6xl">
         <div ref={listRef} className="flex flex-col gap-6">
           {services.map((service, index) => {
-            const hasImage = Boolean(service.image);
-            const reversed = hasImage ? false : index % 2 === 1;
+            const reversed = index % 2 === 1;
             return (
               <div
                 key={service.id}
                 id={service.id}
-                className={`grid scroll-mt-24 items-center gap-10 rounded-2xl bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 ${
-                  hasImage
-                    ? "sm:grid-cols-[1.05fr_1fr]"
-                    : reversed
-                      ? "sm:grid-cols-[1fr_240px]"
-                      : "sm:grid-cols-[240px_1fr]"
-                }`}
+                className={`grid scroll-mt-24 items-center gap-10 rounded-2xl bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:grid-cols-[280px_1fr] sm:gap-16 sm:p-10`}
               >
                 <div
                   className={`flex justify-center ${reversed ? "sm:order-2" : "sm:order-1"}`}
                 >
-                  {hasImage ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
-                      <Image
-                        src={service.image as string}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                        sizes="(min-width: 640px) 45vw, 100vw"
-                      />
-                    </div>
-                  ) : (
-                    <span className="flex h-24 w-24 flex-none items-center justify-center rounded-2xl bg-brand-yellow text-brand-ink sm:h-28 sm:w-28">
-                      <service.icon className="h-12 w-12 sm:h-14 sm:w-14" strokeWidth={1.6} />
-                    </span>
-                  )}
+                  <div className="relative aspect-square w-full max-w-[220px] overflow-hidden rounded-xl bg-brand-paper">
+                    <Image
+                      src={service.pageImage}
+                      alt={service.title}
+                      fill
+                      className="object-contain p-8"
+                      sizes="(min-width: 640px) 220px, 55vw"
+                    />
+                  </div>
                 </div>
 
                 <div className={reversed ? "sm:order-1" : "sm:order-2"}>
