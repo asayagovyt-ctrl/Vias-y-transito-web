@@ -54,7 +54,7 @@ function HeroTile({ service, variant }: { service: Service; variant: "featured" 
         className="object-cover transition-transform duration-500 group-hover:scale-105"
         sizes="(min-width: 640px) 55vw, 100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink from-25% via-brand-ink/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 via-brand-ink/25 to-transparent" />
       <div className="absolute inset-0 flex flex-col justify-end p-6">
         {variant === "featured" && (
           <span className="mb-2 w-fit rounded-full bg-brand-yellow px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-brand-ink">
@@ -104,7 +104,7 @@ function MediumTile({ service }: { service: Service }) {
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(min-width: 640px) 30vw, 100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-ink from-25% via-brand-ink/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 via-brand-ink/25 to-transparent" />
         <div className="absolute inset-0 flex flex-col justify-end p-5">
           <h3 className="font-heading text-lg font-extrabold text-brand-yellow">{service.title}</h3>
           <p className="mt-1.5 text-xs leading-relaxed text-slate-200">{service.description}</p>
