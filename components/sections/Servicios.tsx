@@ -49,7 +49,7 @@ export function Servicios() {
                 </div>
 
                 <div className={reversed ? "sm:order-1" : "sm:order-2"}>
-                  <span className="mb-3 block font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+                  <span className="mb-3 block font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
                     Servicio {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mb-3 text-balance font-heading text-2xl font-bold text-brand-ink sm:text-3xl">

@@ -36,10 +36,7 @@ export function PageVideoBanner({ eyebrow, title, description }: PageVideoBanner
         <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-10 sm:pb-20">
           <div className="max-w-2xl">
             {eyebrow && (
-              <p
-                className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg"
-                style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.6)" }}
-              >
+              <p className="mb-3 font-sans text-lg font-bold uppercase tracking-wide text-brand-yellow sm:text-xl">
                 {eyebrow}
               </p>
             )}

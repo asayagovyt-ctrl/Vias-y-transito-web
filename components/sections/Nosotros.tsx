@@ -32,7 +32,7 @@ export function Nosotros() {
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">
-        <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+        <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
           Visítanos
         </p>
         <h3 className="mb-6 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">

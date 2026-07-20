@@ -28,7 +28,7 @@ export function Clientes() {
       className="relative px-6 py-20 sm:px-10 sm:py-28"
     >
       <div className="relative mx-auto max-w-6xl">
-        <p className="mb-3 font-sans text-sm font-bold uppercase tracking-wide text-brand-yellow">
+        <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
           Confían en nosotros
         </p>
         <h2 className="mb-14 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
