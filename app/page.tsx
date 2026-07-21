@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { RoadBackground } from "@/components/layout/RoadBackground";
 import { Hero } from "@/components/sections/Hero";
 import { Clientes } from "@/components/sections/Clientes";
 import { ServiceBento } from "@/components/sections/ServiceBento";
@@ -13,23 +12,6 @@ import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
 
-const roadTrees = [
-  { top: "1%", left: "4%", size: 26 },
-  { top: "2%", left: "94%", size: 30 },
-  { top: "10%", left: "3%", size: 20 },
-  { top: "18%", left: "6%", size: 32 },
-  { top: "16%", left: "96%", size: 24 },
-  { top: "30%", left: "3%", size: 22 },
-  { top: "38%", left: "93%", size: 20 },
-  { top: "50%", left: "5%", size: 28 },
-  { top: "48%", left: "96%", size: 30 },
-  { top: "62%", left: "3%", size: 20 },
-  { top: "70%", left: "92%", size: 22 },
-  { top: "80%", left: "4%", size: 22 },
-  { top: "88%", left: "96%", size: 26 },
-  { top: "95%", left: "5%", size: 20 },
-];
-
 export default function Home() {
   const featuredProject = projects[0];
 
@@ -37,9 +19,7 @@ export default function Home() {
     <main className="relative">
       <Navbar />
       <Hero />
-      <div className="relative overflow-hidden">
-        <RoadBackground trees={roadTrees} />
-
+      <div className="relative overflow-hidden bg-brand-cream">
         {/* Servicios — resumen */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
           <div className="relative mx-auto max-w-6xl">

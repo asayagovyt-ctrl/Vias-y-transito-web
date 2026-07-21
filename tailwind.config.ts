@@ -12,6 +12,7 @@ const config: Config = {
         brand: {
           yellow: "#FFC107",
           paper: "#F1F5F9",
+          cream: "#FBF7ED",
           grey: "#64748B",
           ink: "#111827",
         },
