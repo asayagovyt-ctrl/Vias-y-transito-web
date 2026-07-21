@@ -81,7 +81,7 @@ function Tile({ service, variant }: { service: Service; variant: Variant }) {
 
       <div className={`flex-none ${isSmall ? "p-4" : "p-5"}`}>
         <h3
-          className={`font-heading font-bold text-brand-ink ${
+          className={`font-heading font-bold text-brand-yellow ${
             isFeatured ? "text-xl sm:text-2xl" : isSmall ? "text-base" : "text-lg"
           }`}
         >
