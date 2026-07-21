@@ -40,6 +40,7 @@ export function Servicios() {
                         className="object-cover"
                         sizes="(min-width: 640px) 45vw, 100vw"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/35 via-transparent to-transparent" />
                     </div>
                   ) : (
                     <span className="flex h-24 w-24 flex-none items-center justify-center rounded-2xl bg-brand-yellow text-brand-ink sm:h-28 sm:w-28">
