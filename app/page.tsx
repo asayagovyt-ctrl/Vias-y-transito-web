@@ -43,7 +43,8 @@ export default function Home() {
         {/* Servicios — resumen */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+            <p className="mb-4 flex items-center gap-2.5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-xl">
+              <span className="h-[3px] w-7 flex-none rounded-full bg-brand-yellow" />
               Lo que hacemos
             </p>
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -69,7 +70,8 @@ export default function Home() {
         {/* Proyectos — resumen */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+            <p className="mb-4 flex items-center gap-2.5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-xl">
+              <span className="h-[3px] w-7 flex-none rounded-full bg-brand-yellow" />
               Nuestro trabajo
             </p>
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -117,7 +119,8 @@ export default function Home() {
           <div className="relative mx-auto max-w-6xl rounded-2xl bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
             <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div>
-                <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+                <p className="mb-4 flex items-center gap-2.5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-xl">
+                  <span className="h-[3px] w-7 flex-none rounded-full bg-brand-yellow" />
                   Quiénes somos
                 </p>
                 <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -152,7 +155,8 @@ export default function Home() {
           <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
             <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
               <div className="p-7 sm:p-9">
-                <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+                <p className="mb-4 flex items-center gap-2.5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-xl">
+                  <span className="h-[3px] w-7 flex-none rounded-full bg-brand-yellow" />
                   Visítanos
                 </p>
                 <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">
@@ -188,7 +192,8 @@ export default function Home() {
         {/* Contacto */}
         <section className="relative px-6 py-20 sm:px-10 sm:py-28">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+            <p className="mb-4 flex items-center gap-2.5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-xl">
+              <span className="h-[3px] w-7 flex-none rounded-full bg-brand-yellow" />
               Contacto
             </p>
             <h2 className="mb-4 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
