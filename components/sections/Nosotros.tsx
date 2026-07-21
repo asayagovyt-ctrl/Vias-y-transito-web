@@ -7,7 +7,7 @@ export function Nosotros() {
   const contentRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section id="nosotros" className="relative px-6 py-20 sm:px-10 sm:py-28">
+    <section id="nosotros" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div
         ref={contentRef}
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"

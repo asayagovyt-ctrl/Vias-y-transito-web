@@ -10,7 +10,7 @@ export function Servicios() {
   const listRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section id="servicios" className="relative px-6 py-20 sm:px-10 sm:py-28">
+    <section id="servicios" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
         <div ref={listRef} className="flex flex-col gap-6">
           {services.map((service, index) => {

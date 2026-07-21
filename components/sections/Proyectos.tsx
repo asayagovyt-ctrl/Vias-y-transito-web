@@ -8,7 +8,7 @@ export function Proyectos() {
   const listRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section id="proyectos" className="relative px-6 py-20 sm:px-10 sm:py-28">
+    <section id="proyectos" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
         <div ref={listRef} className="flex flex-col gap-10">
           {projects.map((project) => (

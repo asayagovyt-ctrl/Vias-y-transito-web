@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       <div className="relative overflow-hidden bg-brand-cream">
         {/* Servicios — resumen */}
-        <section className="relative px-6 py-20 sm:px-10 sm:py-28">
+        <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
             <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
               Lo que hacemos
@@ -29,7 +29,7 @@ export default function Home() {
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Nuestros servicios
             </h2>
-            <p className="mb-14 max-w-xl text-base leading-relaxed text-slate-600">
+            <p className="mb-10 max-w-xl text-base leading-relaxed text-slate-600">
               Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación.
             </p>
 
@@ -47,7 +47,7 @@ export default function Home() {
         <Clientes />
 
         {/* Proyectos — resumen */}
-        <section className="relative px-6 py-20 sm:px-10 sm:py-28">
+        <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
             <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
               Nuestro trabajo
@@ -55,7 +55,7 @@ export default function Home() {
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Proyectos destacados
             </h2>
-            <p className="mb-14 max-w-xl text-base leading-relaxed text-slate-600">
+            <p className="mb-10 max-w-xl text-base leading-relaxed text-slate-600">
               Así resolvimos la movilidad en proyectos reales.
             </p>
 
@@ -166,7 +166,7 @@ export default function Home() {
         </section>
 
         {/* Contacto */}
-        <section className="relative px-6 py-20 sm:px-10 sm:py-28">
+        <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
             <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
               Contacto
@@ -174,7 +174,7 @@ export default function Home() {
             <h2 className="mb-4 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Hablemos de tu proyecto
             </h2>
-            <p className="mb-14 max-w-md text-base leading-relaxed text-slate-700">
+            <p className="mb-10 max-w-md text-base leading-relaxed text-slate-700">
               Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico.
             </p>
             <ContactoForm />

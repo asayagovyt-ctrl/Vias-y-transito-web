@@ -38,7 +38,7 @@ const VARIANT_CLASSES: Record<Variant, string> = {
   featured: "sm:col-span-4 sm:row-span-4",
   tall: "sm:col-span-2 sm:row-span-4",
   wide: "sm:col-span-3 sm:row-span-3",
-  small: "sm:col-span-2 sm:row-span-2",
+  small: "sm:col-span-3 sm:row-span-2",
 };
 
 const BULLET_COUNT: Record<Variant, number> = {

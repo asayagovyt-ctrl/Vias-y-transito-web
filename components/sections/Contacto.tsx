@@ -7,7 +7,7 @@ import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function Contacto() {
   return (
-    <section id="contacto" className="relative px-6 py-20 sm:px-10 sm:py-28">
+    <section id="contacto" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <ContactoForm />
     </section>
   );
