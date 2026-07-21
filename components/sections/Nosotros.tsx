@@ -12,7 +12,7 @@ export function Nosotros() {
         ref={contentRef}
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
       >
-        <div className="rounded-2xl bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
+        <div className="rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
           <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
             {company.aboutIntro}
           </p>
@@ -24,7 +24,7 @@ export function Nosotros() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[340px] items-center justify-center rounded-2xl bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12">
+        <div className="relative flex min-h-[340px] items-center justify-center rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12">
           <p className="text-balance px-6 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
             “{company.differentiator}”
           </p>
@@ -39,7 +39,7 @@ export function Nosotros() {
           {company.address}
         </h3>
 
-        <div className="relative h-[420px] overflow-hidden rounded-2xl shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:h-[520px]">
+        <div className="relative h-[420px] overflow-hidden rounded-2xl border border-black/10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:h-[520px]">
           <iframe
             title="Ubicación de Vías y Tránsito SAS"
             src={`https://www.google.com/maps?q=${encodeURIComponent(

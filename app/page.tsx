@@ -60,7 +60,7 @@ export default function Home() {
             </p>
 
             {featuredProject && (
-              <article className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]">
+              <article className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]">
                 <div className="p-7 sm:p-9">
                   <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
                     {featuredProject.location}
@@ -94,7 +94,7 @@ export default function Home() {
 
         {/* Nosotros — resumen */}
         <section className="relative px-6 pb-20 pt-6 sm:px-10 sm:pb-28 sm:pt-10">
-          <div className="relative mx-auto max-w-6xl rounded-2xl bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+          <div className="relative mx-auto max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
             <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div>
                 <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
@@ -129,7 +129,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
+          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
             <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
               <div className="p-7 sm:p-9">
                 <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
