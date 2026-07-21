@@ -12,7 +12,7 @@ export function Footer() {
             alt={company.legalName}
             width={1195}
             height={482}
-            className="h-14 w-auto"
+            className="h-20 w-auto sm:h-28"
           />
           <p className="mt-2 text-xs font-medium uppercase tracking-wide text-brand-grey">
             {company.tagline}
@@ -26,11 +26,6 @@ export function Footer() {
             </a>
           ))}
         </nav>
-
-        <div className="text-sm text-slate-600">
-          <div>{company.phones[0]}</div>
-          <div>{company.emails[0]}</div>
-        </div>
       </div>
 
       <div className="relative mx-auto mt-10 max-w-6xl border-t border-slate-200 pt-6 text-xs text-brand-grey">

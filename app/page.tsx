@@ -37,7 +37,7 @@ export default function Home() {
 
             <Link
               href="/servicios"
-              className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black"
+              className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-yellow hover:text-brand-ink"
             >
               Ver todos los servicios →
             </Link>
@@ -85,7 +85,7 @@ export default function Home() {
 
             <Link
               href="/proyectos"
-              className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black"
+              className="mt-10 inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-yellow hover:text-brand-ink"
             >
               Ver todos los proyectos →
             </Link>
@@ -115,7 +115,7 @@ export default function Home() {
 
                 <Link
                   href="/nosotros"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-black"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-brand-ink px-7 py-3.5 text-sm font-bold text-white transition-colors hover:bg-brand-yellow hover:text-brand-ink"
                 >
                   Conócenos →
                 </Link>
