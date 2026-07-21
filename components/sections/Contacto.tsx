@@ -37,7 +37,7 @@ export function ContactoForm() {
   return (
     <div
       ref={contentRef}
-      className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+      className="relative mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
     >
         <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
           <div className="flex flex-col gap-6">

@@ -18,7 +18,7 @@ export function Clientes() {
   const goPrev = () => setPage((p) => (p - 1 + pageCount) % pageCount);
   const goNext = () => setPage((p) => (p + 1) % pageCount);
 
-  const { pause, resume } = useAutoAdvance(goNext, 4000);
+  const { pause, resume } = useAutoAdvance(goNext, 2200);
 
   return (
     <section
