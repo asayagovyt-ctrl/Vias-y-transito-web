@@ -8,5 +8,4 @@ export interface Service {
   highlights: string[];
   icon: LucideIcon;
   image?: string;
-  homeImage: string;
 }
