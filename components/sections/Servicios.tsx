@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Check } from "lucide-react";
@@ -8,11 +9,106 @@ import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function Servicios() {
   const listRef = useScrollReveal<HTMLDivElement>();
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const [activeId, setActiveId] = useState(services[0]?.id ?? "");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-20% 0px -65% 0px", threshold: 0 }
+    );
+
+    Object.values(cardRefs.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    pillRefs.current[activeId]?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest",
+    });
+  }, [activeId]);
+
+  const activeIndex = Math.max(
+    0,
+    services.findIndex((service) => service.id === activeId)
+  );
+
+  function scrollToService(id: string) {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 
   return (
     <section id="servicios" className="relative px-6 py-10 sm:px-10 sm:py-16">
-      <div className="relative mx-auto max-w-6xl">
-        <div ref={listRef} className="flex flex-col gap-6">
+      <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[260px_1fr] lg:gap-14 lg:items-start">
+        <nav className="sticky top-24 z-10 -mx-6 flex gap-2 overflow-x-auto bg-brand-cream px-6 py-3 sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
+          {services.map((service, index) => (
+            <button
+              key={service.id}
+              ref={(el) => {
+                pillRefs.current[service.id] = el;
+              }}
+              type="button"
+              onClick={() => scrollToService(service.id)}
+              className={`flex-none whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                activeId === service.id
+                  ? "border-brand-yellow bg-brand-yellow text-brand-ink"
+                  : "border-black/10 bg-white text-brand-grey"
+              }`}
+            >
+              {String(index + 1).padStart(2, "0")} · {service.title}
+            </button>
+          ))}
+        </nav>
+
+        <aside className="hidden lg:sticky lg:top-28 lg:block">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-brand-grey">
+            Explora nuestros servicios
+          </p>
+          <nav className="flex flex-col gap-0.5 border-l border-black/10">
+            {services.map((service, index) => {
+              const isActive = activeId === service.id;
+              return (
+                <button
+                  key={service.id}
+                  type="button"
+                  onClick={() => scrollToService(service.id)}
+                  className={`-ml-px flex items-baseline gap-2.5 border-l-2 py-2.5 pl-4 text-left transition-colors ${
+                    isActive
+                      ? "border-brand-yellow text-brand-ink"
+                      : "border-transparent text-brand-grey hover:text-brand-ink"
+                  }`}
+                >
+                  <span
+                    className={`font-mono text-xs ${isActive ? "text-brand-yellow" : "text-slate-400"}`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className={`text-sm leading-snug ${isActive ? "font-semibold" : "font-medium"}`}>
+                    {service.title}
+                  </span>
+                </button>
+              );
+            })}
+          </nav>
+          <div className="mt-5 border-t border-black/10 pt-4 font-mono text-xs text-brand-grey">
+            <span className="text-base font-semibold text-brand-ink">
+              {String(activeIndex + 1).padStart(2, "0")}
+            </span>{" "}
+            / {services.length} especialidades
+          </div>
+        </aside>
+
+        <div ref={listRef} className="flex min-w-0 flex-col gap-6 lg:col-start-2">
           {services.map((service, index) => {
             const hasImage = Boolean(service.image);
             const reversed = hasImage ? false : index % 2 === 1;
@@ -20,7 +116,10 @@ export function Servicios() {
               <div
                 key={service.id}
                 id={service.id}
-                className={`grid scroll-mt-24 items-center gap-10 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 ${
+                ref={(el) => {
+                  cardRefs.current[service.id] = el;
+                }}
+                className={`grid scroll-mt-28 items-center gap-10 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 ${
                   hasImage
                     ? "sm:grid-cols-[1.05fr_1fr]"
                     : reversed

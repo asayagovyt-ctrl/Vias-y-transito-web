@@ -19,7 +19,7 @@ export default function ServiciosPage() {
         title="Nuestros servicios"
         description="Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación. Con 18 años de experiencia y más de 1.000 proyectos ejecutados a nivel nacional e internacional, respaldamos cada etapa con soluciones técnicas rigurosas y ajustadas a la normativa INVIAS vigente."
       />
-      <div className="relative overflow-hidden bg-brand-cream">
+      <div className="relative bg-brand-cream">
         <Servicios />
         <Footer />
       </div>

@@ -5,6 +5,7 @@
 body {
   color: theme("colors.brand.ink");
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 @layer utilities {
