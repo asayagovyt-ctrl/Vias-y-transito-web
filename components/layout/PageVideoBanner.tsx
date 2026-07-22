@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 interface PageVideoBannerProps {
   eyebrow?: string;
   title?: string;
@@ -7,6 +9,8 @@ interface PageVideoBannerProps {
   videoSrc?: string;
   /** Intensifica el velo blanco donde va el texto, para videos más contrastados. */
   strongOverlay?: boolean;
+  /** Contenido extra (cifras, botones) debajo de la descripción. */
+  children?: ReactNode;
 }
 
 export function PageVideoBanner({
@@ -16,9 +20,10 @@ export function PageVideoBanner({
   emphasizeEyebrow = false,
   videoSrc = "/videos/hero-road-2.mp4",
   strongOverlay = false,
+  children,
 }: PageVideoBannerProps) {
   return (
-    <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
+    <div className="relative w-full overflow-hidden">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src={videoSrc}
@@ -46,7 +51,7 @@ export function PageVideoBanner({
         }}
       />
       {(eyebrow || title) && (
-        <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-10 sm:pb-20">
+        <div className="relative z-10 flex min-h-[400px] flex-col justify-end px-6 pb-16 pt-32 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-40">
           <div className="max-w-2xl">
             {eyebrow && (
               <p
@@ -69,6 +74,7 @@ export function PageVideoBanner({
                 {description}
               </p>
             )}
+            {children && <div className="mt-6">{children}</div>}
           </div>
         </div>
       )}

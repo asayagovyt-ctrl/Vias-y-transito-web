@@ -48,7 +48,7 @@ export function Servicios() {
   }
 
   return (
-    <section id="servicios" className="relative px-6 py-10 sm:px-10 sm:py-16">
+    <section id="servicios" className="relative scroll-mt-20 px-6 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16">
       <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[260px_1fr] lg:gap-14 lg:items-start">
         <nav className="sticky top-24 z-10 -mx-6 flex gap-2 overflow-x-auto bg-brand-cream px-6 py-3 sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
