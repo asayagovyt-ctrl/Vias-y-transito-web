@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import "../styles/globals.css";
 
 const sora = Sora({
@@ -37,6 +38,7 @@ export default function RootLayout({
         className={`${sora.variable} ${plexSans.variable} ${plexMono.variable} font-sans antialiased`}
       >
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
