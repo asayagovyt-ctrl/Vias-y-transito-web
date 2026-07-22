@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Clientes } from "@/components/sections/Clientes";
 import { ServiceBento } from "@/components/sections/ServiceBento";
+import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
 import { ContactoForm } from "@/components/sections/Contacto";
 import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
@@ -121,11 +122,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="flex min-h-[220px] items-center justify-center rounded-xl bg-brand-paper p-10 sm:p-12">
-                <p className="text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
-                  “{company.differentiator}”
-                </p>
-              </div>
+              <DifferentiatorCarousel className="min-h-[220px] rounded-xl bg-brand-paper p-10 sm:p-12" />
             </div>
           </div>
 

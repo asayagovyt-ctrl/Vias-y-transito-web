@@ -2,6 +2,7 @@
 
 import { company } from "@/constants/company";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
 
 export function Nosotros() {
   const contentRef = useScrollReveal<HTMLDivElement>();
@@ -24,11 +25,7 @@ export function Nosotros() {
           </div>
         </div>
 
-        <div className="relative flex min-h-[340px] items-center justify-center rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12">
-          <p className="text-balance px-6 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl">
-            “{company.differentiator}”
-          </p>
-        </div>
+        <DifferentiatorCarousel className="min-h-[340px] rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">

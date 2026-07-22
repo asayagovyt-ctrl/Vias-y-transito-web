@@ -6,8 +6,11 @@ export const company = {
   yearsOfExperience: new Date().getFullYear() - 2008,
   projectsCompleted: "1000+",
   coverage: "Nacional e internacional",
-  differentiator:
-    "Nos distingue el acompañamiento integral a nuestros clientes durante todas las etapas del proyecto, mediante una visión multidisciplinaria que integra las diferentes especialidades, permitiendo desarrollar soluciones técnicas coordinadas y ajustadas a las necesidades de cada proyecto.",
+  differentiators: [
+    "Te acompañamos en cada etapa de tu proyecto.",
+    "Un equipo multidisciplinario, una sola visión.",
+    "Soluciones técnicas a la medida de cada proyecto.",
+  ],
   // Propuesta de redacción, pendiente de reemplazar con el texto definitivo del cliente.
   aboutIntro:
     "Desde 2008 trabajamos junto a entidades públicas y privadas en la planeación, el diseño y la gestión de proyectos de infraestructura vial en todo el país. Con más de 1.000 proyectos a nivel nacional e internacional, tenemos un equipo capaz de resolver cualquier etapa del proyecto, con rigor técnico y cumplimiento normativo.",
