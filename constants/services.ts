@@ -16,7 +16,7 @@ export const services: Service[] = [
     title: "Diseño geométrico de vías",
     description: "Trazado, perfiles y plataformas que cumplen norma desde el primer diseño.",
     details:
-      "Definimos el trazado horizontal y vertical, el diseño de intersecciones y los accesos y conexiones viales, cumpliendo la normativa técnica vigente en cada etapa. El resultado es un diseño optimizado en su funcionalidad y operación, que pasa revisión sin retrasos y funciona igual de bien en una vía urbana que en un corredor interurbano.",
+      "Definimos el trazado horizontal y vertical, el diseño de intersecciones, así como los accesos y conexiones viales, cumpliendo la normativa técnica vigente en cada etapa. El resultado es un diseño optimizado para su funcionalidad, operación y seguridad vial, adaptable tanto a vías urbanas como a corredores interurbanos.",
     highlights: [
       "Trazado horizontal y vertical.",
       "Diseño de intersecciones.",
