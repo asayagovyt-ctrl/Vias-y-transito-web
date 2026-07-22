@@ -11,4 +11,5 @@ export const technologies: Technology[] = [
   { name: "ArcGIS / QGIS", application: "Análisis espacial y gestión geográfica." },
   { name: "AutoCAD", application: "Elaboración de planos técnicos." },
   { name: "Vehicle Tracking", application: "Análisis de trayectorias vehiculares." },
+  { name: "Metodología BIM", application: "Modelado coordinado e integrado de proyectos de infraestructura." },
 ];
