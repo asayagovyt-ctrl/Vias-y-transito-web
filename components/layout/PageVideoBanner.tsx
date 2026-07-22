@@ -5,6 +5,8 @@ interface PageVideoBannerProps {
   /** Muestra el eyebrow como título grande en amarillo, en vez del título estándar. */
   emphasizeEyebrow?: boolean;
   videoSrc?: string;
+  /** Intensifica el velo blanco donde va el texto, para videos más contrastados. */
+  strongOverlay?: boolean;
 }
 
 export function PageVideoBanner({
@@ -13,6 +15,7 @@ export function PageVideoBanner({
   description,
   emphasizeEyebrow = false,
   videoSrc = "/videos/hero-road-2.mp4",
+  strongOverlay = false,
 }: PageVideoBannerProps) {
   return (
     <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
@@ -29,8 +32,9 @@ export function PageVideoBanner({
         className="absolute inset-0"
         aria-hidden="true"
         style={{
-          background:
-            "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%), linear-gradient(0deg, rgba(250,250,248,0.78) 0%, rgba(250,250,248,0.4) 24%, transparent 40%)",
+          background: strongOverlay
+            ? "linear-gradient(90deg, rgba(250,250,248,0.95) 0%, rgba(250,250,248,0.8) 40%, rgba(250,250,248,0.4) 60%, transparent 75%), linear-gradient(0deg, rgba(250,250,248,0.94) 0%, rgba(250,250,248,0.6) 30%, transparent 48%)"
+            : "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%), linear-gradient(0deg, rgba(250,250,248,0.78) 0%, rgba(250,250,248,0.4) 24%, transparent 40%)",
         }}
       />
       <div
