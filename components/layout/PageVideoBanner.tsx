@@ -2,16 +2,9 @@ interface PageVideoBannerProps {
   eyebrow?: string;
   title?: string;
   description?: string;
-  /** Restringe el velo blanco a la zona del texto (izquierda/abajo) en vez de cubrir todo el video, igual que en el Hero del inicio. */
-  focusOverlayOnText?: boolean;
 }
 
-export function PageVideoBanner({
-  eyebrow,
-  title,
-  description,
-  focusOverlayOnText = false,
-}: PageVideoBannerProps) {
+export function PageVideoBanner({ eyebrow, title, description }: PageVideoBannerProps) {
   return (
     <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
       <video
@@ -27,9 +20,8 @@ export function PageVideoBanner({
         className="absolute inset-0"
         aria-hidden="true"
         style={{
-          background: focusOverlayOnText
-            ? "linear-gradient(90deg, rgba(250,250,248,0.94) 0%, rgba(250,250,248,0.8) 38%, rgba(250,250,248,0.32) 58%, transparent 74%), linear-gradient(0deg, rgba(250,250,248,0.92) 0%, rgba(250,250,248,0.55) 26%, transparent 44%)"
-            : "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.8) 35%, rgba(250,250,248,0.4) 60%, rgba(250,250,248,0.5) 100%)",
+          background:
+            "linear-gradient(90deg, rgba(250,250,248,0.94) 0%, rgba(250,250,248,0.8) 38%, rgba(250,250,248,0.32) 58%, transparent 74%), linear-gradient(0deg, rgba(250,250,248,0.92) 0%, rgba(250,250,248,0.55) 26%, transparent 44%)",
         }}
       />
       <div
