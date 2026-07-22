@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import { company } from "@/constants/company";
 import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+
+const whatsappLink = `https://wa.me/${company.whatsappNumber}`;
 
 export function Contacto() {
   return (
@@ -39,47 +42,76 @@ export function ContactoForm() {
       ref={contentRef}
       className="relative mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
     >
-        <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
-          <div className="flex flex-col gap-6">
-            <div>
-              <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
-                Teléfonos
+        <div className="flex flex-col gap-6">
+          <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+            <div className="flex flex-col gap-6">
+              <div>
+                <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                  Teléfonos
+                </div>
+                <div className="flex flex-col gap-2">
+                  {company.phones.map((phone) => (
+                    <a
+                      key={phone}
+                      href={`tel:+57${phone}`}
+                      className="group flex items-center gap-3 font-mono text-lg font-semibold text-brand-ink hover:text-brand-yellow"
+                    >
+                      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
+                        <PhoneIcon />
+                      </span>
+                      {phone}
+                    </a>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                {company.phones.map((phone) => (
-                  <a
-                    key={phone}
-                    href={`tel:+57${phone}`}
-                    className="group flex items-center gap-3 font-mono text-lg font-semibold text-brand-ink hover:text-brand-yellow"
-                  >
-                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
-                      <PhoneIcon />
-                    </span>
-                    {phone}
-                  </a>
-                ))}
-              </div>
-            </div>
 
-            <div>
-              <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
-                Correo
-              </div>
-              <div className="flex flex-col gap-2">
-                {company.emails.map((email) => (
-                  <a
-                    key={email}
-                    href={`mailto:${email}`}
-                    className="group flex items-center gap-3 text-base font-medium text-brand-ink hover:text-brand-yellow"
-                  >
-                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
-                      <MailIcon />
-                    </span>
-                    {email}
-                  </a>
-                ))}
+              <div>
+                <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                  Correo
+                </div>
+                <div className="flex flex-col gap-2">
+                  {company.emails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="group flex items-center gap-3 text-base font-medium text-brand-ink hover:text-brand-yellow"
+                    >
+                      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-brand-yellow">
+                        <MailIcon />
+                      </span>
+                      {email}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 rounded-2xl border border-black/10 bg-white p-8 text-center shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+            <p className="font-heading text-xl font-bold text-brand-ink">
+              Escanéame y hablemos ya
+            </p>
+            <p className="max-w-xs text-sm text-slate-600">
+              Escanea el código con la cámara de tu celular y te respondemos por WhatsApp al instante.
+            </p>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-black/10 p-3"
+              aria-label="Escanear código QR de WhatsApp"
+            >
+              <QRCodeSVG value={whatsappLink} size={160} fgColor="#171B1F" />
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-6 py-3 text-sm font-extrabold uppercase tracking-wide text-white transition-colors hover:bg-[#1DA851]"
+            >
+              Escríbenos por WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
 
