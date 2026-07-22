@@ -49,7 +49,7 @@ export function Servicios() {
 
   return (
     <section id="servicios" className="relative scroll-mt-20 px-6 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16">
-      <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[260px_1fr] lg:gap-14 lg:items-start">
+      <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
         <nav className="sticky top-24 z-10 -mx-6 flex gap-2 overflow-x-auto bg-brand-cream px-6 py-3 sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
             <button
@@ -71,10 +71,10 @@ export function Servicios() {
         </nav>
 
         <aside className="hidden lg:sticky lg:top-28 lg:block">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-brand-grey">
+          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-brand-yellow">
             Explora nuestros servicios
           </p>
-          <nav className="flex flex-col gap-0.5 border-l border-black/10">
+          <nav className="flex flex-col gap-1 border-l border-black/10">
             {services.map((service, index) => {
               const isActive = activeId === service.id;
               return (
@@ -82,18 +82,20 @@ export function Servicios() {
                   key={service.id}
                   type="button"
                   onClick={() => scrollToService(service.id)}
-                  className={`-ml-px flex items-baseline gap-2.5 border-l-2 py-2.5 pl-4 text-left transition-colors ${
+                  className={`group -ml-px flex items-baseline gap-3 border-l-2 py-3.5 pl-5 text-left transition-all duration-200 hover:translate-x-1.5 ${
                     isActive
                       ? "border-brand-yellow text-brand-ink"
-                      : "border-transparent text-brand-grey hover:text-brand-ink"
+                      : "border-transparent text-brand-grey hover:border-brand-yellow hover:text-brand-yellow"
                   }`}
                 >
                   <span
-                    className={`font-mono text-xs ${isActive ? "text-brand-yellow" : "text-slate-400"}`}
+                    className={`font-mono text-sm ${
+                      isActive ? "text-brand-yellow" : "text-slate-400 group-hover:text-brand-yellow"
+                    }`}
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className={`text-sm leading-snug ${isActive ? "font-semibold" : "font-medium"}`}>
+                  <span className={`text-base leading-snug ${isActive ? "font-semibold" : "font-medium"}`}>
                     {service.title}
                   </span>
                 </button>
