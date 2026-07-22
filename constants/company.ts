@@ -10,9 +10,8 @@ export const company = {
     "Acompañamiento integral, de principio a fin.",
     "Varias especialidades, una sola solución.",
   ],
-  // Propuesta de redacción, pendiente de reemplazar con el texto definitivo del cliente.
   aboutIntro:
-    "Desde 2008 trabajamos junto a entidades públicas y privadas en la planeación, el diseño y la gestión de proyectos de infraestructura vial en todo el país. Con más de 1.000 proyectos a nivel nacional e internacional, tenemos un equipo capaz de resolver cualquier etapa del proyecto, con rigor técnico y cumplimiento normativo.",
+    "Somos una firma de ingeniería especializada en movilidad, tránsito e infraestructura vial, con sede en el Distrito de Medellín y experiencia en el desarrollo de proyectos para entidades públicas y privadas en Colombia e internacionalmente. Desde 2008 hemos participado en más de 1.000 proyectos, integrando la ingeniería de tránsito, la movilidad y el diseño de infraestructura para desarrollar soluciones técnicas, funcionales y efectivas.",
   phones: ["3184586533", "3162885102"],
   // Pendiente de confirmar por el cliente cuál número usar para el botón de WhatsApp.
   whatsappNumber: "573184586533",

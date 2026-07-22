@@ -1,6 +1,7 @@
 "use client";
 
 import { company } from "@/constants/company";
+import { technologies } from "@/constants/technologies";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
 
@@ -26,6 +27,32 @@ export function Nosotros() {
         </div>
 
         <DifferentiatorCarousel className="min-h-[340px] rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
+      </div>
+
+      <div className="relative mx-auto mt-12 max-w-6xl">
+        <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+          Nuestra tecnología
+        </p>
+        <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+          Ingeniería respaldada por herramientas de clase mundial
+        </h3>
+        <p className="mb-8 max-w-2xl text-base leading-relaxed text-slate-700">
+          Utilizamos software especializado para el análisis, modelación y diseño de proyectos de
+          movilidad e infraestructura, garantizando resultados técnicamente sólidos y acordes con
+          las mejores prácticas de la ingeniería.
+        </p>
+
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {technologies.map((tech) => (
+            <div
+              key={tech.name}
+              className="rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]"
+            >
+              <h4 className="font-heading text-lg font-bold text-brand-ink">{tech.name}</h4>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{tech.application}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">
