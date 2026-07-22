@@ -10,7 +10,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed inset-x-3 top-3 z-30 sm:inset-x-6 sm:top-4">
+    <div className="absolute inset-x-3 top-3 z-30 sm:inset-x-6 sm:top-4">
       <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/5 bg-brand-cream/95 py-2.5 pl-4 pr-2.5 shadow-[0_20px_45px_-15px_rgba(23,27,31,0.35)] backdrop-blur-md sm:py-3 sm:pl-6 sm:pr-3">
         <Link href="/" className="flex items-center">
           <Image
