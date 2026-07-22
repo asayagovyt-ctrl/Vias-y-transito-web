@@ -7,6 +7,7 @@ import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 const whatsappLink = `https://wa.me/${company.whatsappNumber}`;
+const tarjetaLink = "https://vias-y-transito-web.vercel.app/tarjeta";
 
 export function Contacto() {
   return (
@@ -89,19 +90,19 @@ export function ContactoForm() {
 
           <div className="flex flex-col items-center gap-4 rounded-2xl border border-black/10 bg-white p-8 text-center shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
             <p className="font-heading text-xl font-bold text-brand-ink">
-              Escanéame y hablemos ya
+              Escanéame
             </p>
             <p className="max-w-xs text-sm text-slate-600">
-              Escanea el código con la cámara de tu celular y te respondemos por WhatsApp al instante.
+              Escanea el código con la cámara de tu celular para ver nuestra información de contacto.
             </p>
             <a
-              href={whatsappLink}
+              href={tarjetaLink}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-black/10 p-3"
-              aria-label="Escanear código QR de WhatsApp"
+              aria-label="Escanear código QR con la información de contacto"
             >
-              <QRCodeSVG value={whatsappLink} size={160} fgColor="#171B1F" />
+              <QRCodeSVG value={tarjetaLink} size={160} fgColor="#171B1F" />
             </a>
             <a
               href={whatsappLink}
