@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageVideoBanner } from "@/components/layout/PageVideoBanner";
 import { Servicios } from "@/components/sections/Servicios";
 import { company } from "@/constants/company";
+import { services } from "@/constants/services";
 
 export const metadata: Metadata = {
   title: "Servicios | Vías y Tránsito SAS",
@@ -23,12 +25,11 @@ export default function ServiciosPage() {
         videoSrc="/videos/servicios-banner.mp4"
         strongOverlay
       >
-        <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-          <div className="flex flex-wrap gap-7">
-            <Stat value={String(company.yearsOfExperience)} label="Años de experiencia" />
-            <Stat value={company.projectsCompleted} label="Proyectos realizados" />
-            <Stat value="Nacional" label="e internacional" />
-          </div>
+        <div className="flex flex-wrap items-center gap-2.5">
+          <Badge>{company.yearsOfExperience} años de experiencia</Badge>
+          <Badge>{company.projectsCompleted} proyectos</Badge>
+          <Badge>Nacional e internacional</Badge>
+          <Badge>{services.length} especialidades técnicas</Badge>
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3.5">
           <Link
@@ -53,11 +54,11 @@ export default function ServiciosPage() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function Badge({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">{value}</div>
-      <div className="text-[11px] uppercase tracking-wide text-brand-grey">{label}</div>
-    </div>
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-ink/15 bg-white/80 px-4 py-2 text-sm font-semibold text-brand-ink backdrop-blur-sm">
+      <span className="h-1.5 w-1.5 flex-none rounded-full bg-brand-yellow" aria-hidden="true" />
+      {children}
+    </span>
   );
 }
