@@ -43,7 +43,15 @@ export function useScrollReveal<T extends HTMLElement>() {
       );
     }, container);
 
-    return () => ctx.revert();
+    // On client-side route changes the browser hasn't finished scrolling
+    // back to the top yet when this effect runs, so ScrollTrigger can
+    // measure stale positions. Refresh once the scroll position settles.
+    const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
+
+    return () => {
+      cancelAnimationFrame(raf);
+      ctx.revert();
+    };
   }, []);
 
   return containerRef;
