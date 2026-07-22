@@ -128,13 +128,16 @@ export default function Home() {
 
           <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
             <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
-              <div className="p-7 sm:p-9 lg:self-center">
+              <div className="p-7 sm:p-9">
                 <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
                   Visítanos
                 </p>
-                <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">
+                <h3 className="mb-3 font-heading text-2xl font-bold text-brand-ink">
                   {company.address}
                 </h3>
+                <p className="mb-6 max-w-md text-base leading-relaxed text-slate-700">
+                  {company.locationDirections}
+                </p>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                     company.address

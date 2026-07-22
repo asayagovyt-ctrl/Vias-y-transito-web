@@ -18,4 +18,6 @@ export const company = {
   whatsappNumber: "573184586533",
   emails: ["a.velez.vyt@gmail.com", "a.sayago.vyt@gmail.com"],
   address: "Carrera 43A #14-27, Oficina 702, Medellín, Colombia",
+  locationDirections:
+    "Estamos ubicados sobre la Carrera 43A (Avenida El Poblado), en el sector de El Poblado, cerca del Centro Comercial Monterrey. Quedamos a pocos minutos caminando de las estaciones de bus/MetroPlus de Castropol y Colinas del Poblado, con fácil acceso desde toda la ciudad.",
 };
