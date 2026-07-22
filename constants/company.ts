@@ -7,9 +7,8 @@ export const company = {
   projectsCompleted: "1000+",
   coverage: "Nacional e internacional",
   differentiators: [
-    "Te acompañamos en cada etapa de tu proyecto.",
-    "Un equipo multidisciplinario, una sola visión.",
-    "Soluciones técnicas a la medida de cada proyecto.",
+    "Acompañamiento integral, de principio a fin.",
+    "Varias especialidades, una sola solución.",
   ],
   // Propuesta de redacción, pendiente de reemplazar con el texto definitivo del cliente.
   aboutIntro:
