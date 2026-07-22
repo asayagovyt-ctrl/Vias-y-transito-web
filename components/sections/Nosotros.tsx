@@ -15,6 +15,9 @@ export function Nosotros() {
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
       >
         <div className="rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
+          <h2 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
+            {company.yearsOfExperience} años acompañando la movilidad del país
+          </h2>
           <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
             {company.aboutIntro}
           </p>
@@ -46,7 +49,7 @@ export function Nosotros() {
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="rounded-2xl border border-black/10 bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]"
+              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
             >
               <h4 className="font-heading text-lg font-bold text-brand-ink">{tech.name}</h4>
               <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{tech.application}</p>

@@ -2,9 +2,16 @@ interface PageVideoBannerProps {
   eyebrow?: string;
   title?: string;
   description?: string;
+  /** Muestra el eyebrow como título grande en amarillo, en vez del título estándar. */
+  emphasizeEyebrow?: boolean;
 }
 
-export function PageVideoBanner({ eyebrow, title, description }: PageVideoBannerProps) {
+export function PageVideoBanner({
+  eyebrow,
+  title,
+  description,
+  emphasizeEyebrow = false,
+}: PageVideoBannerProps) {
   return (
     <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
       <video
@@ -21,7 +28,7 @@ export function PageVideoBanner({ eyebrow, title, description }: PageVideoBanner
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(90deg, rgba(250,250,248,0.94) 0%, rgba(250,250,248,0.8) 38%, rgba(250,250,248,0.32) 58%, transparent 74%), linear-gradient(0deg, rgba(250,250,248,0.92) 0%, rgba(250,250,248,0.55) 26%, transparent 44%)",
+            "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%), linear-gradient(0deg, rgba(250,250,248,0.78) 0%, rgba(250,250,248,0.4) 24%, transparent 40%)",
         }}
       />
       <div
@@ -36,7 +43,13 @@ export function PageVideoBanner({ eyebrow, title, description }: PageVideoBanner
         <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-16 sm:px-10 sm:pb-20">
           <div className="max-w-2xl">
             {eyebrow && (
-              <p className="mb-3 font-sans text-lg font-bold uppercase tracking-wide text-brand-yellow sm:text-xl">
+              <p
+                className={
+                  emphasizeEyebrow
+                    ? "mb-3 text-balance font-heading text-4xl font-extrabold uppercase leading-tight tracking-tight text-brand-yellow sm:text-5xl"
+                    : "mb-3 font-sans text-lg font-bold uppercase tracking-wide text-brand-yellow sm:text-xl"
+                }
+              >
                 {eyebrow}
               </p>
             )}
