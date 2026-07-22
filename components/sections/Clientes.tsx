@@ -1,24 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 import { clients } from "@/constants/clients";
-import { useFadeInUp } from "@/lib/useFadeInUp";
 import { useAutoAdvance } from "@/lib/useAutoAdvance";
 
 const PAGE_SIZE = 4;
 
 export function Clientes() {
   const [page, setPage] = useState(0);
-  const containerRef = useFadeInUp<HTMLDivElement>([page]);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isAnimatingRef = useRef(false);
 
   const pageCount = Math.ceil(clients.length / PAGE_SIZE);
   const visible = clients.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
 
-  const goPrev = () => setPage((p) => (p - 1 + pageCount) % pageCount);
-  const goNext = () => setPage((p) => (p + 1) % pageCount);
+  const goToPage = (compute: (p: number) => number) => {
+    const container = containerRef.current;
+    if (!container || isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+    gsap.to(container, {
+      opacity: 0,
+      y: -8,
+      duration: 0.4,
+      ease: "power1.inOut",
+      onComplete: () => setPage(compute),
+    });
+  };
 
-  const { pause, resume } = useAutoAdvance(goNext, 2200);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    gsap.set(container, { opacity: 1, y: 0 });
+    const tween = gsap.fromTo(
+      Array.from(container.children),
+      { opacity: 0, y: 16 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power2.out",
+        onComplete: () => {
+          isAnimatingRef.current = false;
+        },
+      }
+    );
+
+    return () => {
+      tween.kill();
+    };
+  }, [page]);
+
+  const goPrev = () => goToPage((p) => (p - 1 + pageCount) % pageCount);
+  const goNext = () => goToPage((p) => (p + 1) % pageCount);
+
+  const { pause, resume } = useAutoAdvance(goNext, 2600);
 
   return (
     <section
@@ -67,7 +106,7 @@ export function Clientes() {
               <button
                 key={i}
                 aria-label={`Ir a la página ${i + 1}`}
-                onClick={() => setPage(i)}
+                onClick={() => goToPage(() => i)}
                 className={`h-1.5 rounded-full transition-all ${
                   i === page ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
                 }`}
