@@ -4,6 +4,7 @@ interface PageVideoBannerProps {
   description?: string;
   /** Muestra el eyebrow como título grande en amarillo, en vez del título estándar. */
   emphasizeEyebrow?: boolean;
+  videoSrc?: string;
 }
 
 export function PageVideoBanner({
@@ -11,12 +12,13 @@ export function PageVideoBanner({
   title,
   description,
   emphasizeEyebrow = false,
+  videoSrc = "/videos/hero-road-2.mp4",
 }: PageVideoBannerProps) {
   return (
     <div className="relative h-[400px] w-full overflow-hidden sm:h-[500px]">
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/hero-road-2.mp4"
+        src={videoSrc}
         autoPlay
         loop
         muted

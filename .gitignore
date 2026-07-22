@@ -41,4 +41,5 @@ next-env.d.ts
 # unused source assets superseded by optimized versions actually used in code
 public/videos/video 2 fondo pag web.mp4
 public/videos/hero-road.mp4
+public/videos/video home servicios.mp4
 public/images/logo vias mejorado.png
