@@ -67,7 +67,7 @@ export function Clientes() {
       className="relative px-6 py-10 sm:px-10 sm:py-16"
     >
       <div className="relative mx-auto max-w-6xl">
-        <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+        <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
           Confían en nosotros
         </p>
         <h2 className="mb-10 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">

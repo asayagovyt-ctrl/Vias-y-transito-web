@@ -24,7 +24,7 @@ export default function Home() {
         {/* Servicios — resumen */}
         <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
               Lo que hacemos
             </p>
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -50,7 +50,7 @@ export default function Home() {
         {/* Proyectos — resumen */}
         <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
               Nuestro trabajo
             </p>
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
             <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div>
-                <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+                <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
                   Quiénes somos
                 </p>
                 <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -129,7 +129,7 @@ export default function Home() {
           <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
             <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
               <div className="p-7 sm:p-9">
-                <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+                <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
                   Visítanos
                 </p>
                 <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">
@@ -165,7 +165,7 @@ export default function Home() {
         {/* Contacto */}
         <section className="relative px-6 py-10 sm:px-10 sm:py-16">
           <div className="relative mx-auto max-w-6xl">
-            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 font-sans text-xs font-extrabold uppercase tracking-wide text-brand-ink sm:text-sm">
+            <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
               Contacto
             </p>
             <h2 className="mb-4 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
