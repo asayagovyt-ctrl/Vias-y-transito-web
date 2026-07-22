@@ -7,9 +7,9 @@ export const heroSlides: HeroSlide[] = [
     sub: "Desarrollamos estudios de movilidad y tránsito para proyectos inmobiliarios e infraestructura, integrando análisis de demanda, accesibilidad y operación vial para respaldar su viabilidad.",
   },
   {
-    eyebrow: "Diseño de vías",
-    headline: "Movilidad y diseño vial en una sola solución",
-    sub: "Integramos la ingeniería de tránsito y movilidad con el diseño geométrico para desarrollar proyectos funcionales, seguros y eficientes, acordes con las condiciones operacionales, urbanísticas y topográficas de cada entorno.",
+    eyebrow: "Diseño vial con criterio",
+    headline: "Diseñamos infraestructura vial funcional, segura y eficiente",
+    sub: "Integrando el diseño geométrico con la ingeniería de tránsito para validar técnicamente cada solución y optimizar su operación desde la etapa de diseño.",
   },
   {
     eyebrow: "Plan de Manejo de Tránsito (PMT)",
