@@ -1,57 +1,47 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-let pluginRegistered = false;
-
-function ensureScrollTrigger() {
-  if (!pluginRegistered) {
-    gsap.registerPlugin(ScrollTrigger);
-    pluginRegistered = true;
-  }
-}
 
 /**
  * Fades in and slides up the direct children of the container as it
  * scrolls into view, staggered in order. Runs once per mount.
+ *
+ * Uses IntersectionObserver instead of a scroll-position calculation
+ * so children already in view on mount (e.g. right after a page
+ * navigation) reveal immediately, instead of depending on a cached
+ * pixel threshold that can end up stale after a route change.
  */
 export function useScrollReveal<T extends HTMLElement>() {
   const containerRef = useRef<T>(null);
 
   useEffect(() => {
-    ensureScrollTrigger();
     const container = containerRef.current;
     if (!container) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        Array.from(container.children),
-        { opacity: 0, y: 32 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          stagger: 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: container,
-            start: "top 80%",
-          },
+    const children = Array.from(container.children) as HTMLElement[];
+
+    children.forEach((child, index) => {
+      child.style.opacity = "0";
+      child.style.transform = "translateY(32px)";
+      child.style.transition = `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s`;
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const el = entry.target as HTMLElement;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+          observer.unobserve(el);
         }
-      );
-    }, container);
+      },
+      { rootMargin: "0px 0px -10% 0px" }
+    );
 
-    // On client-side route changes the browser hasn't finished scrolling
-    // back to the top yet when this effect runs, so ScrollTrigger can
-    // measure stale positions. Refresh once the scroll position settles.
-    const raf = requestAnimationFrame(() => ScrollTrigger.refresh());
+    children.forEach((child) => observer.observe(child));
 
-    return () => {
-      cancelAnimationFrame(raf);
-      ctx.revert();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return containerRef;

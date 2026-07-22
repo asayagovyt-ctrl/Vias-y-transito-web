@@ -13,9 +13,17 @@ export function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+
+    // On client-side route changes the browser hasn't necessarily
+    // finished restoring/resetting the scroll position for the new
+    // page yet when this effect runs, so reading window.scrollY here
+    // can catch a stale value. Wait a frame for it to settle first.
+    const raf = requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
