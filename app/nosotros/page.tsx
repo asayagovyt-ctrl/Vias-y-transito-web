@@ -14,7 +14,11 @@ export default function NosotrosPage() {
   return (
     <main className="relative">
       <Navbar />
-      <PageVideoBanner eyebrow="Quiénes somos" emphasizeEyebrow />
+      <PageVideoBanner
+        eyebrow="Quiénes somos"
+        emphasizeEyebrow
+        videoSrc="/videos/nosotros-banner.mp4"
+      />
       <div className="relative overflow-hidden bg-brand-cream">
         <Nosotros />
         <Footer />

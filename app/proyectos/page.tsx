@@ -18,6 +18,7 @@ export default function ProyectosPage() {
         eyebrow="Nuestro trabajo"
         title="Proyectos destacados"
         description="Así resolvimos la movilidad en proyectos reales."
+        videoSrc="/videos/proyectos-banner.mp4"
       />
       <div className="relative overflow-hidden bg-brand-cream">
         <Proyectos />

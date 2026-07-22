@@ -38,8 +38,8 @@ export function PageVideoBanner({
         aria-hidden="true"
         style={{
           background: strongOverlay
-            ? "linear-gradient(90deg, rgba(250,250,248,0.95) 0%, rgba(250,250,248,0.8) 40%, rgba(250,250,248,0.4) 60%, transparent 75%), linear-gradient(0deg, rgba(250,250,248,0.94) 0%, rgba(250,250,248,0.6) 30%, transparent 48%)"
-            : "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%), linear-gradient(0deg, rgba(250,250,248,0.78) 0%, rgba(250,250,248,0.4) 24%, transparent 40%)",
+            ? "linear-gradient(90deg, rgba(250,250,248,0.95) 0%, rgba(250,250,248,0.8) 40%, rgba(250,250,248,0.4) 60%, transparent 75%)"
+            : "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%)",
         }}
       />
       <div
