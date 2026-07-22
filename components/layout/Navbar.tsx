@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <>
       <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex flex-col items-start">
           <Image
             src="/images/logo-mark.png"
             alt={company.legalName}
@@ -38,6 +38,9 @@ export function Navbar() {
             priority
             className="h-20 w-auto sm:h-28"
           />
+          <span className="mt-1 text-[10px] font-medium uppercase tracking-wide text-white/90 sm:text-xs">
+            {company.tagline}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-9 rounded-full bg-black/30 px-8 py-3 text-base font-semibold text-white backdrop-blur-sm md:flex">
@@ -74,7 +77,7 @@ export function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/5 bg-brand-cream/95 py-2.5 pl-4 pr-2.5 shadow-[0_20px_45px_-15px_rgba(23,27,31,0.35)] backdrop-blur-md sm:py-3 sm:pl-6 sm:pr-3">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex flex-col items-start">
             <Image
               src="/images/logo-mark.png"
               alt={company.legalName}
@@ -82,6 +85,9 @@ export function Navbar() {
               height={482}
               className="h-14 w-auto sm:h-16"
             />
+            <span className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-brand-grey">
+              {company.tagline}
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-1 rounded-full bg-brand-ink/[0.04] p-1.5 text-sm font-semibold md:flex">
