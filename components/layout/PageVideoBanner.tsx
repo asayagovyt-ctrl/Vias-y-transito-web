@@ -51,7 +51,7 @@ export function PageVideoBanner({
         }}
       />
       {(eyebrow || title) && (
-        <div className="relative z-10 flex min-h-[400px] flex-col justify-end px-6 pb-16 pt-32 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-40">
+        <div className="relative z-10 flex min-h-[400px] flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-56">
           <div className="max-w-2xl">
             {eyebrow && (
               <p

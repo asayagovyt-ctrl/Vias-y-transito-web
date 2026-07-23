@@ -18,6 +18,7 @@ export default function NosotrosPage() {
         eyebrow="Quiénes somos"
         emphasizeEyebrow
         videoSrc="/videos/nosotros-banner.mp4"
+        strongOverlay
       />
       <div className="relative overflow-hidden bg-brand-cream">
         <Nosotros />

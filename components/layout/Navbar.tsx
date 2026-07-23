@@ -38,7 +38,7 @@ export function Navbar() {
             priority
             className="h-20 w-auto sm:h-28"
           />
-          <span className="mt-1 text-[10px] font-medium uppercase tracking-wide text-brand-ink sm:text-xs">
+          <span className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-brand-ink sm:text-sm">
             {company.tagline}
           </span>
         </Link>
@@ -85,7 +85,7 @@ export function Navbar() {
               height={482}
               className="h-14 w-auto sm:h-16"
             />
-            <span className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-brand-ink">
+            <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-ink sm:text-xs">
               {company.tagline}
             </span>
           </Link>

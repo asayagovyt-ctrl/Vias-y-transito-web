@@ -19,6 +19,7 @@ export default function ProyectosPage() {
         title="Proyectos destacados"
         description="Así resolvimos la movilidad en proyectos reales."
         videoSrc="/videos/proyectos-banner.mp4"
+        strongOverlay
       />
       <div className="relative overflow-hidden bg-brand-cream">
         <Proyectos />

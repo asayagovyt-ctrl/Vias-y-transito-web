@@ -12,6 +12,15 @@ export function Servicios() {
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [activeId, setActiveId] = useState(services[0]?.id ?? "");
+  const hasScrolledRef = useRef(false);
+
+  useEffect(() => {
+    function onScroll() {
+      hasScrolledRef.current = true;
+    }
+    window.addEventListener("scroll", onScroll, { once: true, passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,6 +40,7 @@ export function Servicios() {
   }, []);
 
   useEffect(() => {
+    if (!hasScrolledRef.current) return;
     pillRefs.current[activeId]?.scrollIntoView({
       behavior: "smooth",
       inline: "center",

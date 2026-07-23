@@ -18,6 +18,7 @@ export default function ContactoPage() {
         eyebrow="Contacto"
         title="Hablemos de tu proyecto"
         description="Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico."
+        strongOverlay
       />
       <div className="relative overflow-hidden bg-brand-cream">
         <Contacto />
