@@ -140,5 +140,6 @@ export const services: Service[] = [
     ],
     icon: Rows3,
     image: "/images/servicios/diseno-semaforizacion.jpg",
+    imageFit: "contain",
   },
 ];

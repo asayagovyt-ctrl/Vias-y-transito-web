@@ -143,16 +143,18 @@ export function Servicios() {
                   className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
                 >
                   {hasImage ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl sm:aspect-auto sm:h-full sm:min-h-[300px]">
+                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[300px]">
                       <Image
                         src={service.image as string}
                         alt={service.title}
                         fill
-                        className="object-cover"
+                        className={service.imageFit === "contain" ? "object-contain" : "object-cover"}
                         style={{ objectPosition: service.imagePosition ?? "center" }}
                         sizes="(min-width: 640px) 45vw, 100vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/35 via-transparent to-transparent" />
+                      {service.imageFit !== "contain" && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/35 via-transparent to-transparent" />
+                      )}
                     </div>
                   ) : (
                     <span className="flex h-24 w-24 flex-none items-center justify-center rounded-2xl bg-brand-yellow text-brand-ink sm:h-28 sm:w-28">
