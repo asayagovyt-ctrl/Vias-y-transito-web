@@ -8,4 +8,6 @@ export interface Service {
   highlights: string[];
   icon: LucideIcon;
   image?: string;
+  /** CSS object-position for the image crop; defaults to "center" when omitted. */
+  imagePosition?: string;
 }

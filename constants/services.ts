@@ -107,6 +107,7 @@ export const services: Service[] = [
     ],
     icon: Mountain,
     image: "/images/servicios/diseno-explanaciones.jpeg",
+    imagePosition: "65% center",
   },
   {
     id: "modelaciones-trafico",
@@ -138,5 +139,6 @@ export const services: Service[] = [
       "Mejora de la seguridad vial.",
     ],
     icon: Rows3,
+    image: "/images/servicios/diseno-semaforizacion.jpg",
   },
 ];

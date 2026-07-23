@@ -149,6 +149,7 @@ export function Servicios() {
                         alt={service.title}
                         fill
                         className="object-cover"
+                        style={{ objectPosition: service.imagePosition ?? "center" }}
                         sizes="(min-width: 640px) 45vw, 100vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/35 via-transparent to-transparent" />
