@@ -140,10 +140,10 @@ export function Servicios() {
                 }`}
               >
                 <div
-                  className={`flex justify-center ${reversed ? "sm:order-2" : "sm:order-1"}`}
+                  className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
                 >
                   {hasImage ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl sm:aspect-auto sm:h-full sm:min-h-[300px]">
                       <Image
                         src={service.image as string}
                         alt={service.title}
