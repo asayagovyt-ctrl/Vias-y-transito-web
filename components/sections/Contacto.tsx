@@ -36,6 +36,17 @@ export function ContactoForm() {
     );
   }
 
+  const allServiceIds = services.map((service) => service.id);
+  const allSelected = allServiceIds.every((id) => servicios.includes(id));
+
+  function toggleAllServicios() {
+    setServicios((prev) =>
+      allSelected
+        ? prev.filter((id) => !allServiceIds.includes(id))
+        : Array.from(new Set([...prev, ...allServiceIds]))
+    );
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("sending");
@@ -163,9 +174,18 @@ export function ContactoForm() {
               <Field label="Correo" name="email" type="email" required />
               <Field label="Teléfono" name="phone" type="tel" />
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-brand-ink">
-                  Servicios de interés
-                </label>
+                <div className="mb-1.5 flex items-center justify-between gap-2">
+                  <label className="block text-sm font-medium text-brand-ink">
+                    Servicios de interés
+                  </label>
+                  <button
+                    type="button"
+                    onClick={toggleAllServicios}
+                    className="text-xs font-semibold text-brand-ink underline decoration-brand-yellow decoration-2 underline-offset-2 hover:text-brand-yellow"
+                  >
+                    {allSelected ? "Deseleccionar todos" : "Seleccionar todos"}
+                  </button>
+                </div>
                 <p className="mb-2 text-xs text-slate-500">
                   Puedes seleccionar más de uno si necesitas varios servicios.
                 </p>
