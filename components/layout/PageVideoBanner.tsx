@@ -36,8 +36,20 @@ export function PageVideoBanner({
         playsInline
         aria-hidden="true"
       />
+      {/* En móvil el bloque de texto ocupa casi todo el ancho, así que el fade
+          horizontal (pensado para pantallas anchas) deja el final de cada
+          línea sobre video transparente. Se usa un velo vertical de ancho
+          completo solo en móvil; desde sm: se conserva el fade original. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 sm:hidden"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(250,250,248,0.3) 0%, rgba(250,250,248,0.82) 22%, rgba(250,250,248,0.95) 42%, rgba(250,250,248,0.97) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden sm:block"
         aria-hidden="true"
         style={{
           background: strongOverlay
@@ -72,12 +84,18 @@ export function PageVideoBanner({
               </p>
             )}
             {title && (
-              <h1 className="mb-3 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+              <h1
+                className="mb-3 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl"
+                style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 16px rgba(250,250,248,0.9)" }}
+              >
                 {title}
               </h1>
             )}
             {description && (
-              <p className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-[17px]">
+              <p
+                className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-[17px]"
+                style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
+              >
                 {description}
               </p>
             )}

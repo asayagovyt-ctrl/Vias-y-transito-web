@@ -60,7 +60,7 @@ export function Servicios() {
   return (
     <section id="servicios" className="relative scroll-mt-20 px-6 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16">
       <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
-        <nav className="sticky top-24 z-10 -mx-6 flex gap-2 overflow-x-auto bg-brand-cream px-6 py-3 sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
+        <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-[0_8px_20px_-12px_rgba(23,27,31,0.3)] sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
             <button
               key={service.id}
@@ -131,7 +131,7 @@ export function Servicios() {
                 ref={(el) => {
                   cardRefs.current[service.id] = el;
                 }}
-                className={`grid scroll-mt-28 items-center gap-10 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 ${
+                className={`grid scroll-mt-40 items-center gap-10 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 lg:scroll-mt-28 ${
                   hasImage
                     ? "sm:grid-cols-[1.05fr_1fr]"
                     : reversed

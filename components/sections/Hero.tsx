@@ -35,8 +35,20 @@ export function Hero() {
         playsInline
         aria-hidden="true"
       />
+      {/* En móvil el bloque de texto ocupa casi todo el ancho, así que el fade
+          horizontal (pensado para pantallas anchas) deja el final de cada
+          línea sobre video transparente. Se usa un velo vertical de ancho
+          completo solo en móvil; desde sm: se conserva el fade original. */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 sm:hidden"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.95) 42%, rgba(250,250,248,0.8) 62%, rgba(250,250,248,0.3) 100%)",
+        }}
+      />
+      <div
+        className="absolute inset-0 hidden sm:block"
         aria-hidden="true"
         style={{
           background:
@@ -52,7 +64,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-28 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
+      <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
         <div ref={contentRef} className="max-w-2xl">
           <p className="mb-5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-2xl">
             {slide.eyebrow}
