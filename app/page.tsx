@@ -14,7 +14,7 @@ import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
 
 export default function Home() {
-  const featuredProject = projects[0];
+  const featuredProjects = projects.filter((project) => project.featured);
 
   return (
     <main className="relative">
@@ -60,29 +60,44 @@ export default function Home() {
               Así resolvimos la movilidad en proyectos reales.
             </p>
 
-            {featuredProject && (
-              <article className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]">
-                <div className="p-7 sm:p-9">
-                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
-                    {featuredProject.location}
-                  </p>
-                  <h3 className="mb-2 font-heading text-xl font-bold text-brand-ink">
-                    {featuredProject.title}
-                  </h3>
-                  <p className="max-w-2xl text-sm leading-relaxed text-slate-600">
-                    {featuredProject.description}
-                  </p>
-                </div>
-                <div className="relative aspect-[16/8]">
-                  <Image
-                    src={featuredProject.images[0]}
-                    alt={featuredProject.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </article>
-            )}
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredProjects.map((project) => (
+                <article
+                  key={project.id}
+                  className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
+                >
+                  <div className="p-6">
+                    <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                      {project.location}
+                    </p>
+                    <h3 className="mb-2 font-heading text-lg font-bold text-brand-ink">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="relative aspect-[16/10] bg-black">
+                    {project.video ? (
+                      <video
+                        src={project.video}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <Image
+                        src={project.images[0]}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
 
             <Link
               href="/proyectos"

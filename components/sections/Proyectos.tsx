@@ -37,25 +37,37 @@ export function Proyectos() {
                   </a>
                 )}
               </div>
-              <div
-                className={`grid gap-1 ${project.images.length > 1 ? "sm:grid-cols-2" : ""}`}
-              >
-                {project.images.map((src, i) => (
-                  <div
-                    key={src}
-                    className={`relative aspect-[16/10] ${
-                      project.planPdf ? "bg-slate-100" : ""
-                    }`}
-                  >
-                    <Image
-                      src={src}
-                      alt={`${project.title} — vista ${i + 1}`}
-                      fill
-                      className={project.planPdf ? "object-contain p-3" : "object-cover"}
-                    />
-                  </div>
-                ))}
-              </div>
+              {project.video ? (
+                <div className="relative aspect-[16/10] bg-black">
+                  <video
+                    src={project.video}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div
+                  className={`grid gap-1 ${project.images.length > 1 ? "sm:grid-cols-2" : ""}`}
+                >
+                  {project.images.map((src, i) => (
+                    <div
+                      key={src}
+                      className={`relative aspect-[16/10] ${
+                        project.planPdf ? "bg-slate-100" : ""
+                      }`}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${project.title} — vista ${i + 1}`}
+                        fill
+                        className={project.planPdf ? "object-contain p-3" : "object-cover"}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>
