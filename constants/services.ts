@@ -57,7 +57,7 @@ export const services: Service[] = [
       "Planos y especificaciones técnicas.",
     ],
     icon: SignpostBig,
-    image: "/images/servicios/senalizacion-vial.jpeg",
+    image: "/images/servicios/senalizacion-vial.png",
   },
   {
     id: "estudios-transito",
