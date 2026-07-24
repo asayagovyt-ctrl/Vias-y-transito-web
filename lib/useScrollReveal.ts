@@ -2,16 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-type RevealVariant = "slide-up" | "scale-in";
+type RevealVariant = "slide-up" | "scale-in" | "slide-side";
 
-const HIDDEN_TRANSFORM: Record<RevealVariant, string> = {
-  "slide-up": "translateY(32px)",
-  "scale-in": "scale(0.94)",
-};
+function hiddenTransform(variant: RevealVariant, index: number): string {
+  if (variant === "slide-up") return "translateY(32px)";
+  if (variant === "scale-in") return "scale(0.94)";
+  return index % 2 === 0 ? "translateX(-48px)" : "translateX(48px)";
+}
 
 const VISIBLE_TRANSFORM: Record<RevealVariant, string> = {
   "slide-up": "translateY(0)",
   "scale-in": "scale(1)",
+  "slide-side": "translateX(0)",
 };
 
 /**
@@ -34,7 +36,7 @@ export function useScrollReveal<T extends HTMLElement>(variant: RevealVariant = 
 
     children.forEach((child, index) => {
       child.style.opacity = "0";
-      child.style.transform = HIDDEN_TRANSFORM[variant];
+      child.style.transform = hiddenTransform(variant, index);
       child.style.transition = `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s`;
     });
 
