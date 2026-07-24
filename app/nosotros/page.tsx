@@ -22,6 +22,8 @@ export default function NosotrosPage() {
         description="Una firma de ingeniería de Medellín especializada en tránsito, movilidad e infraestructura vial. Desde 2008 resolvemos cómo se va a mover un proyecto antes de que se construya, para entidades públicas y constructoras privadas."
         videoSrc="/videos/nosotros-banner.mp4"
         strongOverlay
+        overlayBoost
+        videoPlaybackRate={0.6}
       >
         <ExperienceBadge value={company.foundedYear} label="Año de fundación" />
       </PageVideoBanner>

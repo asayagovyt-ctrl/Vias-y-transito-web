@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { useEffect, useRef, type ReactNode } from "react";
 
 interface PageVideoBannerProps {
   eyebrow?: string;
@@ -11,6 +13,8 @@ interface PageVideoBannerProps {
   strongOverlay?: boolean;
   /** Refuerza aún más el velo (opacidad y alcance) sobre la zona del texto, para esta instancia únicamente. */
   overlayBoost?: boolean;
+  /** Velocidad de reproducción del video (1 = normal, 0.5 = mitad de velocidad). */
+  videoPlaybackRate?: number;
   /** Posición vertical del bloque de texto dentro del banner. Por defecto va abajo. */
   contentAlign?: "end" | "center";
   /** Línea corta subordinada a la descripción (ej. plazo de respuesta). */
@@ -27,13 +31,23 @@ export function PageVideoBanner({
   videoSrc = "/videos/hero-road-2.mp4",
   strongOverlay = false,
   overlayBoost = false,
+  videoPlaybackRate = 1,
   contentAlign = "end",
   microcopy,
   children,
 }: PageVideoBannerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = videoPlaybackRate;
+    }
+  }, [videoPlaybackRate]);
+
   return (
     <div className="relative w-full overflow-hidden">
       <video
+        ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
         src={videoSrc}
         autoPlay
