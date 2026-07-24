@@ -3,7 +3,15 @@
 import { useEffect, useState } from "react";
 import { Award } from "lucide-react";
 
-export function ExperienceBadge({ value, label }: { value: number; label: string }) {
+export function ExperienceBadge({
+  value,
+  suffix = "",
+  label,
+}: {
+  value: number;
+  suffix?: string;
+  label: string;
+}) {
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -31,6 +39,7 @@ export function ExperienceBadge({ value, label }: { value: number; label: string
       <div className="flex flex-col leading-none">
         <span className="font-heading text-3xl font-extrabold tabular-nums text-brand-ink">
           {display}
+          {suffix}
         </span>
         <span className="mt-1 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
           {label}

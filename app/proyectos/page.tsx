@@ -18,13 +18,17 @@ export default function ProyectosPage() {
       <Navbar />
       <PageVideoBanner
         eyebrow="Nuestro trabajo"
-        title="Proyectos destacados"
-        description="Diseño geométrico, señalización y planes de manejo de tránsito aplicados en intersecciones reales, desde el primer estudio hasta el plano final."
+        title="Proyectos como el tuyo, ya resueltos"
+        description="Intercambios viales, planes de manejo de tránsito y estudios de movilidad. Estos son algunos de los más de 1.000 que hemos entregado."
         videoSrc="/videos/proyectos-banner.mp4"
         strongOverlay
         contentAlign="center"
       >
-        <ExperienceBadge value={company.yearsOfExperience} label="Años de experiencia" />
+        <ExperienceBadge
+          value={parseInt(company.projectsCompleted, 10)}
+          suffix={company.projectsCompleted.replace(/[0-9]/g, "")}
+          label="Proyectos realizados"
+        />
       </PageVideoBanner>
       <div className="relative overflow-hidden bg-brand-cream">
         <Proyectos />
