@@ -49,7 +49,7 @@ function Tile({ service }: { service: Service }) {
         <h3 className="font-heading text-lg font-bold text-brand-yellow">{service.title}</h3>
         <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{service.description}</p>
         <span className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-brand-ink transition-colors group-hover:text-brand-yellow">
-          Ver más
+          Qué incluye
           <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
             →
           </span>

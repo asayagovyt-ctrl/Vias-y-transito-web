@@ -17,7 +17,9 @@ export const projects: Project[] = [
   {
     id: "intercambio-vial-glorieta-aeropuerto-jmc",
     title: "Intercambio vial Glorieta Aeropuerto JMC",
+    // TODO: falta ciudad/municipio exacto del proyecto.
     location: "Pendiente: agregar ubicación",
+    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
     images: [],
     video: "/images/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
@@ -28,7 +30,9 @@ export const projects: Project[] = [
   {
     id: "intercambio-vial-mayorca-sabaneta-envigado",
     title: "Intercambio vial Mayorca (Sabaneta-Envigado)",
+    // TODO: falta ciudad/municipio exacto del proyecto.
     location: "Pendiente: agregar ubicación",
+    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
     images: [],
     video: "/images/proyecto-intercambio-mayorca-sabaneta-envigado.mp4",
@@ -39,7 +43,9 @@ export const projects: Project[] = [
   {
     id: "analisis-conflicto-vehiculo-peaton",
     title: "Análisis de conflicto vehículo - peatón",
+    // TODO: falta ciudad/municipio exacto del proyecto.
     location: "Pendiente: agregar ubicación",
+    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
     images: [],
     video: "/images/proyecto-analisis-conflicto-vehiculo-peaton.mp4",

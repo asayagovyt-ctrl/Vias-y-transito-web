@@ -67,15 +67,19 @@ export default function Home() {
                   className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
                 >
                   <div className="p-6">
-                    <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
-                      {project.location}
-                    </p>
+                    {!project.pending && (
+                      <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                        {project.location}
+                      </p>
+                    )}
                     <h3 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                       {project.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-slate-600">
-                      {project.description}
-                    </p>
+                    {!project.pending && (
+                      <p className="text-sm leading-relaxed text-slate-600">
+                        {project.description}
+                      </p>
+                    )}
                   </div>
                   <div className="relative aspect-[16/10] bg-black">
                     {project.video ? (

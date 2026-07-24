@@ -5,6 +5,21 @@ import { technologies } from "@/constants/technologies";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
 
+const differentiatorItems = [
+  {
+    title: "Acompañamiento en todas las etapas",
+    body: "No entregamos un informe y desaparecemos. Estamos desde la viabilidad hasta que el proyecto entra en operación.",
+  },
+  {
+    title: "Un solo equipo, todas las especialidades",
+    body: "Tránsito, movilidad, diseño geométrico y señalización coordinados internamente. Sin contratar tres firmas ni conciliar tres criterios distintos.",
+  },
+  {
+    title: "Experiencia pública y privada",
+    body: "Trabajamos tanto con entidades como con constructoras. Sabemos qué exige cada una y cómo hablarle a ambas.",
+  },
+];
+
 export function Nosotros() {
   const contentRef = useScrollReveal<HTMLDivElement>();
 
@@ -32,17 +47,49 @@ export function Nosotros() {
         <DifferentiatorCarousel className="min-h-[340px] rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
       </div>
 
+      <div className="relative mx-auto mt-12 max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
+        <h3 className="mb-4 max-w-2xl text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
+          Un estudio de movilidad puede frenar tu proyecto o destrabarlo
+        </h3>
+        <p className="mb-4 max-w-2xl text-base leading-relaxed text-slate-700">
+          Un proyecto inmobiliario o de infraestructura no avanza sin sustento técnico de
+          movilidad. Y cuando ese estudio llega tarde, incompleto o sin respaldo, el cronograma se
+          para.
+        </p>
+        <p className="max-w-2xl text-base leading-relaxed text-slate-700">
+          Llevamos {company.yearsOfExperience} años entregando estudios que las entidades aprueban
+          y que los constructores pueden ejecutar. Conocemos la norma, conocemos al revisor y
+          conocemos los errores que retrasan un proyecto — porque ya los vimos antes.
+        </p>
+      </div>
+
+      <div className="relative mx-auto mt-12 max-w-6xl">
+        <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+          Qué nos distingue
+        </h3>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {differentiatorItems.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
+            >
+              <h4 className="font-heading text-lg font-bold text-brand-ink">{item.title}</h4>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="relative mx-auto mt-12 max-w-6xl">
         <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
           Nuestra tecnología
         </p>
         <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-          Ingeniería respaldada por herramientas de clase mundial
+          Ingeniería con las herramientas que usa la industria
         </h3>
         <p className="mb-8 max-w-2xl text-base leading-relaxed text-slate-700">
-          Utilizamos software especializado para el análisis, modelación y diseño de proyectos de
-          movilidad e infraestructura, garantizando resultados técnicamente sólidos y acordes con
-          las mejores prácticas de la ingeniería.
+          Modelamos, simulamos y diseñamos con el mismo software que exigen las entidades
+          revisoras. Nuestros entregables llegan en el formato que esperan recibir.
         </p>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
