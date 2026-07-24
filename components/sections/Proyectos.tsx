@@ -67,7 +67,7 @@ function FilterPill({
       onClick={onClick}
       className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors sm:text-base ${
         active
-          ? "border-brand-ink bg-brand-ink text-white"
+          ? "border-brand-yellow bg-brand-yellow text-brand-ink"
           : "border-black/10 bg-brand-paper text-brand-grey hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
       }`}
     >
