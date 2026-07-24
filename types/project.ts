@@ -1,3 +1,8 @@
+export type ProjectCategory =
+  | "Diseño geométrico"
+  | "Plan de Manejo de Tránsito"
+  | "Estudios de movilidad";
+
 export interface Project {
   id: string;
   title: string;
@@ -7,4 +12,7 @@ export interface Project {
   video?: string;
   planPdf?: string;
   featured?: boolean;
+  category: ProjectCategory;
+  /** true while location/description are still placeholder text, pending client input */
+  pending?: boolean;
 }

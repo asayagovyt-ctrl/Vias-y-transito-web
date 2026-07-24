@@ -27,4 +27,19 @@ body {
   .animate-fade-in-carousel {
     animation: fade-in-carousel 0.5s ease-out;
   }
+
+  @keyframes fade-in-tile {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-tile {
+    animation: fade-in-tile 0.45s ease-out both;
+  }
 }

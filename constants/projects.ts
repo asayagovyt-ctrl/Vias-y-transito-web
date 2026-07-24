@@ -12,6 +12,7 @@ export const projects: Project[] = [
       "/images/proyecto-intercambio-vial-2.jpeg",
     ],
     featured: true,
+    category: "Diseño geométrico",
   },
   {
     id: "intercambio-vial-glorieta-aeropuerto-jmc",
@@ -21,6 +22,8 @@ export const projects: Project[] = [
     images: [],
     video: "/images/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
     featured: true,
+    category: "Diseño geométrico",
+    pending: true,
   },
   {
     id: "intercambio-vial-mayorca-sabaneta-envigado",
@@ -30,6 +33,8 @@ export const projects: Project[] = [
     images: [],
     video: "/images/proyecto-intercambio-mayorca-sabaneta-envigado.mp4",
     featured: true,
+    category: "Diseño geométrico",
+    pending: true,
   },
   {
     id: "analisis-conflicto-vehiculo-peaton",
@@ -38,6 +43,8 @@ export const projects: Project[] = [
     description: "Pendiente: agregar descripción del proyecto.",
     images: [],
     video: "/images/proyecto-analisis-conflicto-vehiculo-peaton.mp4",
+    category: "Estudios de movilidad",
+    pending: true,
   },
   {
     id: "pmt-glorieta-san-nicolas",
@@ -47,6 +54,7 @@ export const projects: Project[] = [
       "Diseñamos la señalización y el manejo temporal del tránsito durante la construcción de un intercambio tipo glorieta sobre la calle 41C, sin comprometer la seguridad de vehículos, peatones y ciclistas.",
     images: ["/images/pmt-glorieta.jpg"],
     planPdf: "/docs/pmt-glorieta-san-nicolas.pdf",
+    category: "Plan de Manejo de Tránsito",
   },
   {
     id: "mejoramiento-carrera-34",
@@ -56,5 +64,6 @@ export const projects: Project[] = [
       "Desarrollamos el diseño geométrico en planta y perfil para la maduración de estudios de mejoramiento de la intersección, en convenio con la Secretaría de Infraestructura Física de la Alcaldía de Medellín.",
     images: ["/images/planta-perfil.jpg"],
     planPdf: "/docs/planta-perfil-carrera-34.pdf",
+    category: "Diseño geométrico",
   },
 ];
