@@ -17,8 +17,11 @@ export default function ContactoPage() {
       <PageVideoBanner
         eyebrow="Contacto"
         title="Hablemos de tu proyecto"
-        description="Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico."
+        description="Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un correo automático."
+        microcopy="Respondemos en menos de 24 horas hábiles."
         strongOverlay
+        overlayBoost
+        compact
       />
       <div className="relative overflow-hidden bg-brand-cream">
         <Contacto />
