@@ -62,7 +62,7 @@ export function Navbar() {
 
         <Link
           href="/contacto"
-          className="rounded-full bg-brand-yellow px-6 py-3 text-base font-bold text-brand-ink transition-colors hover:bg-[#E0A800]"
+          className="rounded-full bg-brand-yellow px-8 py-4 text-lg font-bold text-brand-ink transition-colors hover:bg-[#E0A800]"
         >
           Cotizar
         </Link>
@@ -111,7 +111,7 @@ export function Navbar() {
 
           <Link
             href="/contacto"
-            className="rounded-full bg-brand-yellow px-5 py-2.5 text-sm font-bold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.6)] sm:px-6"
+            className="rounded-full bg-brand-yellow px-6 py-3.5 text-base font-bold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.6)] sm:px-8"
           >
             Cotizar
           </Link>
