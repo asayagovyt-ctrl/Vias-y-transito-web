@@ -21,7 +21,7 @@ export const projects: Project[] = [
     location: "Pendiente: agregar ubicación",
     // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
-    images: [],
+    images: ["/images/proyecto-intercambio-glorieta-aeropuerto-jmc-poster.jpg"],
     video: "/images/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
     featured: true,
     category: "Diseño geométrico",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     location: "Pendiente: agregar ubicación",
     // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
-    images: [],
+    images: ["/images/proyecto-intercambio-mayorca-sabaneta-envigado-poster.jpg"],
     video: "/images/proyecto-intercambio-mayorca-sabaneta-envigado.mp4",
     featured: true,
     category: "Diseño geométrico",
@@ -47,8 +47,20 @@ export const projects: Project[] = [
     location: "Pendiente: agregar ubicación",
     // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
     description: "Pendiente: agregar descripción del proyecto.",
-    images: [],
+    images: ["/images/proyecto-analisis-conflicto-vehiculo-peaton-poster.jpg"],
     video: "/images/proyecto-analisis-conflicto-vehiculo-peaton.mp4",
+    category: "Estudios de movilidad",
+    pending: true,
+  },
+  {
+    id: "modulacion-estacionamientos",
+    title: "Modulación de estacionamientos",
+    // TODO: falta ciudad/municipio exacto del proyecto.
+    location: "Pendiente: agregar ubicación",
+    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
+    description: "Pendiente: agregar descripción del proyecto.",
+    images: ["/images/proyecto-modulacion-estacionamientos-poster.jpg"],
+    video: "/images/proyecto-modulacion-estacionamientos.mp4",
     category: "Estudios de movilidad",
     pending: true,
   },
