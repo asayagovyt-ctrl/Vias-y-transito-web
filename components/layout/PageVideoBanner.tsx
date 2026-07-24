@@ -9,6 +9,8 @@ interface PageVideoBannerProps {
   videoSrc?: string;
   /** Intensifica el velo blanco donde va el texto, para videos más contrastados. */
   strongOverlay?: boolean;
+  /** Posición vertical del bloque de texto dentro del banner. Por defecto va abajo. */
+  contentAlign?: "end" | "center";
   /** Contenido extra (cifras, botones) debajo de la descripción. */
   children?: ReactNode;
 }
@@ -20,6 +22,7 @@ export function PageVideoBanner({
   emphasizeEyebrow = false,
   videoSrc = "/videos/hero-road-2.mp4",
   strongOverlay = false,
+  contentAlign = "end",
   children,
 }: PageVideoBannerProps) {
   return (
@@ -51,7 +54,11 @@ export function PageVideoBanner({
         }}
       />
       {(eyebrow || title) && (
-        <div className="relative z-10 flex min-h-[400px] flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-56">
+        <div
+          className={`relative z-10 flex min-h-[400px] flex-col px-6 pb-16 pt-44 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-56 ${
+            contentAlign === "center" ? "justify-center" : "justify-end"
+          }`}
+        >
           <div className="max-w-2xl">
             {eyebrow && (
               <p

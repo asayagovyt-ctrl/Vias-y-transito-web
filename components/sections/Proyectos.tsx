@@ -4,16 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Play, X } from "lucide-react";
 import { projects } from "@/constants/projects";
-import { company } from "@/constants/company";
 import type { Project } from "@/types/project";
 
 const categories = Array.from(new Set(projects.map((p) => p.category)));
-
-const stats = [
-  { value: String(projects.length), label: "Proyectos documentados" },
-  { value: String(categories.length), label: "Tipos de servicio" },
-  { value: String(company.yearsOfExperience), label: "Años de experiencia" },
-];
 
 export function Proyectos() {
   const [filter, setFilter] = useState<string>("Todos");
@@ -22,17 +15,6 @@ export function Proyectos() {
   return (
     <section id="proyectos" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
-        <div className="mb-10 grid grid-cols-2 divide-x divide-black/10 border-y border-black/10 sm:grid-cols-3">
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1 px-5 py-5 first:pl-0">
-              <span className="font-heading text-2xl font-extrabold tabular-nums text-brand-ink sm:text-3xl">
-                {stat.value}
-              </span>
-              <span className="text-[11px] font-medium text-brand-grey">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-
         <div className="mb-6 flex flex-wrap gap-2">
           <FilterPill active={filter === "Todos"} onClick={() => setFilter("Todos")}>
             Todos <span className="opacity-60">({projects.length})</span>
