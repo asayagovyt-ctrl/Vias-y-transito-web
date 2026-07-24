@@ -21,7 +21,7 @@ const differentiatorItems = [
 ];
 
 export function Nosotros() {
-  const contentRef = useScrollReveal<HTMLDivElement>();
+  const contentRef = useScrollReveal<HTMLDivElement>("scale-in");
 
   return (
     <section id="nosotros" className="relative px-6 py-10 sm:px-10 sm:py-16">

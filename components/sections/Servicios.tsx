@@ -59,7 +59,7 @@ export function Servicios() {
 
   return (
     <section id="servicios" className="relative scroll-mt-20 px-6 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16">
-      <div className="relative mx-auto grid max-w-6xl gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
+      <div className="relative mx-auto grid w-full max-w-[1800px] gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
         <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-[0_8px_20px_-12px_rgba(23,27,31,0.3)] sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
             <button
@@ -173,15 +173,15 @@ export function Servicios() {
                   <p className="mb-5 max-w-2xl text-base leading-relaxed text-slate-600">
                     {service.details}
                   </p>
-                  <ul className="mb-6 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
+                  <ul className="mb-6 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
                     {service.highlights.map((highlight) => (
-                      <li key={highlight} className="flex items-start gap-2 text-sm text-slate-600">
-                        <Check className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2.5} />
+                      <li key={highlight} className="flex items-start gap-2.5 text-sm text-slate-600 sm:text-base">
+                        <Check className="mt-0.5 h-5 w-5 flex-none text-brand-yellow sm:h-6 sm:w-6" strokeWidth={2.5} />
                         <span>{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="max-w-2xl border-t border-slate-200 pt-6">
+                  <div className="border-t border-slate-200 pt-6">
                     <Link
                       href={`/contacto?servicio=${service.id}`}
                       className="inline-flex items-center gap-1.5 rounded-full border border-brand-ink/30 px-5 py-3 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-yellow hover:bg-brand-yellow"
