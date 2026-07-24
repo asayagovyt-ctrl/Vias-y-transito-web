@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { navLinks } from "@/constants/nav";
 import { company } from "@/constants/company";
 
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -25,6 +27,17 @@ export function Navbar() {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <>
@@ -60,12 +73,23 @@ export function Navbar() {
           })}
         </nav>
 
-        <Link
-          href="/contacto"
-          className="rounded-full bg-brand-yellow px-8 py-4 text-lg font-bold text-brand-ink transition-colors hover:bg-[#E0A800]"
-        >
-          Cotizar
-        </Link>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/15 bg-white/70 text-brand-ink transition-colors hover:bg-white md:hidden"
+          >
+            <Menu className="h-5 w-5" strokeWidth={2.25} />
+          </button>
+          <Link
+            href="/contacto"
+            className="rounded-full bg-brand-yellow px-5 py-3 text-sm font-bold text-brand-ink transition-colors hover:bg-[#E0A800] sm:px-8 sm:py-4 sm:text-lg"
+          >
+            Cotizar
+          </Link>
+        </div>
       </div>
 
       <div
@@ -109,11 +133,82 @@ export function Navbar() {
             })}
           </nav>
 
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={menuOpen}
+              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-brand-ink/10 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5 md:hidden"
+            >
+              <Menu className="h-5 w-5" strokeWidth={2.25} />
+            </button>
+            <Link
+              href="/contacto"
+              className="rounded-full bg-brand-yellow px-6 py-3.5 text-base font-bold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.6)] sm:px-8"
+            >
+              Cotizar
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`fixed inset-0 z-50 flex flex-col bg-brand-cream transition-opacity duration-200 md:hidden ${
+          menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        <div className="flex items-center justify-between px-6 py-6 sm:px-10">
+          <Link href="/" className="flex flex-col items-start" onClick={() => setMenuOpen(false)}>
+            <Image
+              src="/images/logo-mark.png"
+              alt={company.legalName}
+              width={1195}
+              height={482}
+              className="h-14 w-auto"
+            />
+            <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-ink">
+              {company.tagline}
+            </span>
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Cerrar menú"
+            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/15 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5"
+          >
+            <X className="h-5 w-5" strokeWidth={2.25} />
+          </button>
+        </div>
+
+        <nav className="flex flex-1 flex-col justify-center gap-2 px-6 sm:px-10">
+          {navLinks.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`rounded-2xl px-5 py-4 font-heading text-2xl font-extrabold transition-colors ${
+                  active
+                    ? "bg-brand-yellow text-brand-ink"
+                    : "text-brand-ink hover:bg-brand-ink/5"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="px-6 pb-10 sm:px-10">
           <Link
             href="/contacto"
-            className="rounded-full bg-brand-yellow px-6 py-3.5 text-base font-bold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.6)] sm:px-8"
+            onClick={() => setMenuOpen(false)}
+            className="flex w-full items-center justify-center rounded-full bg-brand-yellow px-8 py-4 text-base font-extrabold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
           >
-            Cotizar
+            Cotiza tu proyecto
           </Link>
         </div>
       </div>
