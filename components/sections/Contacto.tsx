@@ -20,15 +20,21 @@ export function Contacto() {
 export function ContactoForm() {
   const contentRef = useScrollReveal<HTMLDivElement>();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [servicio, setServicio] = useState("");
+  const [servicios, setServicios] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const servicioParam = params.get("servicio");
     if (servicioParam && services.some((service) => service.id === servicioParam)) {
-      setServicio(servicioParam);
+      setServicios([servicioParam]);
     }
   }, []);
+
+  function toggleServicio(id: string) {
+    setServicios((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -45,7 +51,7 @@ export function ContactoForm() {
           name: formData.get("name"),
           email: formData.get("email"),
           phone: formData.get("phone"),
-          servicio: formData.get("servicio"),
+          servicio: servicios.join(", "),
           message: formData.get("message"),
         }),
       });
@@ -157,27 +163,27 @@ export function ContactoForm() {
               <Field label="Correo" name="email" type="email" required />
               <Field label="Teléfono" name="phone" type="tel" />
               <div>
-                <label
-                  htmlFor="servicio"
-                  className="mb-1.5 block text-sm font-medium text-brand-ink"
-                >
-                  Servicio de interés
+                <label className="mb-1.5 block text-sm font-medium text-brand-ink">
+                  Servicios de interés
                 </label>
-                <select
-                  id="servicio"
-                  name="servicio"
-                  value={servicio}
-                  onChange={(event) => setServicio(event.target.value)}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
-                >
-                  <option value="">Selecciona un servicio</option>
+                <p className="mb-2 text-xs text-slate-500">
+                  Puedes seleccionar más de uno si necesitas varios servicios.
+                </p>
+                <div className="flex flex-wrap gap-2">
                   {services.map((service) => (
-                    <option key={service.id} value={service.id}>
-                      {service.title}
-                    </option>
+                    <ServicioChip
+                      key={service.id}
+                      label={service.title}
+                      active={servicios.includes(service.id)}
+                      onToggle={() => toggleServicio(service.id)}
+                    />
                   ))}
-                  <option value="otro">Otro / no estoy seguro</option>
-                </select>
+                  <ServicioChip
+                    label="Otro / no estoy seguro"
+                    active={servicios.includes("otro")}
+                    onToggle={() => toggleServicio("otro")}
+                  />
+                </div>
               </div>
               <div>
                 <label
@@ -227,6 +233,29 @@ function MailIcon() {
         fill="currentColor"
       />
     </svg>
+  );
+}
+
+function ServicioChip({
+  label,
+  active,
+  onToggle,
+}: {
+  label: string;
+  active: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <label
+      className={`cursor-pointer rounded-full border px-3.5 py-2 text-xs font-semibold transition-colors sm:text-sm ${
+        active
+          ? "border-brand-ink bg-brand-yellow text-brand-ink"
+          : "border-slate-300 bg-white text-brand-grey hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
+      }`}
+    >
+      <input type="checkbox" className="sr-only" checked={active} onChange={onToggle} />
+      {label}
+    </label>
   );
 }
 
