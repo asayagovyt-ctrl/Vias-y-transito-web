@@ -13,8 +13,6 @@ interface PageVideoBannerProps {
   overlayBoost?: boolean;
   /** Posición vertical del bloque de texto dentro del banner. Por defecto va abajo. */
   contentAlign?: "end" | "center";
-  /** Reduce el alto del banner (padding y min-height) solo para esta instancia. */
-  compact?: boolean;
   /** Línea corta subordinada a la descripción (ej. plazo de respuesta). */
   microcopy?: string;
   /** Contenido extra (cifras, botones) debajo de la descripción. */
@@ -30,7 +28,6 @@ export function PageVideoBanner({
   strongOverlay = false,
   overlayBoost = false,
   contentAlign = "end",
-  compact = false,
   microcopy,
   children,
 }: PageVideoBannerProps) {
@@ -79,11 +76,9 @@ export function PageVideoBanner({
       />
       {(eyebrow || title) && (
         <div
-          className={`relative z-10 flex flex-col px-6 sm:px-10 ${
-            compact
-              ? "min-h-[300px] pb-10 pt-28 sm:min-h-[360px] sm:pb-12 sm:pt-36"
-              : "min-h-[400px] pb-16 pt-44 sm:min-h-[500px] sm:pb-20 sm:pt-56"
-          } ${contentAlign === "center" ? "justify-center" : "justify-end"}`}
+          className={`relative z-10 flex min-h-[400px] flex-col px-6 pb-16 pt-44 sm:min-h-[500px] sm:px-10 sm:pb-20 sm:pt-56 ${
+            contentAlign === "center" ? "justify-center" : "justify-end"
+          }`}
         >
           <div className="max-w-2xl">
             {eyebrow && (
