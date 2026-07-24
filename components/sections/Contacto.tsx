@@ -19,7 +19,7 @@ export function Contacto() {
 
 export function ContactoForm() {
   const contentRef = useScrollReveal<HTMLDivElement>();
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [servicio, setServicio] = useState("");
 
   useEffect(() => {
@@ -30,12 +30,32 @@ export function ContactoForm() {
     }
   }, []);
 
-  // TODO(fase 4): conectar con POST /api/contacto una vez existan las
-  // cuentas de GitHub/Vercel/Turso — por ahora solo confirma en pantalla,
-  // no guarda ni envía nada todavía.
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sent");
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          servicio: formData.get("servicio"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!response.ok) throw new Error("request_failed");
+
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -128,6 +148,11 @@ export function ContactoForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              {status === "error" ? (
+                <p className="rounded-lg bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
+                  No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por WhatsApp.
+                </p>
+              ) : null}
               <Field label="Nombre" name="name" type="text" required />
               <Field label="Correo" name="email" type="email" required />
               <Field label="Teléfono" name="phone" type="tel" />
@@ -171,9 +196,10 @@ export function ContactoForm() {
               </div>
               <button
                 type="submit"
-                className="mt-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink"
+                disabled={status === "sending"}
+                className="mt-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink disabled:opacity-60"
               >
-                Solicitar cotización
+                {status === "sending" ? "Enviando..." : "Solicitar cotización"}
               </button>
             </form>
           )}
