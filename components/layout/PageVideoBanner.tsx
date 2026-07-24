@@ -53,7 +53,7 @@ export function PageVideoBanner({
         aria-hidden="true"
         style={{
           background: strongOverlay
-            ? "linear-gradient(90deg, rgba(250,250,248,0.96) 0%, rgba(250,250,248,0.85) 35%, rgba(250,250,248,0.4) 46%, transparent 58%)"
+            ? "linear-gradient(90deg, rgba(250,250,248,0.97) 0%, rgba(250,250,248,0.9) 40%, rgba(250,250,248,0.55) 55%, transparent 68%)"
             : "linear-gradient(90deg, rgba(250,250,248,0.8) 0%, rgba(250,250,248,0.6) 38%, rgba(250,250,248,0.2) 58%, transparent 68%)",
         }}
       />
