@@ -1,5 +1,6 @@
 "use client";
 
+import { Calendar, Building2, Globe2, type LucideIcon } from "lucide-react";
 import { company } from "@/constants/company";
 import { technologies } from "@/constants/technologies";
 import { useScrollReveal } from "@/lib/useScrollReveal";
@@ -37,30 +38,41 @@ export function Nosotros() {
             {company.aboutIntro}
           </p>
 
-          <div className="flex flex-wrap gap-10">
-            <Stat value={String(company.yearsOfExperience)} label="Años de experiencia" />
-            <Stat value={company.projectsCompleted} label="Proyectos realizados" />
-            <Stat value="Nacional" label="e internacional" />
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-6">
+            <Stat icon={Calendar} value={String(company.yearsOfExperience)} label="Años de experiencia" />
+            <Stat
+              icon={Building2}
+              value={company.projectsCompleted}
+              label="Proyectos realizados"
+              divider
+            />
+            <Stat icon={Globe2} value="Nacional" label="e internacional" divider />
           </div>
         </div>
 
-        <DifferentiatorCarousel className="min-h-[340px] rounded-2xl border border-black/10 bg-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
+        <DifferentiatorCarousel className="min-h-[340px] overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-[#FFF8E6] to-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
-        <h3 className="mb-4 max-w-2xl text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
-          Un estudio de movilidad puede frenar tu proyecto o destrabarlo
-        </h3>
-        <p className="mb-4 max-w-2xl text-base leading-relaxed text-slate-700">
-          Un proyecto inmobiliario o de infraestructura no avanza sin sustento técnico de
-          movilidad. Y cuando ese estudio llega tarde, incompleto o sin respaldo, el cronograma se
-          para.
-        </p>
-        <p className="max-w-2xl text-base leading-relaxed text-slate-700">
-          Llevamos {company.yearsOfExperience} años entregando estudios que las entidades aprueban
-          y que los constructores pueden ejecutar. Conocemos la norma, conocemos al revisor y
-          conocemos los errores que retrasan un proyecto — porque ya los vimos antes.
-        </p>
+        <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
+          <div>
+            <h3 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
+              Un estudio de movilidad puede frenar tu proyecto o destrabarlo
+            </h3>
+            <p className="text-base leading-relaxed text-slate-700">
+              Un proyecto inmobiliario o de infraestructura no avanza sin sustento técnico de
+              movilidad. Y cuando ese estudio llega tarde, incompleto o sin respaldo, el cronograma
+              se para.
+            </p>
+          </div>
+          <div className="rounded-r-xl rounded-l-sm border-l-4 border-brand-yellow bg-gradient-to-br from-[#FFF8E3] to-white p-6">
+            <p className="text-sm font-semibold leading-relaxed text-brand-ink">
+              Llevamos {company.yearsOfExperience} años entregando estudios que las entidades
+              aprueban y que los constructores pueden ejecutar. Conocemos la norma, conocemos al
+              revisor y conocemos los errores que retrasan un proyecto — porque ya los vimos antes.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">
@@ -141,14 +153,33 @@ export function Nosotros() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function Stat({
+  icon: Icon,
+  value,
+  label,
+  divider = false,
+}: {
+  icon: LucideIcon;
+  value: string;
+  label: string;
+  divider?: boolean;
+}) {
   return (
-    <div>
-      <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">
-        {value}
+    <div
+      className={`flex items-center gap-3 ${
+        divider ? "border-l border-black/10 pl-6" : ""
+      }`}
+    >
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/15 text-[#E0A800]">
+        <Icon className="h-4 w-4" strokeWidth={2.25} />
       </div>
-      <div className="text-[11px] uppercase tracking-wide text-brand-grey">
-        {label}
+      <div>
+        <div className="font-mono text-xl font-extrabold tabular-nums text-[#E0A800] sm:text-2xl">
+          {value}
+        </div>
+        <div className="text-[11px] font-bold uppercase tracking-wide text-slate-600">
+          {label}
+        </div>
       </div>
     </div>
   );

@@ -17,11 +17,17 @@ export function DifferentiatorCarousel({ className = "" }: { className?: string 
       onMouseLeave={resume}
       className={`relative flex flex-col items-center justify-center ${className}`}
     >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-6 left-4 select-none font-serif text-[9rem] font-bold leading-none text-brand-yellow/20 sm:left-6"
+      >
+        “
+      </span>
       <p
         key={index}
-        className="animate-fade-in-carousel text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl"
+        className="animate-fade-in-carousel relative text-balance px-2 text-center font-heading text-xl font-semibold leading-snug text-brand-ink sm:text-2xl"
       >
-        “{phrases[index]}”
+        {phrases[index]}
       </p>
 
       <div className="mt-6 flex gap-2">
