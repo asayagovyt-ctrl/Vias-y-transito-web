@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageVideoBanner } from "@/components/layout/PageVideoBanner";
 import { Proyectos } from "@/components/sections/Proyectos";
+import { HistorialProyectos } from "@/components/sections/HistorialProyectos";
 import { ExperienceBadge } from "@/components/sections/ExperienceBadge";
 import { company } from "@/constants/company";
 
@@ -33,6 +34,7 @@ export default function ProyectosPage() {
       </PageVideoBanner>
       <div className="relative overflow-hidden bg-brand-cream">
         <Proyectos />
+        <HistorialProyectos />
         <Footer />
       </div>
     </main>
