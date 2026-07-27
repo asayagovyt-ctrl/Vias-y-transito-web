@@ -17,52 +17,44 @@ export const projects: Project[] = [
   {
     id: "intercambio-vial-glorieta-aeropuerto-jmc",
     title: "Intercambio vial Glorieta Aeropuerto JMC",
-    // TODO: falta ciudad/municipio exacto del proyecto.
-    location: "Pendiente: agregar ubicación",
-    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
-    description: "Pendiente: agregar descripción del proyecto.",
+    location: "Rionegro, Antioquia",
+    description:
+      "Diseñamos el intercambio tipo glorieta que ordena los cruces entre el corredor de acceso al Aeropuerto José María Córdova y las vías urbanas de Rionegro, mejorando la capacidad y seguridad en un punto de alto flujo vehicular.",
     images: ["/images/proyecto-intercambio-glorieta-aeropuerto-jmc-poster.jpg"],
     video: "/images/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
     featured: true,
     category: "Diseño geométrico",
-    pending: true,
   },
   {
     id: "intercambio-vial-mayorca-sabaneta-envigado",
     title: "Intercambio vial Mayorca (Sabaneta-Envigado)",
-    // TODO: falta ciudad/municipio exacto del proyecto.
-    location: "Pendiente: agregar ubicación",
-    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
-    description: "Pendiente: agregar descripción del proyecto.",
+    location: "Sabaneta - Envigado, Antioquia",
+    description:
+      "Diseñamos el intercambio vial en el límite entre Sabaneta y Envigado, junto al Centro Comercial Mayorca, para ordenar los giros y reducir la congestión en uno de los puntos de mayor tráfico entre los dos municipios.",
     images: ["/images/proyecto-intercambio-mayorca-sabaneta-envigado-poster.jpg"],
     video: "/images/proyecto-intercambio-mayorca-sabaneta-envigado.mp4",
     featured: true,
     category: "Diseño geométrico",
-    pending: true,
   },
   {
     id: "analisis-conflicto-vehiculo-peaton",
     title: "Análisis de conflicto vehículo - peatón",
-    // TODO: falta ciudad/municipio exacto del proyecto.
-    location: "Pendiente: agregar ubicación",
-    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
-    description: "Pendiente: agregar descripción del proyecto.",
+    location: "Ubicación por confirmar",
+    description:
+      "Analizamos los puntos de conflicto entre vehículos y peatones en una intersección de alto flujo, identificando cruces inseguros y proponiendo medidas de mitigación como demarcación, señalización y ajuste de tiempos semafóricos para reducir el riesgo de accidentalidad.",
     images: ["/images/proyecto-analisis-conflicto-vehiculo-peaton-poster.jpg"],
     video: "/images/proyecto-analisis-conflicto-vehiculo-peaton.mp4",
     category: "Estudios de movilidad",
-    pending: true,
   },
   {
     id: "modulacion-estacionamientos",
     title: "Modulación de estacionamientos",
-    // TODO: falta ciudad/municipio exacto del proyecto.
-    location: "Pendiente: agregar ubicación",
-    // TODO: falta descripción real (2-3 frases: qué problema resolvió el proyecto).
-    description: "Pendiente: agregar descripción del proyecto.",
+    location: "Ubicación por confirmar",
+    description:
+      "Diseñamos la modulación de un parqueadero, definiendo la disposición de celdas, circulaciones y accesos para maximizar la capacidad de parqueo sin afectar la fluidez del tránsito interno ni las zonas de cargue y descargue.",
     images: ["/images/proyecto-modulacion-estacionamientos-poster.jpg"],
     video: "/images/proyecto-modulacion-estacionamientos.mp4",
     category: "Estudios de movilidad",
-    pending: true,
   },
   {
     id: "pmt-glorieta-san-nicolas",
