@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Play, X } from "lucide-react";
 import { projects } from "@/constants/projects";
@@ -17,22 +17,35 @@ export function Proyectos() {
   const [filter, setFilter] = useState<string>("Todos");
   const [openProject, setOpenProject] = useState<Project | null>(null);
 
+  const visibleCount =
+    filter === "Todos"
+      ? visibleProjects.length
+      : visibleProjects.filter((p) => p.category === filter).length;
+
   return (
     <section id="proyectos" className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
-        <div className="mb-6 flex flex-wrap gap-2">
+        <h2 className="mb-6 font-heading text-3xl font-extrabold text-brand-ink">
+          Proyectos destacados
+        </h2>
+        <div
+          role="group"
+          aria-label="Filtrar proyectos por categoría"
+          className="mb-6 flex flex-wrap gap-2"
+        >
           <FilterPill active={filter === "Todos"} onClick={() => setFilter("Todos")}>
-            Todos <span className="opacity-60">({visibleProjects.length})</span>
+            Todos <span>({visibleProjects.length})</span>
           </FilterPill>
           {categories.map((category) => (
             <FilterPill key={category} active={filter === category} onClick={() => setFilter(category)}>
               {category}{" "}
-              <span className="opacity-60">
-                ({visibleProjects.filter((p) => p.category === category).length})
-              </span>
+              <span>({visibleProjects.filter((p) => p.category === category).length})</span>
             </FilterPill>
           ))}
         </div>
+        <p aria-live="polite" className="sr-only">
+          Mostrando {visibleCount} de {visibleProjects.length} proyectos
+        </p>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visibleProjects.map((project, index) => {
@@ -70,10 +83,11 @@ function FilterPill({
     <button
       type="button"
       onClick={onClick}
+      aria-pressed={active}
       className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors sm:text-base ${
         active
           ? "border-brand-yellow bg-brand-yellow text-brand-ink"
-          : "border-black/10 bg-brand-paper text-brand-grey hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
+          : "border-black/10 bg-brand-paper text-brand-ink/75 hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
       }`}
     >
       {children}
@@ -118,7 +132,7 @@ function ProjectTile({
             <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/35 bg-white/10">
               <Play className="h-4 w-4 fill-current" />
             </span>
-            <span className="text-[11px] tracking-wide">Video del proyecto</span>
+            <span className="text-xs tracking-wide">Video del proyecto</span>
           </div>
         )}
       </div>
@@ -132,14 +146,14 @@ function ProjectTile({
       )}
 
       <div className="absolute inset-x-0 bottom-0 p-4">
-        <span className="text-[10px] font-semibold uppercase tracking-wide text-white/75">
+        <span className="text-xs font-semibold uppercase tracking-wide text-white/75">
           {project.category}
         </span>
         <h3 className="mt-1 font-heading text-base font-bold leading-snug text-white">
           {project.title}
         </h3>
         {project.location && (
-          <span className="mt-1 block text-[11px] text-white/70">{project.location}</span>
+          <span className="mt-1 block text-sm text-white/70">{project.location}</span>
         )}
       </div>
     </button>
@@ -147,6 +161,9 @@ function ProjectTile({
 }
 
 function ProjectLightbox({ project, onClose }: { project: Project; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") onClose();
@@ -160,6 +177,12 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
     };
   }, [onClose]);
 
+  useEffect(() => {
+    triggerRef.current = document.activeElement as HTMLElement;
+    dialogRef.current?.querySelector("button")?.focus();
+    return () => triggerRef.current?.focus();
+  }, []);
+
   return (
     <div
       role="dialog"
@@ -169,6 +192,7 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
       className="fixed inset-0 z-50 flex items-center justify-center bg-brand-ink/80 p-4"
     >
       <div
+        ref={dialogRef}
         onClick={(event) => event.stopPropagation()}
         className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white p-6 sm:p-8"
       >
@@ -181,12 +205,12 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
           <X className="h-4 w-4" />
         </button>
 
-        <span className="text-[11px] font-semibold uppercase tracking-wide text-brand-grey">
+        <span className="text-xs font-semibold uppercase tracking-wide text-brand-ink/75">
           {project.category}
         </span>
         <h3 className="mt-1 font-heading text-xl font-bold text-brand-ink">{project.title}</h3>
         {project.location && (
-          <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-brand-ink/75">
             {project.location}
           </p>
         )}
@@ -222,7 +246,7 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
 
         {project.pending ? (
           <div className="mt-5 rounded-xl border border-dashed border-brand-yellow bg-brand-yellow/10 p-4">
-            <span className="text-[11px] font-bold uppercase tracking-wide text-brand-ink">
+            <span className="text-xs font-bold uppercase tracking-wide text-brand-ink">
               Nos falta
             </span>
             <ul className="mt-1.5 list-disc pl-4 text-sm leading-relaxed text-brand-ink">

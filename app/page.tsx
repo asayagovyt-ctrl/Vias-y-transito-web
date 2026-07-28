@@ -70,7 +70,7 @@ export default function Home() {
                 >
                   <div className="p-6">
                     {!project.pending && (
-                      <p className="mb-1.5 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                      <p className="mb-1.5 text-sm font-medium uppercase tracking-wide text-brand-ink/75">
                         {project.location}
                       </p>
                     )}
@@ -214,7 +214,7 @@ function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
       <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">{value}</div>
-      <div className="text-[11px] uppercase tracking-wide text-brand-grey">{label}</div>
+      <div className="text-xs uppercase tracking-wide text-brand-ink/75">{label}</div>
     </div>
   );
 }

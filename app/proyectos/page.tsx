@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Proyectos | Vías y Tránsito SAS",
   description:
     "Proyectos reales donde hemos aportado nuestra experiencia técnica en diseño vial, señalización y planes de manejo de tránsito.",
+  alternates: { canonical: "/proyectos" },
 };
 
 export default function ProyectosPage() {

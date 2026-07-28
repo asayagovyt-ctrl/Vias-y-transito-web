@@ -46,7 +46,8 @@ function Tile({ service }: { service: Service }) {
       )}
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-heading text-lg font-bold text-brand-yellow">{service.title}</h3>
+        <div className="mb-2 h-1 w-10 rounded-full bg-brand-yellow" aria-hidden="true" />
+        <h3 className="font-heading text-lg font-bold text-brand-ink">{service.title}</h3>
         <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{service.description}</p>
         <span className="mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-brand-ink transition-colors group-hover:text-brand-yellow">
           Qué incluye

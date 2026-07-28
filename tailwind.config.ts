@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         brand: {
           yellow: "#FFC107",
+          // El amarillo de marca nunca va como color de texto legible (falla
+          // contraste WCAG en la mayoría de fondos claros del sitio). Este
+          // tono oscurecido sí cumple AA si en algún caso puntual hace falta
+          // texto en amarillo.
+          "yellow-text": "#8A6100",
           paper: "#F1F5F9",
           cream: "#FBF7ED",
           grey: "#64748B",

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contacto | Vías y Tránsito SAS",
   description:
     "Escríbenos o llámanos directamente y te contactamos a la brevedad para hablar de tu proyecto.",
+  alternates: { canonical: "/contacto" },
 };
 
 export default function ContactoPage() {

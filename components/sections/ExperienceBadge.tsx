@@ -41,7 +41,7 @@ export function ExperienceBadge({
           {display}
           {suffix}
         </span>
-        <span className="mt-1 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+        <span className="mt-1 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
           {label}
         </span>
       </div>

@@ -8,6 +8,15 @@ body {
   overflow-x: hidden;
 }
 
+/* El amarillo de marca sí cumple aquí: como indicador no textual, WCAG
+   SC 1.4.11 solo exige 3:1 contra el fondo adyacente, y #FFC107 lo cumple
+   tanto sobre el hero oscuro como sobre el fondo crema. */
+:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

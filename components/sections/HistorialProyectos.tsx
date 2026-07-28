@@ -11,7 +11,7 @@ export function HistorialProyectos() {
     <section className="relative px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-8 max-w-2xl">
-          <span className="mb-3 block font-sans text-base font-bold uppercase tracking-wide text-brand-yellow">
+          <span className="mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-sm font-bold uppercase tracking-wide text-brand-ink">
             Trayectoria
           </span>
           <h2 className="text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
@@ -40,7 +40,7 @@ export function HistorialProyectos() {
                     <MapPin className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2} />
                     <span className="text-sm leading-snug text-slate-700">
                       {item.title}
-                      <span className="ml-1.5 text-brand-grey">({item.location})</span>
+                      <span className="ml-1.5 text-brand-ink/75">({item.location})</span>
                     </span>
                   </li>
                 ))}

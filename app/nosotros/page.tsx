@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Nosotros | Vías y Tránsito SAS",
   description:
     "18 años acompañando la movilidad del país. Conoce quiénes somos y qué nos distingue en cada proyecto.",
+  alternates: { canonical: "/nosotros" },
 };
 
 export default function NosotrosPage() {

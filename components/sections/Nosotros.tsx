@@ -93,7 +93,7 @@ export function Nosotros() {
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">
-        <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+        <p className="mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-sm font-bold uppercase tracking-wide text-brand-ink sm:text-base">
           Nuestra tecnología
         </p>
         <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -118,7 +118,7 @@ export function Nosotros() {
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl">
-        <p className="mb-3 font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+        <p className="mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-sm font-bold uppercase tracking-wide text-brand-ink sm:text-base">
           Visítanos
         </p>
         <h3 className="mb-6 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
@@ -170,14 +170,14 @@ function Stat({
         divider ? "border-l border-black/10 pl-6" : ""
       }`}
     >
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/15 text-[#E0A800]">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-yellow/15 text-brand-ink">
         <Icon className="h-4 w-4" strokeWidth={2.25} />
       </div>
       <div>
-        <div className="font-mono text-xl font-extrabold tabular-nums text-[#E0A800] sm:text-2xl">
+        <div className="font-mono text-xl font-extrabold tabular-nums text-brand-ink sm:text-2xl">
           {value}
         </div>
-        <div className="text-[11px] font-bold uppercase tracking-wide text-slate-600">
+        <div className="text-xs font-bold uppercase tracking-wide text-slate-600">
           {label}
         </div>
       </div>

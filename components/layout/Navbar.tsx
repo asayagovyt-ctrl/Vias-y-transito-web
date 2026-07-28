@@ -56,15 +56,15 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 rounded-full bg-black/30 px-8 py-3 text-base font-semibold text-white backdrop-blur-sm md:flex">
+        <nav className="hidden items-center gap-9 rounded-full bg-brand-ink/70 px-8 py-3 text-base font-semibold text-white backdrop-blur-md md:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors hover:text-brand-yellow ${
-                  active ? "border-b-2 border-brand-yellow pb-1" : "text-white/80"
+                className={`rounded-full px-3 py-3 transition-colors hover:text-brand-yellow ${
+                  active ? "border-b-2 border-brand-yellow pb-1 text-white" : "text-white"
                 }`}
               >
                 {link.label}
@@ -109,7 +109,7 @@ export function Navbar() {
               height={482}
               className="h-14 w-auto sm:h-16"
             />
-            <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-ink sm:text-xs">
+            <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-brand-ink">
               {company.tagline}
             </span>
           </Link>
@@ -121,10 +121,10 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`rounded-full px-4 py-2 transition-colors ${
+                  className={`rounded-full px-4 py-3 transition-colors ${
                     active
                       ? "bg-brand-yellow text-brand-ink"
-                      : "text-brand-ink/60 hover:bg-white hover:text-brand-ink"
+                      : "text-brand-ink/75 hover:bg-white hover:text-brand-ink"
                   }`}
                 >
                   {link.label}
@@ -139,7 +139,7 @@ export function Navbar() {
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={menuOpen}
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-full border border-brand-ink/10 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5 md:hidden"
+              className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/10 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5 md:hidden"
             >
               <Menu className="h-5 w-5" strokeWidth={2.25} />
             </button>

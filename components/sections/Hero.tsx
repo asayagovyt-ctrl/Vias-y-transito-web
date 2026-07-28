@@ -81,15 +81,21 @@ export function Hero() {
 
       <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
         <div ref={contentRef} className="max-w-2xl">
-          <p className="mb-5 font-sans text-lg font-extrabold uppercase tracking-wider text-brand-yellow sm:text-2xl">
+          <p className="mb-5 inline-block w-fit rounded-full bg-brand-yellow px-6 py-2.5 font-sans text-base font-extrabold uppercase tracking-wider text-brand-ink sm:text-xl">
             {slide.eyebrow}
           </p>
-          <h1
+          {/* H1 semántico fijo: el titular visible rota con el carrusel,
+              pero la página necesita un único <h1> estable para SEO y
+              lectores de pantalla, no uno que cambie según qué diapositiva
+              esté activa en el momento en que el servidor renderiza. */}
+          <h1 className="sr-only">Tu obra avanza sin bloquear la ciudad</h1>
+          <div
+            aria-hidden="true"
             className="mb-4 text-balance font-heading text-4xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-5xl"
             style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 16px rgba(250,250,248,0.9)" }}
           >
             {slide.headline}
-          </h1>
+          </div>
           <p
             className="mb-7 max-w-md text-base leading-relaxed text-slate-700 sm:text-[17px]"
             style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
@@ -121,16 +127,20 @@ export function Hero() {
 
           <div className="flex items-center gap-3.5">
             <CarouselArrow direction="prev" onClick={goPrev} />
-            <div className="flex gap-2">
+            <div className="flex gap-1">
               {heroSlides.map((_, i) => (
                 <button
                   key={i}
                   aria-label={`Ir a la diapositiva ${i + 1}`}
                   onClick={() => goTo(i)}
-                  className={`h-1.5 rounded-full transition-all ${
-                    i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
-                  }`}
-                />
+                  className="grid h-11 w-11 place-items-center"
+                >
+                  <span
+                    className={`h-1.5 rounded-full transition-all ${
+                      i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
             <CarouselArrow direction="next" onClick={goNext} />
@@ -147,7 +157,7 @@ function Stat({ value, label }: { value: string; label: string }) {
       <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">
         {value}
       </div>
-      <div className="text-[11px] uppercase tracking-wide text-brand-grey">
+      <div className="text-xs uppercase tracking-wide text-brand-ink/75">
         {label}
       </div>
     </div>
@@ -165,7 +175,7 @@ function CarouselArrow({
     <button
       onClick={onClick}
       aria-label={direction === "prev" ? "Anterior" : "Siguiente"}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-ink/20 bg-white/70 text-brand-ink transition-colors hover:bg-white"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 bg-white/70 text-brand-ink transition-colors hover:bg-white"
     >
       {direction === "prev" ? "‹" : "›"}
     </button>

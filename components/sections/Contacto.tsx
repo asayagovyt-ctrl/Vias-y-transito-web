@@ -17,10 +17,20 @@ export function Contacto() {
   );
 }
 
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  message?: string;
+  autorizacionDatos?: string;
+};
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function ContactoForm() {
   const contentRef = useScrollReveal<HTMLDivElement>();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [servicios, setServicios] = useState<string[]>([]);
+  const [errors, setErrors] = useState<FieldErrors>({});
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -47,12 +57,38 @@ export function ContactoForm() {
     );
   }
 
+  function validate(formData: FormData): FieldErrors {
+    const nextErrors: FieldErrors = {};
+    const name = String(formData.get("name") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    if (!name) nextErrors.name = "Cuéntanos tu nombre.";
+    if (!email) nextErrors.email = "Necesitamos un correo para responderte.";
+    else if (!EMAIL_PATTERN.test(email)) nextErrors.email = "Revisa el formato del correo.";
+    if (!message) nextErrors.message = "Cuéntanos brevemente qué necesitas.";
+    if (!formData.get("autorizacionDatos")) {
+      nextErrors.autorizacionDatos = "Debes autorizar el tratamiento de datos para continuar.";
+    }
+
+    return nextErrors;
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sending");
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+
+    const validationErrors = validate(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      const firstInvalidField = Object.keys(validationErrors)[0];
+      form.querySelector<HTMLElement>(`[name="${firstInvalidField}"]`)?.focus();
+      return;
+    }
+    setErrors({});
+    setStatus("sending");
 
     try {
       const response = await fetch("/api/contacto", {
@@ -84,7 +120,7 @@ export function ContactoForm() {
           <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
             <div className="flex flex-col gap-6">
               <div>
-                <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
                   Teléfonos
                 </div>
                 <div className="flex flex-col gap-2">
@@ -104,7 +140,7 @@ export function ContactoForm() {
               </div>
 
               <div>
-                <div className="mb-2 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
                   Correo
                 </div>
                 <div className="flex flex-col gap-2">
@@ -164,14 +200,14 @@ export function ContactoForm() {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
               {status === "error" ? (
                 <p className="rounded-lg bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
                   No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por WhatsApp.
                 </p>
               ) : null}
-              <Field label="Nombre" name="name" type="text" required />
-              <Field label="Correo" name="email" type="email" required />
+              <Field label="Nombre" name="name" type="text" required error={errors.name} />
+              <Field label="Correo" name="email" type="email" required error={errors.email} />
               <Field label="Teléfono" name="phone" type="tel" />
               <div>
                 <div className="mb-1.5 flex items-center justify-between gap-2">
@@ -186,7 +222,7 @@ export function ContactoForm() {
                     {allSelected ? "Deseleccionar todos" : "Seleccionar todos"}
                   </button>
                 </div>
-                <p className="mb-2 text-xs text-slate-500">
+                <p className="mb-2 text-xs text-brand-ink/75">
                   Puedes seleccionar más de uno si necesitas varios servicios.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -217,8 +253,46 @@ export function ContactoForm() {
                   name="message"
                   rows={4}
                   required
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={`w-full rounded-lg border bg-white px-3.5 py-3 text-base text-brand-ink outline-none focus:border-brand-ink ${
+                    errors.message ? "border-red-400" : "border-slate-300"
+                  }`}
                 />
+                {errors.message && (
+                  <p id="message-error" className="mt-1.5 text-sm text-red-700">
+                    {errors.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="flex items-start gap-3 text-sm">
+                  <input
+                    type="checkbox"
+                    name="autorizacionDatos"
+                    required
+                    aria-invalid={Boolean(errors.autorizacionDatos)}
+                    aria-describedby={errors.autorizacionDatos ? "autorizacion-error" : undefined}
+                    className="mt-1 h-5 w-5 flex-none accent-brand-yellow"
+                  />
+                  <span className="text-brand-ink/75">
+                    Autorizo el tratamiento de mis datos personales conforme a la{" "}
+                    <a
+                      href="/politica-de-datos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-brand-ink underline underline-offset-2"
+                    >
+                      Política de Tratamiento de Datos
+                    </a>{" "}
+                    de {company.legalName}.
+                  </span>
+                </label>
+                {errors.autorizacionDatos && (
+                  <p id="autorizacion-error" className="mt-1.5 text-sm text-red-700">
+                    {errors.autorizacionDatos}
+                  </p>
+                )}
               </div>
               <button
                 type="submit"
@@ -270,7 +344,7 @@ function ServicioChip({
       className={`cursor-pointer rounded-full border px-3.5 py-2 text-xs font-semibold transition-colors sm:text-sm ${
         active
           ? "border-brand-ink bg-brand-yellow text-brand-ink"
-          : "border-slate-300 bg-white text-brand-grey hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
+          : "border-slate-300 bg-white text-brand-ink/75 hover:border-brand-yellow hover:bg-brand-yellow hover:text-brand-ink"
       }`}
     >
       <input type="checkbox" className="sr-only" checked={active} onChange={onToggle} />
@@ -279,17 +353,26 @@ function ServicioChip({
   );
 }
 
+const AUTOCOMPLETE_BY_NAME: Record<string, string> = {
+  name: "name",
+  email: "email",
+  phone: "tel",
+};
+
 function Field({
   label,
   name,
   type,
   required,
+  error,
 }: {
   label: string;
   name: string;
   type: string;
   required?: boolean;
+  error?: string;
 }) {
+  const errorId = `${name}-error`;
   return (
     <div>
       <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-brand-ink">
@@ -300,8 +383,19 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-brand-ink outline-none focus:border-brand-ink"
+        autoComplete={AUTOCOMPLETE_BY_NAME[name]}
+        inputMode={type === "tel" ? "tel" : undefined}
+        aria-invalid={Boolean(error)}
+        aria-describedby={error ? errorId : undefined}
+        className={`w-full rounded-lg border bg-white px-3.5 py-3 text-base text-brand-ink outline-none focus:border-brand-ink ${
+          error ? "border-red-400" : "border-slate-300"
+        }`}
       />
+      {error && (
+        <p id={errorId} className="mt-1.5 text-sm text-red-700">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

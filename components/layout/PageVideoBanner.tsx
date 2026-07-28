@@ -105,7 +105,7 @@ export function PageVideoBanner({
                 className={
                   emphasizeEyebrow
                     ? "mb-3 text-balance font-heading text-4xl font-extrabold uppercase leading-tight tracking-tight text-brand-yellow sm:text-5xl"
-                    : "mb-3 font-sans text-lg font-bold uppercase tracking-wide text-brand-yellow sm:text-xl"
+                    : "mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-base font-bold uppercase tracking-wide text-brand-ink sm:text-lg"
                 }
               >
                 {eyebrow}
@@ -129,7 +129,7 @@ export function PageVideoBanner({
             )}
             {microcopy && (
               <p
-                className="mt-2 text-xs text-slate-500 sm:text-sm"
+                className="mt-2 text-xs text-brand-ink/75 sm:text-sm"
                 style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
               >
                 {microcopy}

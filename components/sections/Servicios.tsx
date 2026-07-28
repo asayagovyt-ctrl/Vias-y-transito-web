@@ -59,6 +59,9 @@ export function Servicios() {
 
   return (
     <section id="servicios" className="relative scroll-mt-20 px-6 py-10 sm:scroll-mt-24 sm:px-10 sm:py-16">
+      <h2 className="mx-auto mb-8 max-w-[1800px] font-heading text-3xl font-extrabold text-brand-ink">
+        Todos nuestros servicios
+      </h2>
       <div className="relative mx-auto grid w-full max-w-[1800px] gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
         <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-[0_8px_20px_-12px_rgba(23,27,31,0.3)] sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
@@ -72,7 +75,7 @@ export function Servicios() {
               className={`flex-none whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                 activeId === service.id
                   ? "border-brand-yellow bg-brand-yellow text-brand-ink"
-                  : "border-black/10 bg-white text-brand-grey"
+                  : "border-black/10 bg-white text-brand-ink/75"
               }`}
             >
               {String(index + 1).padStart(2, "0")} · {service.title}
@@ -81,7 +84,7 @@ export function Servicios() {
         </nav>
 
         <aside className="hidden lg:sticky lg:top-28 lg:block">
-          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-brand-yellow">
+          <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-ink">
             Explora nuestros servicios
           </p>
           <nav className="flex flex-col gap-1 border-l border-black/10">
@@ -95,12 +98,12 @@ export function Servicios() {
                   className={`group -ml-px flex items-baseline gap-3 border-l-2 py-3.5 pl-5 text-left transition-all duration-200 hover:translate-x-1.5 ${
                     isActive
                       ? "border-brand-yellow text-brand-ink"
-                      : "border-transparent text-brand-grey hover:border-brand-yellow hover:text-brand-yellow"
+                      : "border-transparent text-brand-ink/75 hover:border-brand-yellow hover:text-brand-yellow"
                   }`}
                 >
                   <span
                     className={`font-mono text-sm ${
-                      isActive ? "text-brand-yellow" : "text-slate-400 group-hover:text-brand-yellow"
+                      isActive ? "text-brand-ink" : "text-brand-ink/75 group-hover:text-brand-yellow"
                     }`}
                   >
                     {String(index + 1).padStart(2, "0")}
@@ -112,7 +115,7 @@ export function Servicios() {
               );
             })}
           </nav>
-          <div className="mt-5 border-t border-black/10 pt-4 font-mono text-xs text-brand-grey">
+          <div className="mt-5 border-t border-black/10 pt-4 font-mono text-xs text-brand-ink/75">
             <span className="text-base font-semibold text-brand-ink">
               {String(activeIndex + 1).padStart(2, "0")}
             </span>{" "}
@@ -164,7 +167,7 @@ export function Servicios() {
                 </div>
 
                 <div className={reversed ? "sm:order-1" : "sm:order-2"}>
-                  <span className="mb-3 block font-sans text-base font-bold uppercase tracking-wide text-brand-yellow sm:text-lg">
+                  <span className="mb-3 block font-sans text-base font-bold uppercase tracking-wide text-brand-yellow-text sm:text-lg">
                     Servicio {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mb-3 text-balance font-heading text-2xl font-bold text-brand-ink sm:text-3xl">
