@@ -1,18 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Check, Search, X } from "lucide-react";
 import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
+
+function normalize(text: string) {
+  return text
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
+}
 
 export function Servicios() {
   const listRef = useScrollReveal<HTMLDivElement>();
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const pillRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const [activeId, setActiveId] = useState(services[0]?.id ?? "");
+  const [query, setQuery] = useState("");
   const hasScrolledRef = useRef(false);
+
+  const filteredServices = useMemo(() => {
+    const normalizedQuery = normalize(query.trim());
+    if (!normalizedQuery) return services;
+    return services.filter((service) => {
+      const haystack = normalize(
+        [service.title, service.description, service.details, ...service.highlights].join(" ")
+      );
+      return haystack.includes(normalizedQuery);
+    });
+  }, [query]);
 
   useEffect(() => {
     function onScroll() {
@@ -21,6 +40,12 @@ export function Servicios() {
     window.addEventListener("scroll", onScroll, { once: true, passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (filteredServices.length > 0 && !filteredServices.some((service) => service.id === activeId)) {
+      setActiveId(filteredServices[0].id);
+    }
+  }, [filteredServices, activeId]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,7 +62,7 @@ export function Servicios() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [filteredServices]);
 
   useEffect(() => {
     if (!hasScrolledRef.current) return;
@@ -63,68 +88,101 @@ export function Servicios() {
         Todos nuestros servicios
       </h2>
       <div className="relative mx-auto grid w-full max-w-[1800px] gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
-        <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-card sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
-          {services.map((service, index) => (
-            <button
-              key={service.id}
-              ref={(el) => {
-                pillRefs.current[service.id] = el;
-              }}
-              type="button"
-              onClick={() => scrollToService(service.id)}
-              className={`flex-none whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
-                activeId === service.id
-                  ? "border-brand-yellow bg-brand-yellow text-brand-ink"
-                  : "border-black/10 bg-white text-brand-ink/75"
-              }`}
-            >
-              {String(index + 1).padStart(2, "0")} · {service.title}
-            </button>
-          ))}
-        </nav>
+        <div className="sticky top-28 z-10 -mx-6 border-b border-black/5 bg-brand-cream px-6 py-3 shadow-card sm:top-28 sm:-mx-10 sm:px-10 lg:hidden">
+          <ServiceSearchInput value={query} onChange={setQuery} className="mb-3" />
+          {filteredServices.length > 0 ? (
+            <nav className="flex gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+              {filteredServices.map((service) => {
+                const index = services.findIndex((s) => s.id === service.id);
+                return (
+                  <button
+                    key={service.id}
+                    ref={(el) => {
+                      pillRefs.current[service.id] = el;
+                    }}
+                    type="button"
+                    onClick={() => scrollToService(service.id)}
+                    className={`flex-none whitespace-nowrap rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+                      activeId === service.id
+                        ? "border-brand-yellow bg-brand-yellow text-brand-ink"
+                        : "border-black/10 bg-white text-brand-ink/75"
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, "0")} · {service.title}
+                  </button>
+                );
+              })}
+            </nav>
+          ) : (
+            <p className="py-1.5 text-xs text-brand-ink/50">No encontramos servicios con esas palabras.</p>
+          )}
+        </div>
 
         <aside className="hidden lg:sticky lg:top-28 lg:block">
           <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-ink">
             Explora nuestros servicios
           </p>
-          <nav className="flex flex-col gap-1 border-l border-black/10">
-            {services.map((service, index) => {
-              const isActive = activeId === service.id;
-              return (
-                <button
-                  key={service.id}
-                  type="button"
-                  onClick={() => scrollToService(service.id)}
-                  className={`group -ml-px flex items-baseline gap-3 border-l-2 py-3.5 pl-5 text-left transition-all duration-200 hover:translate-x-1.5 ${
-                    isActive
-                      ? "border-brand-yellow text-brand-ink"
-                      : "border-transparent text-brand-ink/75 hover:border-brand-yellow hover:text-brand-yellow"
-                  }`}
-                >
-                  <span
-                    className={`font-mono text-sm ${
-                      isActive ? "text-brand-ink" : "text-brand-ink/75 group-hover:text-brand-yellow"
+          <ServiceSearchInput value={query} onChange={setQuery} className="mb-4" />
+          {filteredServices.length > 0 ? (
+            <nav className="flex flex-col gap-1 border-l border-black/10">
+              {filteredServices.map((service) => {
+                const index = services.findIndex((s) => s.id === service.id);
+                const isActive = activeId === service.id;
+                return (
+                  <button
+                    key={service.id}
+                    type="button"
+                    onClick={() => scrollToService(service.id)}
+                    className={`group -ml-px flex items-baseline gap-3 border-l-2 py-3.5 pl-5 text-left transition-all duration-200 hover:translate-x-1.5 ${
+                      isActive
+                        ? "border-brand-yellow text-brand-ink"
+                        : "border-transparent text-brand-ink/75 hover:border-brand-yellow hover:text-brand-yellow"
                     }`}
                   >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className={`text-base leading-snug ${isActive ? "font-semibold" : "font-medium"}`}>
-                    {service.title}
-                  </span>
-                </button>
-              );
-            })}
-          </nav>
+                    <span
+                      className={`font-mono text-sm ${
+                        isActive ? "text-brand-ink" : "text-brand-ink/75 group-hover:text-brand-yellow"
+                      }`}
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className={`text-base leading-snug ${isActive ? "font-semibold" : "font-medium"}`}>
+                      {service.title}
+                    </span>
+                  </button>
+                );
+              })}
+            </nav>
+          ) : (
+            <p className="border-l border-black/10 py-3.5 pl-5 text-sm text-brand-ink/50">
+              No encontramos servicios con esas palabras.
+            </p>
+          )}
           <div className="mt-5 border-t border-black/10 pt-4 font-mono text-xs text-brand-ink/75">
             <span className="text-base font-semibold text-brand-ink">
-              {String(activeIndex + 1).padStart(2, "0")}
+              {String(query.trim() ? filteredServices.length : activeIndex + 1).padStart(2, "0")}
             </span>{" "}
-            / {services.length} especialidades
+            / {services.length} {query.trim() ? "coincidencias" : "especialidades"}
           </div>
         </aside>
 
         <div ref={listRef} className="flex min-w-0 flex-col gap-6 lg:col-start-2">
-          {services.map((service, index) => {
+          {filteredServices.length === 0 && (
+            <div className="rounded-2xl border border-dashed border-brand-ink/15 bg-white p-10 text-center">
+              <p className="text-base font-medium text-brand-ink/75">
+                No encontramos servicios que coincidan con &ldquo;{query}&rdquo;.
+              </p>
+              <p className="mt-2 text-sm text-brand-ink/60">
+                Prueba con otra palabra o{" "}
+                <Link href="/contacto" className="font-semibold text-brand-ink underline underline-offset-2">
+                  cuéntanos qué necesitas
+                </Link>
+                .
+              </p>
+            </div>
+          )}
+          {filteredServices.map((service) => {
+            const index = services.findIndex((s) => s.id === service.id);
             const hasImage = Boolean(service.image);
             const reversed = hasImage ? false : index % 2 === 1;
             return (
@@ -200,5 +258,42 @@ export function Servicios() {
         </div>
       </div>
     </section>
+  );
+}
+
+function ServiceSearchInput({
+  value,
+  onChange,
+  className = "",
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  className?: string;
+}) {
+  return (
+    <div className={`relative ${className}`}>
+      <Search
+        className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-ink/40"
+        strokeWidth={2}
+      />
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Buscar un servicio..."
+        aria-label="Buscar un servicio"
+        className="w-full rounded-full border border-brand-ink/15 bg-white py-2.5 pl-10 pr-9 text-sm text-brand-ink placeholder:text-brand-ink/40 outline-none transition-colors focus:border-brand-yellow"
+      />
+      {value && (
+        <button
+          type="button"
+          onClick={() => onChange("")}
+          aria-label="Limpiar búsqueda"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-ink/40 transition-colors hover:text-brand-ink"
+        >
+          <X className="h-4 w-4" strokeWidth={2} />
+        </button>
+      )}
+    </div>
   );
 }
