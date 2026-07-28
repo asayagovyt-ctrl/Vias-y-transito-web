@@ -40,14 +40,17 @@ export function useScrollReveal<T extends HTMLElement>(variant: RevealVariant = 
       child.style.transition = `opacity 0.7s ease-out ${index * 0.1}s, transform 0.7s ease-out ${index * 0.1}s`;
     });
 
+    function reveal(el: HTMLElement) {
+      el.style.opacity = "1";
+      el.style.transform = VISIBLE_TRANSFORM[variant];
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting) continue;
-          const el = entry.target as HTMLElement;
-          el.style.opacity = "1";
-          el.style.transform = VISIBLE_TRANSFORM[variant];
-          observer.unobserve(el);
+          reveal(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
         }
       },
       { rootMargin: "0px 0px -10% 0px" }
@@ -55,7 +58,32 @@ export function useScrollReveal<T extends HTMLElement>(variant: RevealVariant = 
 
     children.forEach((child) => observer.observe(child));
 
-    return () => observer.disconnect();
+    // Some GPU/driver setups (e.g. a laptop's dedicated GPU driving an
+    // external monitor) can delay or drop the observer's first callback,
+    // leaving content already on screen stuck at opacity 0 forever. Back
+    // it up with a manual visibility check, then an unconditional reveal
+    // so nothing depends solely on the observer firing.
+    const manualCheck = window.setTimeout(() => {
+      children.forEach((child) => {
+        if (child.style.opacity === "1") return;
+        const rect = child.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          reveal(child);
+          observer.unobserve(child);
+        }
+      });
+    }, 500);
+
+    const hardFallback = window.setTimeout(() => {
+      children.forEach((child) => reveal(child));
+      observer.disconnect();
+    }, 4000);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(manualCheck);
+      window.clearTimeout(hardFallback);
+    };
   }, [variant]);
 
   return containerRef;
