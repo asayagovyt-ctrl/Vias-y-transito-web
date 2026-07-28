@@ -23,7 +23,7 @@ export function HistorialProyectos() {
           {projectsHistory.map((category) => (
             <div
               key={category.name}
-              className={`rounded-2xl border border-black/10 bg-white p-6 shadow-[0_14px_30px_-18px_rgba(23,27,31,0.3)] sm:p-7 ${
+              className={`rounded-2xl border border-brand-ink/8 bg-white p-6 shadow-card sm:p-7 ${
                 category.items.length > 10 ? "lg:col-span-2" : ""
               }`}
             >
@@ -38,7 +38,7 @@ export function HistorialProyectos() {
                 {category.items.map((item) => (
                   <li key={item.title} className="flex items-start gap-2.5 py-2.5 first:pt-0">
                     <MapPin className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2} />
-                    <span className="text-sm leading-snug text-slate-700">
+                    <span className="text-sm font-normal leading-snug text-brand-ink/75">
                       {item.title}
                       <span className="ml-1.5 text-brand-ink/75">({item.location})</span>
                     </span>

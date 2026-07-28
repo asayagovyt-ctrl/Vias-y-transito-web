@@ -27,6 +27,10 @@ const config: Config = {
         heading: ["var(--font-sora)", "sans-serif"],
         mono: ["var(--font-plex-mono)", "monospace"],
       },
+      boxShadow: {
+        card: "0 1px 3px rgba(17,24,39,0.04), 0 8px 24px -12px rgba(17,24,39,0.10)",
+        "card-hover": "0 2px 6px rgba(17,24,39,0.05), 0 16px 32px -16px rgba(17,24,39,0.14)",
+      },
     },
   },
   plugins: [],

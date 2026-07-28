@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function TarjetaPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-brand-cream px-6 py-12">
-      <div className="w-full max-w-sm rounded-2xl border border-black/10 bg-white p-8 text-center shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+      <div className="w-full max-w-sm rounded-2xl border border-brand-ink/8 bg-white p-8 text-center shadow-card sm:p-10">
         <Image
           src="/images/logo-mark.png"
           alt={company.legalName}

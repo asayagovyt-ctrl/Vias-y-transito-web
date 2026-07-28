@@ -30,11 +30,11 @@ export function Nosotros() {
         ref={contentRef}
         className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16"
       >
-        <div className="rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
+        <div className="rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-9">
           <h2 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
             {company.yearsOfExperience} años acompañando la movilidad del país
           </h2>
-          <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
+          <p className="mb-10 max-w-lg text-base font-normal leading-relaxed text-brand-ink/75">
             {company.aboutIntro}
           </p>
 
@@ -50,16 +50,16 @@ export function Nosotros() {
           </div>
         </div>
 
-        <DifferentiatorCarousel className="min-h-[340px] overflow-hidden rounded-2xl border border-black/10 bg-gradient-to-b from-[#FFF8E6] to-white p-10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-12" />
+        <DifferentiatorCarousel className="min-h-[340px] overflow-hidden rounded-2xl border border-brand-ink/8 bg-gradient-to-b from-[#FFF8E6] to-white p-10 shadow-card sm:p-12" />
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-9">
+      <div className="relative mx-auto mt-12 max-w-6xl rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-9">
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
           <div>
             <h3 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
               Un estudio de movilidad puede frenar tu proyecto o destrabarlo
             </h3>
-            <p className="text-base leading-relaxed text-slate-700">
+            <p className="text-base font-normal leading-relaxed text-brand-ink/75">
               Un proyecto inmobiliario o de infraestructura no avanza sin sustento técnico de
               movilidad. Y cuando ese estudio llega tarde, incompleto o sin respaldo, el cronograma
               se para.
@@ -83,10 +83,10 @@ export function Nosotros() {
           {differentiatorItems.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
+              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-yellow hover:shadow-card-hover"
             >
               <h4 className="font-heading text-lg font-bold text-brand-ink">{item.title}</h4>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{item.body}</p>
+              <p className="mt-1.5 text-sm font-normal leading-relaxed text-brand-ink/75">{item.body}</p>
             </div>
           ))}
         </div>
@@ -99,7 +99,7 @@ export function Nosotros() {
         <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
           Ingeniería con las herramientas que usa la industria
         </h3>
-        <p className="mb-8 max-w-2xl text-base leading-relaxed text-slate-700">
+        <p className="mb-8 max-w-2xl text-base font-normal leading-relaxed text-brand-ink/75">
           Modelamos, simulamos y diseñamos con el mismo software que exigen las entidades
           revisoras. Nuestros entregables llegan en el formato que esperan recibir.
         </p>
@@ -108,10 +108,10 @@ export function Nosotros() {
           {technologies.map((tech) => (
             <div
               key={tech.name}
-              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
+              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-yellow hover:shadow-card-hover"
             >
               <h4 className="font-heading text-lg font-bold text-brand-ink">{tech.name}</h4>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{tech.application}</p>
+              <p className="mt-1.5 text-sm font-normal leading-relaxed text-brand-ink/75">{tech.application}</p>
             </div>
           ))}
         </div>
@@ -125,7 +125,7 @@ export function Nosotros() {
           {company.address}
         </h3>
 
-        <div className="relative h-[420px] overflow-hidden rounded-2xl border border-black/10 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:h-[520px]">
+        <div className="relative h-[420px] overflow-hidden rounded-2xl border border-brand-ink/8 shadow-card sm:h-[520px]">
           <iframe
             title="Ubicación de Vías y Tránsito SAS"
             src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -142,7 +142,7 @@ export function Nosotros() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-6 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-6 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink shadow-lg transition-colors hover:bg-[#E0A800]"
+            className="absolute bottom-6 left-6 inline-flex items-center gap-1.5 rounded-full bg-brand-yellow px-6 py-3.5 text-sm font-semibold uppercase tracking-wide text-brand-ink shadow-card-hover transition-colors hover:bg-[#E0A800]"
           >
             Cómo llegar
             <span aria-hidden="true">→</span>
@@ -177,7 +177,7 @@ function Stat({
         <div className="font-mono text-xl font-extrabold tabular-nums text-brand-ink sm:text-2xl">
           {value}
         </div>
-        <div className="text-xs font-bold uppercase tracking-wide text-slate-600">
+        <div className="text-xs font-semibold text-brand-ink/75">
           {label}
         </div>
       </div>

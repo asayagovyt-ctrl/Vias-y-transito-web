@@ -6,6 +6,8 @@ body {
   color: theme("colors.brand.ink");
   background: #ffffff;
   overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* El amarillo de marca sí cumple aquí: como indicador no textual, WCAG

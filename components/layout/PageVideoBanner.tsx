@@ -121,7 +121,7 @@ export function PageVideoBanner({
             )}
             {description && (
               <p
-                className="max-w-xl text-base leading-relaxed text-slate-700 sm:text-[17px]"
+                className="max-w-xl text-base font-normal leading-relaxed text-brand-ink/75 sm:text-[17px]"
                 style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
               >
                 {description}

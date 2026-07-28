@@ -117,10 +117,10 @@ export function ContactoForm() {
       className="relative mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
     >
         <div className="flex flex-col gap-6">
-          <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+          <div className="rounded-2xl border border-brand-ink/8 bg-white p-8 shadow-card sm:p-10">
             <div className="flex flex-col gap-6">
               <div>
-                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
+                <div className="mb-2 text-xs font-medium text-brand-ink/75">
                   Teléfonos
                 </div>
                 <div className="flex flex-col gap-2">
@@ -140,7 +140,7 @@ export function ContactoForm() {
               </div>
 
               <div>
-                <div className="mb-2 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
+                <div className="mb-2 text-xs font-medium text-brand-ink/75">
                   Correo
                 </div>
                 <div className="flex flex-col gap-2">
@@ -161,18 +161,18 @@ export function ContactoForm() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-4 rounded-2xl border border-black/10 bg-white p-8 text-center shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+          <div className="flex flex-col items-center gap-4 rounded-2xl border border-brand-ink/8 bg-white p-8 text-center shadow-card sm:p-10">
             <p className="font-heading text-xl font-bold text-brand-ink">
               Escanéame
             </p>
-            <p className="max-w-xs text-sm text-slate-600">
+            <p className="max-w-xs text-sm font-normal text-brand-ink/75">
               Escanea el código con la cámara de tu celular para ver nuestra información de contacto.
             </p>
             <a
               href={tarjetaLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl border border-black/10 p-3"
+              className="rounded-2xl border border-black/10 p-3"
               aria-label="Escanear código QR con la información de contacto"
             >
               <QRCodeSVG value={tarjetaLink} size={160} fgColor="#171B1F" />
@@ -181,7 +181,7 @@ export function ContactoForm() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-6 py-3 text-sm font-extrabold uppercase tracking-wide text-white transition-colors hover:bg-[#1DA851]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#1DA851]"
             >
               Escríbenos por WhatsApp
               <span aria-hidden="true">→</span>
@@ -189,13 +189,13 @@ export function ContactoForm() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+        <div className="rounded-2xl border border-brand-ink/8 bg-white p-8 shadow-card sm:p-10">
           {status === "sent" ? (
             <div className="flex h-full flex-col items-center justify-center py-12 text-center">
               <p className="mb-2 font-heading text-xl font-bold text-brand-ink">
                 ¡Listo!
               </p>
-              <p className="max-w-xs text-sm text-slate-600">
+              <p className="max-w-xs text-sm font-normal text-brand-ink/75">
                 Ya recibimos tu mensaje. Te contactamos en menos de 24 horas hábiles.
               </p>
             </div>
@@ -297,7 +297,7 @@ export function ContactoForm() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-brand-ink disabled:opacity-60"
+                className="mt-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-brand-ink disabled:opacity-60"
               >
                 {status === "sending" ? "Enviando..." : "Solicitar cotización"}
               </button>

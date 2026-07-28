@@ -51,12 +51,12 @@ export function Navbar() {
             priority
             className="h-20 w-auto sm:h-28"
           />
-          <span className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-brand-ink sm:text-sm">
+          <span className="mt-1.5 text-xs font-medium text-brand-ink sm:text-sm">
             {company.tagline}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 rounded-full bg-brand-ink/70 px-8 py-3 text-base font-semibold text-white backdrop-blur-md md:flex">
+        <nav className="hidden items-center gap-9 rounded-full bg-brand-ink/45 px-8 py-3 text-base font-semibold text-white backdrop-blur-md md:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
@@ -100,7 +100,7 @@ export function Navbar() {
             : "-translate-y-20 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/5 bg-brand-cream/95 py-2.5 pl-4 pr-2.5 shadow-[0_20px_45px_-15px_rgba(23,27,31,0.35)] backdrop-blur-md sm:py-3 sm:pl-6 sm:pr-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/5 bg-brand-cream/95 py-2.5 pl-4 pr-2.5 shadow-card backdrop-blur-md sm:py-3 sm:pl-6 sm:pr-3">
           <Link href="/" className="flex flex-col items-start">
             <Image
               src="/images/logo-mark.png"
@@ -109,7 +109,7 @@ export function Navbar() {
               height={482}
               className="h-14 w-auto sm:h-16"
             />
-            <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-brand-ink">
+            <span className="mt-0.5 text-xs font-medium text-brand-ink">
               {company.tagline}
             </span>
           </Link>
@@ -145,7 +145,7 @@ export function Navbar() {
             </button>
             <Link
               href="/contacto"
-              className="rounded-full bg-brand-yellow px-6 py-3.5 text-base font-bold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.6)] sm:px-8"
+              className="rounded-full bg-brand-yellow px-6 py-3.5 text-base font-bold text-brand-ink transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#E0A800] hover:shadow-[0_10px_25px_-8px_rgba(255,193,7,0.35)] sm:px-8"
             >
               Cotizar
             </Link>
@@ -168,7 +168,7 @@ export function Navbar() {
               height={482}
               className="h-14 w-auto"
             />
-            <span className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-ink">
+            <span className="mt-1 text-xs font-medium text-brand-ink">
               {company.tagline}
             </span>
           </Link>
@@ -206,7 +206,7 @@ export function Navbar() {
           <Link
             href="/contacto"
             onClick={() => setMenuOpen(false)}
-            className="flex w-full items-center justify-center rounded-full bg-brand-yellow px-8 py-4 text-base font-extrabold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
+            className="flex w-full items-center justify-center rounded-full bg-brand-yellow px-8 py-4 text-base font-semibold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
           >
             Cotiza tu proyecto
           </Link>

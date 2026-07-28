@@ -32,7 +32,7 @@ export function ExperienceBadge({
   }, [value]);
 
   return (
-    <div className="inline-flex items-center gap-3 rounded-2xl border border-brand-ink/10 bg-white/90 px-5 py-3 shadow-[0_14px_30px_-14px_rgba(23,27,31,0.4)] backdrop-blur-sm">
+    <div className="inline-flex items-center gap-3 rounded-2xl border border-brand-ink/10 bg-white/90 px-5 py-3 shadow-card backdrop-blur-sm">
       <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-brand-yellow/20">
         <Award className="h-5 w-5 text-brand-yellow" strokeWidth={2.25} />
       </span>
@@ -41,7 +41,7 @@ export function ExperienceBadge({
           {display}
           {suffix}
         </span>
-        <span className="mt-1 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
+        <span className="mt-1 text-xs font-medium text-brand-ink/75">
           {label}
         </span>
       </div>

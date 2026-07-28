@@ -115,7 +115,7 @@ function ProjectTile({
       type="button"
       onClick={onOpen}
       style={{ animationDelay: `${delayMs}ms` }}
-      className={`group relative animate-fade-in-tile overflow-hidden rounded-2xl border border-black/10 bg-brand-ink text-left shadow-[0_14px_30px_-18px_rgba(23,27,31,0.4)] transition-all hover:-translate-y-1 hover:shadow-[0_22px_40px_-16px_rgba(23,27,31,0.45)] ${
+      className={`group relative animate-fade-in-tile overflow-hidden rounded-2xl border border-brand-ink/8 bg-brand-ink text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${
         wide ? "aspect-[16/10] sm:col-span-2" : "aspect-[4/5]"
       } ${hidden ? "hidden" : ""}`}
     >
@@ -210,14 +210,14 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
         </span>
         <h3 className="mt-1 font-heading text-xl font-bold text-brand-ink">{project.title}</h3>
         {project.location && (
-          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-brand-ink/75">
+          <p className="mt-1 text-sm font-medium text-brand-ink/75">
             {project.location}
           </p>
         )}
 
         <div className="mt-5">
           {project.video ? (
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-black">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-black">
               <video
                 src={project.video}
                 poster={project.images[0]}
@@ -229,7 +229,7 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
               />
             </div>
           ) : (
-            <div className={`grid gap-1 overflow-hidden rounded-xl ${project.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
+            <div className={`grid gap-1 overflow-hidden rounded-2xl ${project.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
               {project.images.map((src, i) => (
                 <div key={src} className={`relative aspect-[16/10] ${project.planPdf ? "bg-slate-100" : ""}`}>
                   <Image
@@ -245,8 +245,8 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
         </div>
 
         {project.pending ? (
-          <div className="mt-5 rounded-xl border border-dashed border-brand-yellow bg-brand-yellow/10 p-4">
-            <span className="text-xs font-bold uppercase tracking-wide text-brand-ink">
+          <div className="mt-5 rounded-2xl border border-dashed border-brand-yellow bg-brand-yellow/10 p-4">
+            <span className="text-xs font-bold text-brand-ink">
               Nos falta
             </span>
             <ul className="mt-1.5 list-disc pl-4 text-sm leading-relaxed text-brand-ink">
@@ -255,7 +255,7 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
             </ul>
           </div>
         ) : (
-          <p className="mt-5 text-sm leading-relaxed text-slate-600">{project.description}</p>
+          <p className="mt-5 text-sm font-normal leading-relaxed text-brand-ink/75">{project.description}</p>
         )}
 
         {project.planPdf && (

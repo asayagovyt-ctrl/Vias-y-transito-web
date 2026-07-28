@@ -63,7 +63,7 @@ export function Servicios() {
         Todos nuestros servicios
       </h2>
       <div className="relative mx-auto grid w-full max-w-[1800px] gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
-        <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-[0_8px_20px_-12px_rgba(23,27,31,0.3)] sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
+        <nav className="sticky top-28 z-10 -mx-6 flex gap-2 overflow-x-auto border-b border-black/5 bg-brand-cream px-6 py-3 shadow-card sm:top-28 sm:-mx-10 sm:px-10 lg:hidden [&::-webkit-scrollbar]:hidden">
           {services.map((service, index) => (
             <button
               key={service.id}
@@ -134,7 +134,7 @@ export function Servicios() {
                 ref={(el) => {
                   cardRefs.current[service.id] = el;
                 }}
-                className={`grid scroll-mt-40 items-center gap-10 rounded-2xl border border-black/10 bg-white p-8 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] sm:gap-16 sm:p-10 lg:scroll-mt-28 ${
+                className={`grid scroll-mt-40 items-center gap-10 rounded-2xl border border-brand-ink/8 bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:gap-16 sm:p-10 lg:scroll-mt-28 ${
                   hasImage
                     ? "sm:grid-cols-[1.05fr_1fr]"
                     : reversed
@@ -146,7 +146,7 @@ export function Servicios() {
                   className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
                 >
                   {hasImage ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[300px]">
+                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[300px]">
                       <Image
                         src={service.image as string}
                         alt={service.title}
@@ -173,12 +173,12 @@ export function Servicios() {
                   <h3 className="mb-3 text-balance font-heading text-2xl font-bold text-brand-ink sm:text-3xl">
                     {service.title}
                   </h3>
-                  <p className="mb-5 max-w-2xl text-base leading-relaxed text-slate-600">
+                  <p className="mb-5 max-w-2xl text-base font-normal leading-relaxed text-brand-ink/75">
                     {service.details}
                   </p>
                   <ul className="mb-6 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
                     {service.highlights.map((highlight) => (
-                      <li key={highlight} className="flex items-start gap-2.5 text-sm text-slate-600 sm:text-base">
+                      <li key={highlight} className="flex items-start gap-2.5 text-sm font-normal text-brand-ink/75 sm:text-base">
                         <Check className="mt-0.5 h-5 w-5 flex-none text-brand-yellow sm:h-6 sm:w-6" strokeWidth={2.5} />
                         <span>{highlight}</span>
                       </li>

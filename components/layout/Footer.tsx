@@ -15,7 +15,7 @@ export function Footer() {
             height={482}
             className="h-20 w-auto sm:h-24"
           />
-          <p className="mt-3 text-xs font-medium uppercase tracking-wide text-brand-ink/75">
+          <p className="mt-3 text-xs font-medium text-brand-ink/75">
             {company.tagline}
           </p>
           <Link
@@ -27,7 +27,7 @@ export function Footer() {
         </div>
 
         <nav aria-label="Navegación del pie de página">
-          <p className="mb-3 text-xs font-bold uppercase tracking-wide text-brand-ink/75">
+          <p className="mb-3 text-xs font-semibold text-brand-ink/75">
             Navegación
           </p>
           <ul className="flex flex-col gap-2.5">
@@ -53,7 +53,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-wide text-brand-ink/75">
+          <p className="mb-3 text-xs font-semibold text-brand-ink/75">
             Contacto
           </p>
           <ul className="flex flex-col gap-2.5 text-sm">

@@ -24,12 +24,12 @@ export default function PoliticaDeDatosPage() {
               Política de Tratamiento de Datos Personales
             </h1>
 
-            <div className="flex flex-col gap-8 rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+            <div className="flex flex-col gap-8 rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-10">
               <div>
                 <h2 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                   Responsable del tratamiento
                 </h2>
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base font-normal leading-relaxed text-brand-ink/75">
                   {company.legalName}, con domicilio en {company.address}. Correo de contacto:{" "}
                   {company.emails[0]}.
                 </p>
@@ -37,11 +37,11 @@ export default function PoliticaDeDatosPage() {
 
               <div>
                 <h2 className="mb-2 font-heading text-lg font-bold text-brand-ink">Finalidades</h2>
-                <p className="mb-2 text-base leading-relaxed text-slate-600">
+                <p className="mb-2 text-base font-normal leading-relaxed text-brand-ink/75">
                   Los datos personales recolectados a través del formulario de contacto de este
                   sitio (nombre, correo electrónico y teléfono) se utilizan para:
                 </p>
-                <ul className="list-disc pl-5 text-base leading-relaxed text-slate-600">
+                <ul className="list-disc pl-5 text-base font-normal leading-relaxed text-brand-ink/75">
                   <li>Responder solicitudes de información y cotización.</li>
                   <li>Dar seguimiento comercial a los proyectos consultados.</li>
                   <li>[POR VALIDAR CON JURÍDICA] Otras finalidades específicas del tratamiento.</li>
@@ -52,11 +52,11 @@ export default function PoliticaDeDatosPage() {
                 <h2 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                   Derechos del titular
                 </h2>
-                <p className="mb-2 text-base leading-relaxed text-slate-600">
+                <p className="mb-2 text-base font-normal leading-relaxed text-brand-ink/75">
                   Conforme a la Ley 1581 de 2012 y sus decretos reglamentarios, el titular de los
                   datos personales tiene derecho a:
                 </p>
-                <ul className="list-disc pl-5 text-base leading-relaxed text-slate-600">
+                <ul className="list-disc pl-5 text-base font-normal leading-relaxed text-brand-ink/75">
                   <li>Conocer, actualizar y rectificar sus datos personales.</li>
                   <li>Solicitar prueba de la autorización otorgada para el tratamiento.</li>
                   <li>
@@ -75,7 +75,7 @@ export default function PoliticaDeDatosPage() {
                 <h2 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                   Cómo ejercer estos derechos
                 </h2>
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base font-normal leading-relaxed text-brand-ink/75">
                   El titular puede ejercer sus derechos escribiendo a {company.emails[0]} o a{" "}
                   {company.emails[1]}, indicando su nombre completo y la solicitud puntual.
                   [POR VALIDAR CON JURÍDICA] Plazo y procedimiento exacto de respuesta.
@@ -86,7 +86,7 @@ export default function PoliticaDeDatosPage() {
                 <h2 className="mb-2 font-heading text-lg font-bold text-brand-ink">
                   [POR VALIDAR CON JURÍDICA] Tratamiento y seguridad de la información
                 </h2>
-                <p className="text-base leading-relaxed text-slate-600">
+                <p className="text-base font-normal leading-relaxed text-brand-ink/75">
                   [POR VALIDAR CON JURÍDICA] Descripción de las medidas de seguridad, tiempo de
                   conservación de los datos y si existe transferencia o transmisión a terceros.
                 </p>

@@ -32,7 +32,7 @@ export default function Home() {
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Nuestros servicios
             </h2>
-            <p className="mb-10 max-w-xl text-base leading-relaxed text-slate-600">
+            <p className="mb-10 max-w-xl text-base font-normal leading-relaxed text-brand-ink/75">
               Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación.
             </p>
 
@@ -58,7 +58,7 @@ export default function Home() {
             <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Proyectos destacados
             </h2>
-            <p className="mb-10 max-w-xl text-base leading-relaxed text-slate-600">
+            <p className="mb-10 max-w-xl text-base font-normal leading-relaxed text-brand-ink/75">
               Así resolvimos la movilidad en proyectos reales.
             </p>
 
@@ -66,11 +66,11 @@ export default function Home() {
               {featuredProjects.map((project) => (
                 <article
                   key={project.id}
-                  className="overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] transition-all hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)]"
+                  className="overflow-hidden rounded-2xl border border-brand-ink/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
                 >
                   <div className="p-6">
                     {!project.pending && (
-                      <p className="mb-1.5 text-sm font-medium uppercase tracking-wide text-brand-ink/75">
+                      <p className="mb-1.5 text-sm font-medium text-brand-ink/75">
                         {project.location}
                       </p>
                     )}
@@ -78,7 +78,7 @@ export default function Home() {
                       {project.title}
                     </h3>
                     {!project.pending && (
-                      <p className="text-sm leading-relaxed text-slate-600">
+                      <p className="text-sm font-normal leading-relaxed text-brand-ink/75">
                         {project.description}
                       </p>
                     )}
@@ -118,7 +118,7 @@ export default function Home() {
 
         {/* Nosotros — resumen */}
         <section className="relative px-6 pb-10 pt-6 sm:px-10 sm:pb-16 sm:pt-10">
-          <div className="relative mx-auto max-w-6xl rounded-2xl border border-black/10 bg-white p-7 shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] sm:p-10">
+          <div className="relative mx-auto max-w-6xl rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-10">
             <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
               <div>
                 <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
@@ -127,7 +127,7 @@ export default function Home() {
                 <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
                   {company.yearsOfExperience} años acompañando la movilidad del país
                 </h2>
-                <p className="mb-10 max-w-lg text-base leading-relaxed text-slate-700">
+                <p className="mb-10 max-w-lg text-base font-normal leading-relaxed text-brand-ink/75">
                   {company.aboutIntro}
                 </p>
 
@@ -145,11 +145,11 @@ export default function Home() {
                 </Link>
               </div>
 
-              <DifferentiatorCarousel className="min-h-[220px] rounded-xl bg-brand-paper p-10 sm:p-12" />
+              <DifferentiatorCarousel className="min-h-[220px] rounded-2xl bg-brand-paper p-10 sm:p-12" />
             </div>
           </div>
 
-          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)]">
+          <div className="relative mx-auto mt-6 max-w-6xl overflow-hidden rounded-2xl border border-brand-ink/8 bg-white shadow-card">
             <div className="grid gap-0 lg:grid-cols-[0.8fr_1.2fr]">
               <div className="p-7 sm:p-9">
                 <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
@@ -158,7 +158,7 @@ export default function Home() {
                 <h3 className="mb-3 font-heading text-2xl font-bold text-brand-ink">
                   {company.address}
                 </h3>
-                <p className="mb-6 max-w-md text-base leading-relaxed text-slate-700">
+                <p className="mb-6 max-w-md text-base font-normal leading-relaxed text-brand-ink/75">
                   {company.locationDirections}
                 </p>
                 <a
@@ -197,7 +197,7 @@ export default function Home() {
             <h2 className="mb-4 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
               Hablemos de tu proyecto
             </h2>
-            <p className="mb-10 max-w-md text-base leading-relaxed text-slate-700">
+            <p className="mb-10 max-w-md text-base font-normal leading-relaxed text-brand-ink/75">
               Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un formulario genérico.
             </p>
             <ContactoForm />
@@ -214,7 +214,7 @@ function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div>
       <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">{value}</div>
-      <div className="text-xs uppercase tracking-wide text-brand-ink/75">{label}</div>
+      <div className="text-xs tracking-wide text-brand-ink/75">{label}</div>
     </div>
   );
 }

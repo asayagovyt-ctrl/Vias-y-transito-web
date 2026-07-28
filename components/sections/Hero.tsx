@@ -81,14 +81,14 @@ export function Hero() {
 
       <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
         <div ref={contentRef} className="max-w-2xl">
-          <p className="mb-5 inline-block w-fit rounded-full bg-brand-yellow px-6 py-2.5 font-sans text-base font-extrabold uppercase tracking-wider text-brand-ink sm:text-xl">
+          <p className="mb-5 inline-block w-fit rounded-full bg-brand-yellow px-6 py-2.5 font-sans text-base font-semibold uppercase tracking-wider text-brand-ink sm:text-xl">
             {slide.eyebrow}
           </p>
           {/* H1 semántico fijo: el titular visible rota con el carrusel,
               pero la página necesita un único <h1> estable para SEO y
               lectores de pantalla, no uno que cambie según qué diapositiva
               esté activa en el momento en que el servidor renderiza. */}
-          <h1 className="sr-only">Tu obra avanza sin bloquear la ciudad</h1>
+          <h1 className="sr-only">Viabilizamos la obra sin detener la movilidad</h1>
           <div
             aria-hidden="true"
             className="mb-4 text-balance font-heading text-4xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-5xl"
@@ -97,7 +97,7 @@ export function Hero() {
             {slide.headline}
           </div>
           <p
-            className="mb-7 max-w-md text-base leading-relaxed text-slate-700 sm:text-[17px]"
+            className="mb-7 max-w-md text-base font-normal leading-relaxed text-brand-ink/75 sm:text-[17px]"
             style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
           >
             {slide.sub}
@@ -105,7 +105,7 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-3.5">
             <Link
               href="/contacto"
-              className="rounded-full bg-brand-yellow px-9 py-4 text-base font-extrabold uppercase tracking-wide text-brand-ink"
+              className="rounded-full bg-brand-yellow px-9 py-4 text-base font-semibold uppercase tracking-wide text-brand-ink"
             >
               Cotiza tu proyecto
             </Link>
@@ -157,7 +157,7 @@ function Stat({ value, label }: { value: string; label: string }) {
       <div className="font-mono text-xl font-semibold tabular-nums text-brand-ink">
         {value}
       </div>
-      <div className="text-xs uppercase tracking-wide text-brand-ink/75">
+      <div className="text-xs tracking-wide text-brand-ink/75">
         {label}
       </div>
     </div>

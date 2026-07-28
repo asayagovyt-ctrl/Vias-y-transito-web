@@ -36,7 +36,7 @@ export default function ServiciosPage() {
         <div className="mt-6 flex flex-wrap items-center gap-3.5">
           <Link
             href="/contacto"
-            className="rounded-full bg-brand-yellow px-9 py-4 text-base font-extrabold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
+            className="rounded-full bg-brand-yellow px-9 py-4 text-base font-semibold uppercase tracking-wide text-brand-ink transition-colors hover:bg-[#E0A800]"
           >
             Cotiza tu proyecto
           </Link>

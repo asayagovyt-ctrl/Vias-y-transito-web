@@ -36,18 +36,18 @@ export function ServiceCards({ services }: ServiceCardsProps) {
             key={service.id}
             type="button"
             onClick={() => setSelected(index)}
-            className="group rounded-2xl border-2 border-transparent bg-white p-7 text-left shadow-[0_20px_45px_-10px_rgba(23,27,31,0.28)] outline-none transition-all hover:-translate-y-1.5 hover:border-brand-yellow hover:shadow-[0_30px_60px_-12px_rgba(23,27,31,0.38)] focus-visible:border-brand-yellow"
+            className="group rounded-2xl border-2 border-transparent bg-white p-7 text-left shadow-card outline-none transition-all duration-300 hover:-translate-y-1 hover:border-brand-yellow hover:shadow-card-hover focus-visible:border-brand-yellow"
           >
             <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-yellow text-brand-ink">
               <service.icon className="h-5 w-5" strokeWidth={2.25} />
             </span>
-            <h3 className="mb-2 font-heading text-lg font-bold text-brand-ink">
+            <h3 className="mb-2.5 font-heading text-xl font-bold text-brand-ink">
               {service.title}
             </h3>
-            <p className="mb-4 text-sm leading-relaxed text-slate-600">{service.description}</p>
+            <p className="mb-4 text-sm font-normal leading-relaxed text-brand-ink/75">{service.description}</p>
             <ul className="mb-5 flex flex-col gap-1.5">
               {service.highlights.map((highlight) => (
-                <li key={highlight} className="flex items-start gap-2 text-sm text-slate-600">
+                <li key={highlight} className="flex items-start gap-2 text-sm font-normal text-brand-ink/75">
                   <Check className="mt-0.5 h-4 w-4 flex-none text-brand-yellow" strokeWidth={2.5} />
                   <span>{highlight}</span>
                 </li>
@@ -81,7 +81,7 @@ export function ServiceCards({ services }: ServiceCardsProps) {
                 type="button"
                 onClick={() => setSelected(null)}
                 aria-label="Cerrar"
-                className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-brand-ink"
+                className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full text-brand-ink/75 hover:bg-slate-100 hover:text-brand-ink"
               >
                 ✕
               </button>
@@ -94,7 +94,7 @@ export function ServiceCards({ services }: ServiceCardsProps) {
               <h3 id="servicio-modal-title" className="mb-4 font-heading text-2xl font-bold text-brand-ink">
                 {services[selected].title}
               </h3>
-              <p className="text-base leading-relaxed text-slate-600">
+              <p className="text-base font-normal leading-relaxed text-brand-ink/75">
                 {services[selected].details}
               </p>
             </div>
