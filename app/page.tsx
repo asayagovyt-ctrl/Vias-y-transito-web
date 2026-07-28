@@ -14,7 +14,9 @@ import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
 
 export default function Home() {
-  const featuredProjects = projects.filter((project) => project.featured);
+  const featuredProjects = projects.filter(
+    (project) => project.featured && (process.env.NODE_ENV === "development" || !project.pending)
+  );
 
   return (
     <main className="relative">

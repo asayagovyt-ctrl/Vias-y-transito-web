@@ -6,7 +6,12 @@ import { Play, X } from "lucide-react";
 import { projects } from "@/constants/projects";
 import type { Project } from "@/types/project";
 
-const categories = Array.from(new Set(projects.map((p) => p.category)));
+// En producción no se publican proyectos marcados como pendientes; en
+// desarrollo se muestran igual (con el badge de aviso) para poder revisarlos.
+const visibleProjects =
+  process.env.NODE_ENV === "development" ? projects : projects.filter((p) => !p.pending);
+
+const categories = Array.from(new Set(visibleProjects.map((p) => p.category)));
 
 export function Proyectos() {
   const [filter, setFilter] = useState<string>("Todos");
@@ -17,20 +22,20 @@ export function Proyectos() {
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-6 flex flex-wrap gap-2">
           <FilterPill active={filter === "Todos"} onClick={() => setFilter("Todos")}>
-            Todos <span className="opacity-60">({projects.length})</span>
+            Todos <span className="opacity-60">({visibleProjects.length})</span>
           </FilterPill>
           {categories.map((category) => (
             <FilterPill key={category} active={filter === category} onClick={() => setFilter(category)}>
               {category}{" "}
               <span className="opacity-60">
-                ({projects.filter((p) => p.category === category).length})
+                ({visibleProjects.filter((p) => p.category === category).length})
               </span>
             </FilterPill>
           ))}
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => {
+          {visibleProjects.map((project, index) => {
             const isWide = Boolean(project.featured) && !project.pending && project.images.length > 0;
             const isVisible = filter === "Todos" || project.category === filter;
             return (
@@ -120,9 +125,9 @@ function ProjectTile({
 
       <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/90 via-brand-ink/10 to-transparent" />
 
-      {project.pending && (
-        <span className="absolute right-3 top-3 rounded-full bg-brand-yellow px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-brand-ink">
-          Pendiente
+      {process.env.NODE_ENV === "development" && project.pending && (
+        <span className="absolute right-3 top-3 rounded-full bg-slate-800/80 px-2.5 py-1 text-xs font-semibold text-white">
+          Pendiente (dev)
         </span>
       )}
 

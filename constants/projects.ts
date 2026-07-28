@@ -39,7 +39,6 @@ export const projects: Project[] = [
   {
     id: "analisis-conflicto-vehiculo-peaton",
     title: "Análisis de conflicto vehículo - peatón",
-    location: "Ubicación por confirmar",
     description:
       "Analizamos los puntos de conflicto entre vehículos y peatones en una intersección de alto flujo, identificando cruces inseguros y proponiendo medidas de mitigación como demarcación, señalización y ajuste de tiempos semafóricos para reducir el riesgo de accidentalidad.",
     images: ["/images/proyecto-analisis-conflicto-vehiculo-peaton-poster.jpg"],
