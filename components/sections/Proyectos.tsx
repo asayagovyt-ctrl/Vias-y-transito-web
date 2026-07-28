@@ -133,9 +133,9 @@ function ProjectTile({
         <h3 className="mt-1 font-heading text-base font-bold leading-snug text-white">
           {project.title}
         </h3>
-        <span className="mt-1 block text-[11px] text-white/70">
-          {project.pending ? "Ubicación por confirmar" : project.location}
-        </span>
+        {project.location && (
+          <span className="mt-1 block text-[11px] text-white/70">{project.location}</span>
+        )}
       </div>
     </button>
   );
@@ -180,9 +180,11 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
           {project.category}
         </span>
         <h3 className="mt-1 font-heading text-xl font-bold text-brand-ink">{project.title}</h3>
-        <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
-          {project.pending ? "Ubicación por confirmar" : project.location}
-        </p>
+        {project.location && (
+          <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-brand-grey">
+            {project.location}
+          </p>
+        )}
 
         <div className="mt-5">
           {project.video ? (

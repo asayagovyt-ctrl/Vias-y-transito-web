@@ -48,8 +48,7 @@ export const projects: Project[] = [
   },
   {
     id: "modulacion-estacionamientos",
-    title: "Modulación de estacionamientos",
-    location: "Ubicación por confirmar",
+    title: "Simulación estacionamiento",
     description:
       "Diseñamos la modulación de un parqueadero, definiendo la disposición de celdas, circulaciones y accesos para maximizar la capacidad de parqueo sin afectar la fluidez del tránsito interno ni las zonas de cargue y descargue.",
     images: ["/images/proyecto-modulacion-estacionamientos-poster.jpg"],

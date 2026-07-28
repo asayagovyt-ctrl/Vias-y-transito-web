@@ -6,7 +6,7 @@ export type ProjectCategory =
 export interface Project {
   id: string;
   title: string;
-  location: string;
+  location?: string;
   description: string;
   images: string[];
   video?: string;
