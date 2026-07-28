@@ -9,6 +9,8 @@ interface PageVideoBannerProps {
   /** Muestra el eyebrow como título grande en amarillo, en vez del título estándar. */
   emphasizeEyebrow?: boolean;
   videoSrc?: string;
+  /** Imagen mostrada mientras el video no ha cargado (y como preview). */
+  poster?: string;
   /** Intensifica el velo blanco donde va el texto, para videos más contrastados. */
   strongOverlay?: boolean;
   /** Refuerza aún más el velo (opacidad y alcance) sobre la zona del texto, para esta instancia únicamente. */
@@ -29,6 +31,7 @@ export function PageVideoBanner({
   description,
   emphasizeEyebrow = false,
   videoSrc = "/videos/hero-road-2.mp4",
+  poster,
   strongOverlay = false,
   overlayBoost = false,
   videoPlaybackRate = 1,
@@ -50,6 +53,8 @@ export function PageVideoBanner({
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
         src={videoSrc}
+        poster={poster}
+        preload={poster ? "none" : "metadata"}
         autoPlay
         loop
         muted

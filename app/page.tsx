@@ -87,9 +87,11 @@ export default function Home() {
                     {project.video ? (
                       <video
                         src={project.video}
+                        poster={project.images[0]}
                         controls
+                        muted
                         playsInline
-                        preload="metadata"
+                        preload="none"
                         className="h-full w-full object-cover"
                       />
                     ) : (

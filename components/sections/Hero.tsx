@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { heroSlides } from "@/constants/heroSlides";
 import { company } from "@/constants/company";
 import { useFadeInUp } from "@/lib/useFadeInUp";
 import { useAutoAdvance } from "@/lib/useAutoAdvance";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
   const slide = heroSlides[current];
   const contentRef = useFadeInUp<HTMLDivElement>([current]);
+  const prefersReducedMotion = useReducedMotion();
 
   const goTo = (index: number) => setCurrent(index);
   const goPrev = () =>
@@ -26,15 +29,27 @@ export function Hero() {
       onMouseLeave={resume}
       className="relative min-h-screen overflow-hidden bg-brand-paper sm:min-h-[720px]"
     >
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/hero-road-2.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        aria-hidden="true"
-      />
+      {prefersReducedMotion ? (
+        <Image
+          src="/videos/hero-road-2-poster.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
+      ) : (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="/videos/hero-road-2.mp4"
+          poster="/videos/hero-road-2-poster.webp"
+          preload="none"
+          autoPlay
+          loop
+          muted
+          playsInline
+          aria-hidden="true"
+        />
+      )}
       {/* En móvil el bloque de texto ocupa casi todo el ancho, así que el fade
           horizontal (pensado para pantallas anchas) deja el final de cada
           línea sobre video transparente. Se usa un velo vertical de ancho

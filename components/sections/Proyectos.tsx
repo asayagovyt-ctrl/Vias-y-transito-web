@@ -194,7 +194,15 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
         <div className="mt-5">
           {project.video ? (
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-black">
-              <video src={project.video} controls playsInline preload="metadata" className="h-full w-full object-cover" />
+              <video
+                src={project.video}
+                poster={project.images[0]}
+                controls
+                muted
+                playsInline
+                preload="none"
+                className="h-full w-full object-cover"
+              />
             </div>
           ) : (
             <div className={`grid gap-1 overflow-hidden rounded-xl ${project.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
