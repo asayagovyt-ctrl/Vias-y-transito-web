@@ -194,16 +194,18 @@ export function Servicios() {
                 }}
                 className={`grid scroll-mt-40 items-center gap-10 rounded-2xl border border-brand-ink/8 bg-white p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:gap-16 sm:p-10 lg:scroll-mt-28 ${
                   hasImage
-                    ? "sm:grid-cols-[1.05fr_1fr]"
+                    ? "sm:grid-cols-[minmax(0,380px)_1fr]"
                     : reversed
                       ? "sm:grid-cols-[1fr_240px]"
                       : "sm:grid-cols-[240px_1fr]"
                 }`}
               >
-                <div className={`flex justify-center ${reversed ? "sm:order-2" : "sm:order-1"}`}>
+                <div
+                  className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
+                >
                   {hasImage ? (
                     <div
-                      className="relative w-full max-w-md overflow-hidden rounded-2xl bg-brand-paper sm:h-[480px] sm:w-auto sm:max-w-full"
+                      className="relative w-full max-w-md overflow-hidden rounded-2xl bg-brand-paper sm:h-full sm:min-h-[420px] sm:w-auto sm:max-w-full"
                       style={{
                         aspectRatio:
                           service.imageWidth && service.imageHeight
