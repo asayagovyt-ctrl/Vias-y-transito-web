@@ -12,4 +12,7 @@ export interface Service {
   imagePosition?: string;
   /** "contain" shows the full image with no cropping; defaults to "cover" when omitted. */
   imageFit?: "cover" | "contain";
+  /** Native pixel dimensions of the image, used to size its frame to match instead of leaving empty space. */
+  imageWidth?: number;
+  imageHeight?: number;
 }

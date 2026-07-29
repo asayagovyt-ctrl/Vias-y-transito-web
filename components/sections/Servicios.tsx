@@ -200,11 +200,17 @@ export function Servicios() {
                       : "sm:grid-cols-[240px_1fr]"
                 }`}
               >
-                <div
-                  className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
-                >
+                <div className={`flex justify-center ${reversed ? "sm:order-2" : "sm:order-1"}`}>
                   {hasImage ? (
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[420px]">
+                    <div
+                      className="relative w-full max-w-md overflow-hidden rounded-2xl bg-brand-paper sm:h-[480px] sm:w-auto sm:max-w-full"
+                      style={{
+                        aspectRatio:
+                          service.imageWidth && service.imageHeight
+                            ? `${service.imageWidth} / ${service.imageHeight}`
+                            : "4 / 3",
+                      }}
+                    >
                       <Image
                         src={service.image as string}
                         alt={service.title}
