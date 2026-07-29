@@ -204,7 +204,7 @@ export function Servicios() {
                   className={`flex justify-center ${hasImage ? "sm:self-stretch" : ""} ${reversed ? "sm:order-2" : "sm:order-1"}`}
                 >
                   {hasImage ? (
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[300px]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-brand-paper sm:aspect-auto sm:h-full sm:min-h-[420px]">
                       <Image
                         src={service.image as string}
                         alt={service.title}
