@@ -20,7 +20,7 @@ export function Hero() {
     setCurrent((c) => (c - 1 + heroSlides.length) % heroSlides.length);
   const goNext = () => setCurrent((c) => (c + 1) % heroSlides.length);
 
-  const { pause, resume } = useAutoAdvance(goNext, 6000);
+  const { pause, resume } = useAutoAdvance(goNext, 9000);
 
   return (
     <section
