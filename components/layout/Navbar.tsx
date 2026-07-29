@@ -56,7 +56,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 rounded-full bg-brand-ink/45 px-8 py-3 text-base font-semibold text-white backdrop-blur-md md:flex">
+        <nav className="hidden items-center gap-9 rounded-full bg-brand-ink/45 px-8 py-3 text-base font-semibold text-white backdrop-blur-md lg:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href;
             return (
@@ -79,7 +79,7 @@ export function Navbar() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
-            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/15 bg-white/70 text-brand-ink transition-colors hover:bg-white md:hidden"
+            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/15 bg-white/70 text-brand-ink transition-colors hover:bg-white lg:hidden"
           >
             <Menu className="h-5 w-5" strokeWidth={2.25} />
           </button>
@@ -114,7 +114,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full bg-brand-ink/[0.04] p-1.5 text-sm font-semibold md:flex">
+          <nav className="hidden items-center gap-1 rounded-full bg-brand-ink/[0.04] p-1.5 text-sm font-semibold lg:flex">
             {navLinks.map((link) => {
               const active = pathname === link.href;
               return (
@@ -139,7 +139,7 @@ export function Navbar() {
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={menuOpen}
-              className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/10 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5 md:hidden"
+              className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-brand-ink/10 bg-white text-brand-ink transition-colors hover:bg-brand-ink/5 lg:hidden"
             >
               <Menu className="h-5 w-5" strokeWidth={2.25} />
             </button>
@@ -154,7 +154,7 @@ export function Navbar() {
       </div>
 
       <div
-        className={`fixed inset-0 z-50 flex flex-col bg-brand-cream transition-opacity duration-200 md:hidden ${
+        className={`fixed inset-0 z-50 flex flex-col bg-brand-cream transition-opacity duration-200 lg:hidden ${
           menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden={!menuOpen}
