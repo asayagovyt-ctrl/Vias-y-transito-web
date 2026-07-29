@@ -127,25 +127,6 @@ export const services: Service[] = [
     imageHeight: 1308,
   },
   {
-    id: "diseno-explanaciones",
-    title: "Diseño de explanaciones",
-    description: "Movimientos de tierra optimizados, base estable para la vía.",
-    details:
-      "Calculamos el balance de cortes y llenos a partir de la modelación digital del terreno, optimizando los movimientos de tierra y diseñando plataformas estables. Todo el diseño se integra con el proyecto vial, garantizando una infraestructura estable desde la base.",
-    highlights: [
-      "Balance de cortes y llenos.",
-      "Modelación digital del terreno.",
-      "Optimización de movimientos de tierra.",
-      "Diseño de plataformas.",
-      "Integración con el diseño vial.",
-    ],
-    icon: Mountain,
-    image: "/images/servicios/diseno-explanaciones.jpeg",
-    imageFit: "contain",
-    imageWidth: 1200,
-    imageHeight: 800,
-  },
-  {
     id: "modelaciones-trafico",
     title: "Modelaciones de tráfico",
     description: "Anticipamos cómo se va a comportar el tránsito, antes de construir.",
@@ -163,5 +144,24 @@ export const services: Service[] = [
     imageFit: "contain",
     imageWidth: 1200,
     imageHeight: 2150,
+  },
+  {
+    id: "diseno-explanaciones",
+    title: "Diseño de explanaciones",
+    description: "Movimientos de tierra optimizados, base estable para la vía.",
+    details:
+      "Calculamos el balance de cortes y llenos a partir de la modelación digital del terreno, optimizando los movimientos de tierra y diseñando plataformas estables. Todo el diseño se integra con el proyecto vial, garantizando una infraestructura estable desde la base.",
+    highlights: [
+      "Balance de cortes y llenos.",
+      "Modelación digital del terreno.",
+      "Optimización de movimientos de tierra.",
+      "Diseño de plataformas.",
+      "Integración con el diseño vial.",
+    ],
+    icon: Mountain,
+    image: "/images/servicios/diseno-explanaciones.jpeg",
+    imageFit: "contain",
+    imageWidth: 1200,
+    imageHeight: 800,
   },
 ];
