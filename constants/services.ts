@@ -26,7 +26,6 @@ export const services: Service[] = [
     ],
     icon: Route,
     image: "/images/servicios/diseno-geometrico-vias.jpg",
-    imageFit: "contain",
   },
   {
     id: "planes-manejo-transito",
@@ -43,7 +42,6 @@ export const services: Service[] = [
     ],
     icon: Construction,
     image: "/images/servicios/planes-manejo-transito.jpeg",
-    imageFit: "contain",
   },
   {
     id: "senalizacion-vial",
@@ -60,7 +58,6 @@ export const services: Service[] = [
     ],
     icon: SignpostBig,
     image: "/images/servicios/senalizacion-vial.png",
-    imageFit: "contain",
   },
   {
     id: "estudios-transito",
@@ -78,7 +75,6 @@ export const services: Service[] = [
     ],
     icon: BarChart3,
     image: "/images/servicios/estudios-transito.jpg",
-    imageFit: "contain",
   },
   {
     id: "estudios-movilidad",
@@ -95,7 +91,6 @@ export const services: Service[] = [
     ],
     icon: Footprints,
     image: "/images/servicios/estudios-movilidad.jpg",
-    imageFit: "contain",
   },
   {
     id: "diseno-explanaciones",
@@ -112,7 +107,7 @@ export const services: Service[] = [
     ],
     icon: Mountain,
     image: "/images/servicios/diseno-explanaciones.jpeg",
-    imageFit: "contain",
+    imagePosition: "65% center",
   },
   {
     id: "modelaciones-trafico",
@@ -129,7 +124,6 @@ export const services: Service[] = [
     ],
     icon: Activity,
     image: "/images/servicios/modelaciones-trafico.jpg",
-    imageFit: "contain",
   },
   {
     id: "diseno-semaforizacion",
