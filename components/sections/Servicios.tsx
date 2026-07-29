@@ -88,7 +88,7 @@ export function Servicios() {
         Todos nuestros servicios
       </h2>
       <div className="relative mx-auto grid w-full max-w-[1800px] gap-6 lg:grid-cols-[300px_1fr] lg:gap-16 lg:items-start">
-        <div className="sticky top-28 z-10 -mx-6 border-b border-black/5 bg-brand-cream px-6 py-3 shadow-card sm:top-28 sm:-mx-10 sm:px-10 lg:hidden">
+        <div className="sticky top-28 z-10 -mx-6 border-b border-black/5 bg-brand-cream px-6 py-3 shadow-card sm:top-36 sm:-mx-10 sm:px-10 lg:hidden">
           <ServiceSearchInput value={query} onChange={setQuery} className="mb-3" />
           {filteredServices.length > 0 ? (
             <nav className="flex gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
@@ -118,7 +118,7 @@ export function Servicios() {
           )}
         </div>
 
-        <aside className="hidden lg:sticky lg:top-28 lg:block">
+        <aside className="hidden lg:sticky lg:top-36 lg:block">
           <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-ink">
             Explora nuestros servicios
           </p>
