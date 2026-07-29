@@ -28,13 +28,15 @@ function Tile({ service }: { service: Service }) {
       className="group flex flex-col overflow-hidden rounded-2xl border border-brand-ink/8 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
     >
       {service.image ? (
-        <div className="relative h-48 w-full bg-brand-paper">
+        <div className="relative aspect-[4/3] w-full bg-brand-paper">
           <Image
             src={service.image}
             alt={service.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-contain transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: service.imagePosition ?? "center" }}
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+            quality={90}
           />
         </div>
       ) : (
