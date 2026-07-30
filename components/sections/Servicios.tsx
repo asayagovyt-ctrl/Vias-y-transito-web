@@ -118,7 +118,7 @@ export function Servicios() {
           )}
         </div>
 
-        <aside className="hidden lg:sticky lg:top-36 lg:block">
+        <aside className="hidden lg:sticky lg:top-36 lg:block lg:max-h-[calc(100vh-10rem)] lg:overflow-y-auto">
           <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-ink">
             Explora nuestros servicios
           </p>
