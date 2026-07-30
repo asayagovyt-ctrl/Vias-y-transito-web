@@ -44,7 +44,7 @@ export function Navbar() {
       <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10">
         <Link href="/" className="flex flex-col items-start">
           <Image
-            src="/images/logo-mark.png"
+            src="/images/LOGO VIAS Y TRANSITO/logo-mark.png"
             alt={company.legalName}
             width={1195}
             height={482}
@@ -103,7 +103,7 @@ export function Navbar() {
         <div className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-black/5 bg-brand-cream/95 py-2.5 pl-4 pr-2.5 shadow-card backdrop-blur-md sm:py-3 sm:pl-6 sm:pr-3">
           <Link href="/" className="flex flex-col items-start">
             <Image
-              src="/images/logo-mark.png"
+              src="/images/LOGO VIAS Y TRANSITO/logo-mark.png"
               alt={company.legalName}
               width={1195}
               height={482}
@@ -162,7 +162,7 @@ export function Navbar() {
         <div className="flex items-center justify-between px-6 py-6 sm:px-10">
           <Link href="/" className="flex flex-col items-start" onClick={() => setMenuOpen(false)}>
             <Image
-              src="/images/logo-mark.png"
+              src="/images/LOGO VIAS Y TRANSITO/logo-mark.png"
               alt={company.legalName}
               width={1195}
               height={482}

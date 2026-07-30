@@ -9,7 +9,7 @@ export function Footer() {
       <div className="relative mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.9fr_1fr]">
         <div className="flex flex-col items-start">
           <Image
-            src="/images/logo-mark.png"
+            src="/images/LOGO VIAS Y TRANSITO/logo-mark.png"
             alt={company.legalName}
             width={1195}
             height={482}

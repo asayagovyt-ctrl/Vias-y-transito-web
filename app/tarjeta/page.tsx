@@ -14,7 +14,7 @@ export default function TarjetaPage() {
     <main className="flex min-h-screen items-center justify-center bg-brand-cream px-6 py-12">
       <div className="w-full max-w-sm rounded-2xl border border-brand-ink/8 bg-white p-8 text-center shadow-card sm:p-10">
         <Image
-          src="/images/logo-mark.png"
+          src="/images/LOGO VIAS Y TRANSITO/logo-mark.png"
           alt={company.legalName}
           width={1195}
           height={482}
