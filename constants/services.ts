@@ -102,7 +102,7 @@ export const services: Service[] = [
       "Planos y especificaciones técnicas.",
     ],
     icon: SignpostBig,
-    image: "/images/SERVICIOS/senalizacion-vial-final.png",
+    image: "/images/SERVICIOS/senalizacion-vial-final2.png",
     imageFit: "contain",
     imageWidth: 2400,
     imageHeight: 1792,
