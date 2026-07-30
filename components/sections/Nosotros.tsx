@@ -57,12 +57,12 @@ export function Nosotros() {
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
           <div>
             <h3 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
-              Un estudio de movilidad puede frenar tu proyecto o destrabarlo
+              Una buena asesoría puede agilizar y materializar tu proyecto
             </h3>
             <p className="text-base font-normal leading-relaxed text-brand-ink/75">
-              Un proyecto inmobiliario o de infraestructura no avanza sin sustento técnico de
-              movilidad. Y cuando ese estudio llega tarde, incompleto o sin respaldo, el cronograma
-              se para.
+              Un proyecto inmobiliario o de infraestructura avanza más rápido cuando el
+              acompañamiento técnico es el correcto desde el inicio. Y cuando ese respaldo llega
+              tarde, incompleto o sin experiencia, el cronograma se para.
             </p>
           </div>
           <div className="rounded-r-xl rounded-l-sm border-l-4 border-brand-yellow bg-gradient-to-br from-[#FFF8E3] to-white p-6">
