@@ -62,7 +62,7 @@ export const projects: Project[] = [
       "Diseñamos la señalización y el manejo temporal del tránsito durante la construcción de un intercambio tipo glorieta sobre la calle 41C, sin comprometer la seguridad de vehículos, peatones y ciclistas.",
     images: ["/images/PROYECTOS/pmt-glorieta.jpg"],
     planPdf: "/docs/pmt-glorieta-san-nicolas.pdf",
-    category: "Plan de Manejo de Tránsito",
+    category: "Modelaciones",
   },
   {
     id: "modelacion-intercambio-desnivel-1",
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     description:
       "Analizamos la movilidad del sector TRIADAS en Medellín para identificar puntos críticos de circulación vehicular y peatonal, sirviendo de base para futuras propuestas de mejoramiento.",
     images: ["/images/PROYECTOS/proyecto-analisis-movilidad-triadas-medellin.jpeg"],
-    category: "Estudios de movilidad",
+    category: "Modelaciones",
   },
   {
     id: "mejoramiento-carrera-34",
