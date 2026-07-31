@@ -1,7 +1,8 @@
 export type ProjectCategory =
   | "Diseño geométrico"
   | "Plan de Manejo de Tránsito"
-  | "Estudios de movilidad";
+  | "Estudios de movilidad"
+  | "Modelaciones";
 
 export interface Project {
   id: string;

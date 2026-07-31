@@ -65,6 +65,42 @@ export const projects: Project[] = [
     category: "Plan de Manejo de Tránsito",
   },
   {
+    id: "modelacion-intercambio-desnivel-1",
+    title: "Modelación intercambio a desnivel 1",
+    description:
+      "Modelamos en 3D un intercambio vial a desnivel para visualizar la geometría de los ramales y la interacción entre los distintos niveles de circulación antes de construirlo.",
+    images: ["/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-1-poster.jpg"],
+    video: "/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-1.mp4",
+    category: "Modelaciones",
+  },
+  {
+    id: "modelacion-intercambio-desnivel-2",
+    title: "Modelación intercambio a desnivel 2",
+    description:
+      "Modelamos en 3D un intercambio vial a desnivel para visualizar la geometría de los ramales y la interacción entre los distintos niveles de circulación antes de construirlo.",
+    images: ["/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-2-poster.jpg"],
+    video: "/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-2.mp4",
+    category: "Modelaciones",
+  },
+  {
+    id: "modelacion-intercambio-desnivel-3",
+    title: "Modelación intercambio a desnivel 3",
+    description:
+      "Modelamos en 3D un intercambio vial a desnivel para visualizar la geometría de los ramales y la interacción entre los distintos niveles de circulación antes de construirlo.",
+    images: ["/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-3-poster.jpg"],
+    video: "/images/PROYECTOS/proyecto-modelacion-intercambio-desnivel-3.mp4",
+    category: "Modelaciones",
+  },
+  {
+    id: "analisis-movilidad-triadas-medellin",
+    title: "Análisis de movilidad TRIADAS Medellín",
+    location: "Medellín, Antioquia",
+    description:
+      "Analizamos la movilidad del sector TRIADAS en Medellín para identificar puntos críticos de circulación vehicular y peatonal, sirviendo de base para futuras propuestas de mejoramiento.",
+    images: ["/images/PROYECTOS/proyecto-analisis-movilidad-triadas-medellin.jpeg"],
+    category: "Estudios de movilidad",
+  },
+  {
     id: "mejoramiento-carrera-34",
     title: "Mejoramiento vial Carrera 34 (Transversal Inferior) x Calle 16A Sur",
     location: "Medellín, Antioquia",
