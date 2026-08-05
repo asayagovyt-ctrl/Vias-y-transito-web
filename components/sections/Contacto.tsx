@@ -175,13 +175,13 @@ export function ContactoForm() {
               className="rounded-2xl border border-black/10 p-3"
               aria-label="Escanear código QR con la información de contacto"
             >
-              <QRCodeSVG value={tarjetaLink} size={160} fgColor="#171B1F" />
+              <QRCodeSVG value={tarjetaLink} size={160} fgColor="#171B1F" aria-hidden="true" />
             </a>
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#1DA851]"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7A46] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#0B6B3A]"
             >
               Escríbenos por WhatsApp
               <span aria-hidden="true">→</span>

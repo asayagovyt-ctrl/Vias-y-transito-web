@@ -107,10 +107,14 @@ export function Clientes() {
                 key={i}
                 aria-label={`Ir a la página ${i + 1}`}
                 onClick={() => goToPage(() => i)}
-                className={`h-1.5 rounded-full transition-all ${
-                  i === page ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
-                }`}
-              />
+                className="grid h-6 w-6 place-items-center"
+              >
+                <span
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === page ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
+                  }`}
+                />
+              </button>
             ))}
           </div>
           <CarouselArrow direction="next" onClick={goNext} />

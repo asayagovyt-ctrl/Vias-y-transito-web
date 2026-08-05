@@ -37,10 +37,14 @@ export function DifferentiatorCarousel({ className = "" }: { className?: string 
             type="button"
             aria-label={`Ver frase ${i + 1}`}
             onClick={() => setIndex(i)}
-            className={`h-1.5 rounded-full transition-all ${
-              i === index ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
-            }`}
-          />
+            className="grid h-6 w-6 place-items-center"
+          >
+            <span
+              className={`h-1.5 rounded-full transition-all ${
+                i === index ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
