@@ -1,10 +1,5 @@
 import type { Client } from "@/types/client";
 
-// Falta el logo de Constructora Altos de la Abadía (el archivo recibido para
-// esta última corresponde a otra empresa — Vértice Ingeniería y Construcción
-// — así que se omite hasta recibir el logo correcto). Mientras tanto se
-// muestra el nombre.
-//
 // Orden: de mayor a menor número de proyectos realizados en conjunto.
 export const clients: Client[] = [
   {
@@ -28,7 +23,10 @@ export const clients: Client[] = [
     logo: "/images/LOGO ALIADOS/logo_crearcimientos.svg",
   }, // 11
   { name: "Inversiones Proal S.A.S.", logo: "/images/LOGO ALIADOS/logo_inversiones_proal.svg" }, // 7
-  { name: "Constructora Altos de la Abadía S.A.S." }, // 5
+  {
+    name: "Constructora Altos de la Abadía S.A.S.",
+    logo: "/images/LOGO ALIADOS/LOGO CONSTRUCTORA ALTOS DE LA ABADÍA.jpg",
+  }, // 5
   { name: "Colpatria", logo: "/images/LOGO ALIADOS/logo_colpatria.svg" }, // 4
   {
     name: "Caja de Compensación Familiar de Antioquia — Comfama",
