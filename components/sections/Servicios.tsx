@@ -135,13 +135,13 @@ export function Servicios() {
                     onClick={() => scrollToService(service.id)}
                     className={`group -ml-px flex items-baseline gap-3 border-l-2 py-3.5 pl-5 text-left transition-all duration-200 hover:translate-x-1.5 ${
                       isActive
-                        ? "border-brand-yellow text-brand-ink"
-                        : "border-transparent text-brand-ink/75 hover:border-brand-yellow hover:text-brand-yellow"
+                        ? "border-brand-yellow text-brand-yellow-text"
+                        : "border-transparent text-brand-ink/75 hover:border-brand-yellow hover:text-brand-yellow-text"
                     }`}
                   >
                     <span
                       className={`font-mono text-sm ${
-                        isActive ? "text-brand-ink" : "text-brand-ink/75 group-hover:text-brand-yellow"
+                        isActive ? "text-brand-yellow-text" : "text-brand-ink/75 group-hover:text-brand-yellow-text"
                       }`}
                     >
                       {String(index + 1).padStart(2, "0")}
