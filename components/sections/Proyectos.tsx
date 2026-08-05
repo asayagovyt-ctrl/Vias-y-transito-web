@@ -47,7 +47,7 @@ export function Proyectos() {
           Mostrando {visibleCount} de {visibleProjects.length} proyectos
         </p>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-flow-dense">
           {visibleProjects.map((project, index) => {
             const isWide = Boolean(project.featured) && !project.pending && project.images.length > 0;
             const isVisible = filter === "Todos" || project.category === filter;
