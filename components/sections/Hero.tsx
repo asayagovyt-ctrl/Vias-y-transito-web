@@ -125,7 +125,7 @@ export function Hero() {
             <Stat value="Nacional" label="e internacional" />
           </div>
 
-          <div className="flex items-center gap-3.5">
+          <div className="flex items-center gap-3.5 rounded-full bg-white/90 p-2 shadow-card backdrop-blur-sm">
             <CarouselArrow direction="prev" onClick={goPrev} />
             <div className="flex gap-1">
               {heroSlides.map((_, i) => (
@@ -137,7 +137,7 @@ export function Hero() {
                 >
                   <span
                     className={`h-1.5 rounded-full transition-all ${
-                      i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/20"
+                      i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/40"
                     }`}
                   />
                 </button>
@@ -175,7 +175,7 @@ function CarouselArrow({
     <button
       onClick={onClick}
       aria-label={direction === "prev" ? "Anterior" : "Siguiente"}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 bg-white/70 text-brand-ink transition-colors hover:bg-white"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/25 bg-white text-lg font-semibold text-brand-ink shadow-sm transition-colors hover:border-brand-yellow hover:bg-brand-yellow"
     >
       {direction === "prev" ? "‹" : "›"}
     </button>
