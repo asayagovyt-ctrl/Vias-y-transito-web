@@ -14,7 +14,8 @@ export const services: Service[] = [
   {
     id: "estudios-movilidad",
     title: "Estudios de movilidad",
-    description: "Un diagnóstico claro de cómo se mueve tu zona hoy — y cómo debería moverse.",
+    description:
+      "Analizamos la integración de los proyectos con su entorno y la capacidad del sistema de movilidad existente.",
     details:
       "Elaboramos un diagnóstico integral de cómo se mueve tu zona hoy: vehículos, peatones, ciclistas y transporte público. Evaluamos la accesibilidad en los diferentes modos de transporte, proyectamos la demanda futura de viajes y definimos estrategias de mitigación articuladas con la planeación urbana, todo bajo cumplimiento normativo.",
     highlights: [
@@ -33,7 +34,7 @@ export const services: Service[] = [
   {
     id: "estudios-transito",
     title: "Estudios de tránsito",
-    description: "Los números que sustentan cada decisión de diseño.",
+    description: "Determinamos el impacto de un proyecto sobre la operación y capacidad del sistema vial.",
     details:
       "Hacemos aforos vehiculares y peatonales para levantar información confiable en campo, y con ella evaluamos el desempeño operacional de la red vial: capacidad, niveles de servicio y proyecciones de tránsito a futuro. Entregamos recomendaciones técnicas claras y un estudio que cumple con la normativa vigente, listo para sustentar decisiones de diseño, operación o gestión vial.",
     highlights: [
@@ -53,7 +54,8 @@ export const services: Service[] = [
   {
     id: "diseno-geometrico-vias",
     title: "Diseño geométrico de vías",
-    description: "Trazado, perfiles y plataformas que cumplen norma desde el primer diseño.",
+    description:
+      "Trazados, perfiles y secciones viales eficientes, cómodos y seguros, ajustados a la norma.",
     details:
       "Definimos el trazado horizontal y vertical, el diseño de intersecciones, así como los accesos y conexiones viales, cumpliendo la normativa técnica vigente en cada etapa. El resultado es un diseño optimizado para su funcionalidad, operación y seguridad vial, adaptable tanto a vías urbanas como a corredores interurbanos.",
     highlights: [
