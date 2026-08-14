@@ -151,11 +151,17 @@ export function Hero() {
 
       <a
         href="#servicios"
-        className="absolute bottom-36 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-sm font-semibold text-brand-ink transition-colors hover:text-brand-yellow-text sm:flex"
-        style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
+        className="group absolute bottom-32 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 sm:flex"
       >
-        <span>Conoce nuestros servicios</span>
-        <ChevronDown className="h-5 w-5 animate-bounce" strokeWidth={2.5} />
+        <span
+          className="font-heading text-sm font-bold uppercase tracking-widest text-brand-ink"
+          style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
+        >
+          Conoce nuestros servicios
+        </span>
+        <span className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/25 bg-white shadow-lg transition-colors group-hover:border-brand-yellow group-hover:bg-brand-yellow">
+          <ChevronDown className="h-5 w-5 animate-bounce text-brand-ink" strokeWidth={2.5} />
+        </span>
       </a>
     </section>
   );
