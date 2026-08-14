@@ -17,7 +17,7 @@ export const services: Service[] = [
     description:
       "Analizamos la integración de los proyectos con su entorno y la capacidad del sistema de movilidad existente.",
     details:
-      "Elaboramos un diagnóstico integral de cómo se mueve tu zona hoy: vehículos, peatones, ciclistas y transporte público. Evaluamos la accesibilidad en los diferentes modos de transporte, proyectamos la demanda futura de viajes y definimos estrategias de mitigación articuladas con la planeación urbana, todo bajo cumplimiento normativo.",
+      "Elaboramos diagnósticos integrales de movilidad para evaluar el comportamiento de los diferentes modos de transporte. Analizamos la accesibilidad, proyectamos la demanda futura de viajes y formulamos estrategias de mitigación articuladas con la planeación urbana, bajo el cumplimiento de la normativa vigente.",
     highlights: [
       "Diagnóstico integral de la movilidad.",
       "Accesibilidad en los diferentes modos de transporte.",
