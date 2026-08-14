@@ -57,7 +57,7 @@ export const services: Service[] = [
     description:
       "Trazados, perfiles y secciones viales eficientes, cómodos y seguros, ajustados a la norma.",
     details:
-      "Definimos el trazado horizontal y vertical, el diseño de intersecciones, así como los accesos y conexiones viales, cumpliendo la normativa técnica vigente en cada etapa. El resultado es un diseño optimizado para su funcionalidad, operación y seguridad vial, adaptable tanto a vías urbanas como a corredores interurbanos.",
+      "Definimos el trazado horizontal y vertical, el diseño de intersecciones, así como los accesos y conexiones viales, cumpliendo la normativa técnica vigente. El resultado es un diseño optimizado para su funcionalidad, operación y seguridad vial, adaptable tanto a vías urbanas como a corredores interurbanos.",
     highlights: [
       "Trazado horizontal y vertical.",
       "Diseño de intersecciones.",
