@@ -74,7 +74,7 @@ export const services: Service[] = [
   {
     id: "planes-manejo-transito",
     title: "Planes de manejo de tránsito",
-    description: "Tu obra avanza sin bloquear la ciudad.",
+    description: "Medidas y acciones que mitigan los impactos de las obras.",
     details:
       "Diseñamos los desvíos y el manejo de la circulación durante la obra, priorizando la seguridad de todos los usuarios de la vía con señalización temporal adecuada. Programamos el plan por etapas constructivas y gestionamos su aprobación ante la autoridad competente, para que la obra avance sin convertirse en un problema de movilidad para la ciudad.",
     highlights: [
@@ -92,8 +92,8 @@ export const services: Service[] = [
   },
   {
     id: "senalizacion-vial",
-    title: "Diseño de señalización vial",
-    description: "Señalización horizontal y vertical que cumple INVIAS.",
+    title: "Diseño de señalización y seguridad vial",
+    description: "Señalización vial que ordena, guía y protege.",
     details:
       "Diseñamos la señalización horizontal y vertical y los dispositivos de seguridad vial requeridos, incluyendo demarcación y canalización del tránsito. Cada diseño cumple los manuales vigentes y se entrega con planos y especificaciones técnicas listos para construcción, sin retrasos en la aprobación.",
     highlights: [
@@ -150,7 +150,7 @@ export const services: Service[] = [
   {
     id: "diseno-explanaciones",
     title: "Diseño de explanaciones",
-    description: "Movimientos de tierra optimizados, base estable para la vía.",
+    description: "Optimizamos los movimientos de tierra para lograr plataformas estables y eficientes.",
     details:
       "Calculamos el balance de cortes y llenos a partir de la modelación digital del terreno, optimizando los movimientos de tierra y diseñando plataformas estables. Todo el diseño se integra con el proyecto vial, garantizando una infraestructura estable desde la base.",
     highlights: [
