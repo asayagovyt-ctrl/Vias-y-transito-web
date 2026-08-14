@@ -112,7 +112,7 @@ export const services: Service[] = [
   {
     id: "diseno-semaforizacion",
     title: "Diseño de semaforización",
-    description: "Programamos los tiempos semafóricos y coordinamos corredores para intersecciones más seguras y eficientes.",
+    description: "Señalización vial que ordena, guía y protege a todos los usuarios de la vía.",
     details:
       "Realizamos los estudios de justificación semafórica y programamos los tiempos de cada intersección, coordinando corredores completos para optimizar el flujo. El resultado son intersecciones más seguras y eficientes, con menos tiempo de espera para conductores y peatones.",
     highlights: [
