@@ -29,12 +29,19 @@ export default function Home() {
             <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
               Lo que hacemos
             </p>
-            <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-              Nuestros servicios
-            </h2>
-            <p className="mb-10 max-w-xl text-base font-normal leading-relaxed text-brand-ink/75">
-              Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación.
-            </p>
+            <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h2 className="mb-4 max-w-xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
+                  Nuestros servicios
+                </h2>
+                <p className="max-w-xl text-base font-normal leading-relaxed text-brand-ink/75">
+                  Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación.
+                </p>
+              </div>
+              <p className="max-w-md text-base font-normal leading-relaxed text-brand-ink/75 lg:text-right">
+                Cubrimos los proyectos desde diferentes especialidades de la ingeniería de vías.
+              </p>
+            </div>
 
             <ServiceBento services={services} />
 

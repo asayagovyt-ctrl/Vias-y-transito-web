@@ -22,7 +22,7 @@ export default function ServiciosPage() {
       <PageVideoBanner
         eyebrow="Lo que hacemos"
         title="Todo lo que tu proyecto vial necesita, en un solo equipo"
-        description="Cubrimos tu proyecto vial de punta a punta, desde el diseño hasta que entra en operación. Con 18 años de experiencia y más de 1.000 proyectos ejecutados a nivel nacional e internacional, respaldamos cada etapa con soluciones técnicas rigurosas y ajustadas a la normativa INVIAS vigente."
+        description="Somos un equipo interdisciplinario de ingenieros especialistas que integra las diferentes áreas del diseño vial y la movilidad para desarrollar soluciones técnicas eficientes, cómodas y seguras, adaptadas a las necesidades de cada proyecto."
         videoSrc="/videos/servicios-banner.mp4"
         poster="/videos/servicios-banner-poster.webp"
         strongOverlay
