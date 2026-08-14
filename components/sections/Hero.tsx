@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import { heroSlides } from "@/constants/heroSlides";
 import { company } from "@/constants/company";
 import { useFadeInUp } from "@/lib/useFadeInUp";
@@ -125,7 +126,7 @@ export function Hero() {
             <Stat value="Nacional" label="e internacional" />
           </div>
 
-          <div className="flex items-center gap-3.5 rounded-full bg-white/90 p-2 shadow-card backdrop-blur-sm">
+          <div className="flex items-center gap-3.5 rounded-full border border-brand-ink/10 bg-white p-2 shadow-lg">
             <CarouselArrow direction="prev" onClick={goPrev} />
             <div className="flex gap-1">
               {heroSlides.map((_, i) => (
@@ -137,7 +138,7 @@ export function Hero() {
                 >
                   <span
                     className={`h-1.5 rounded-full transition-all ${
-                      i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/40"
+                      i === current ? "w-5 bg-brand-yellow" : "w-1.5 bg-brand-ink/55"
                     }`}
                   />
                 </button>
@@ -147,6 +148,15 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <a
+        href="#servicios"
+        className="absolute bottom-36 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1.5 text-sm font-semibold text-brand-ink transition-colors hover:text-brand-yellow-text sm:flex"
+        style={{ textShadow: "0 1px 2px rgba(250,250,248,0.9), 0 2px 14px rgba(250,250,248,0.85)" }}
+      >
+        <span>Conoce nuestros servicios</span>
+        <ChevronDown className="h-5 w-5 animate-bounce" strokeWidth={2.5} />
+      </a>
     </section>
   );
 }
