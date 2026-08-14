@@ -36,7 +36,7 @@ export const services: Service[] = [
     title: "Estudios de tránsito",
     description: "Determinamos el impacto de un proyecto sobre la operación y capacidad del sistema vial.",
     details:
-      "Hacemos aforos vehiculares y peatonales para levantar información confiable en campo, y con ella evaluamos el desempeño operacional de la red vial: capacidad, niveles de servicio y proyecciones de tránsito a futuro. Entregamos recomendaciones técnicas claras y un estudio que cumple con la normativa vigente, listo para sustentar decisiones de diseño, operación o gestión vial.",
+      "Realizamos aforos vehiculares, peatonales y de biciusuarios para obtener información primaria que permita evaluar el desempeño operacional de la red vial, su capacidad y los niveles de servicio. Además, estimamos la demanda generada por proyectos inmobiliarios y de infraestructura vial para definir soluciones que optimicen la operación y el funcionamiento de la red vial en los escenarios futuros.",
     highlights: [
       "Aforos y recolección de información.",
       "Análisis operacional de la red vial.",
