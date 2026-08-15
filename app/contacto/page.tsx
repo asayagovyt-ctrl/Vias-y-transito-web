@@ -18,8 +18,7 @@ export default function ContactoPage() {
       <PageVideoBanner
         eyebrow="Contacto"
         title="Hablemos de tu proyecto"
-        description="Cuéntanos qué necesitas y te respondemos con una propuesta técnica, no con un correo automático."
-        microcopy="Respondemos en menos de 24 horas hábiles."
+        description="Cuéntanos las características de tu proyecto y el acompañamiento que requieres. Prepararemos una propuesta técnica acorde con sus necesidades y requerimientos."
         strongOverlay
         overlayBoost
       />

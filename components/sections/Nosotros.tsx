@@ -8,16 +8,16 @@ import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCaro
 
 const differentiatorItems = [
   {
-    title: "Acompañamiento en todas las etapas",
-    body: "No entregamos un informe y desaparecemos. Estamos desde la viabilidad hasta que el proyecto entra en operación.",
+    title: "Acompañamiento desde la concepción del proyecto",
+    body: "Participamos en la formulación y el diseño de los proyectos, desarrollando los estudios técnicos necesarios y gestionando su trámite ante las entidades competentes para obtener las aprobaciones requeridas.",
   },
   {
     title: "Un solo equipo, todas las especialidades",
     body: "Tránsito, movilidad, diseño geométrico y señalización coordinados internamente. Sin contratar tres firmas ni conciliar tres criterios distintos.",
   },
   {
-    title: "Experiencia pública y privada",
-    body: "Trabajamos tanto con entidades como con constructoras. Sabemos qué exige cada una y cómo hablarle a ambas.",
+    title: "Experiencia en los sectores público y privado",
+    body: "Contamos con experiencia en el desarrollo de proyectos para entidades públicas y empresas privadas, comprendiendo los requerimientos técnicos, normativos y administrativos propios de cada sector y adaptando nuestros procesos a sus estándares de evaluación y aprobación.",
   },
 ];
 
@@ -60,16 +60,19 @@ export function Nosotros() {
               Una buena asesoría puede agilizar y materializar tu proyecto
             </h3>
             <p className="text-base font-normal leading-relaxed text-brand-ink/75">
-              Un proyecto inmobiliario o de infraestructura avanza más rápido cuando el
-              acompañamiento técnico es el correcto desde el inicio. Y cuando ese respaldo llega
-              tarde, incompleto o sin experiencia, el cronograma se para.
+              Un proyecto inmobiliario o de infraestructura avanza con mayor eficiencia cuando
+              cuenta con el acompañamiento técnico adecuado desde el inicio. Una planificación
+              sólida y estudios especializados reducen riesgos, evitan reprocesos y contribuyen al
+              cumplimiento del cronograma y los requisitos normativos.
             </p>
           </div>
           <div className="rounded-r-xl rounded-l-sm border-l-4 border-brand-yellow bg-gradient-to-br from-[#FFF8E3] to-white p-6">
             <p className="text-sm font-semibold leading-relaxed text-brand-ink">
-              Llevamos {company.yearsOfExperience} años entregando estudios que las entidades
-              aprueban y que los constructores pueden ejecutar. Conocemos la norma, conocemos al
-              revisor y conocemos los errores que retrasan un proyecto — porque ya los vimos antes.
+              Llevamos {company.yearsOfExperience} años desarrollando estudios y diseños de
+              ingeniería, y gestionando la aprobación de proyectos ante entidades del orden
+              municipal y nacional. Nuestro conocimiento de la normativa y de los requerimientos
+              técnicos nos permite acompañar cada proyecto con criterios sólidos y una experiencia
+              que respalda nuestros resultados.
             </p>
           </div>
         </div>
