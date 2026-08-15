@@ -17,7 +17,7 @@ export const company = {
     "Varias especialidades, una sola solución.",
   ],
   aboutIntro:
-    "Somos una firma de ingeniería de Medellín especializada en estudios de tránsito, movilidad e infraestructura vial. Desde 2008 acompañamos a entidades públicas y empresas privadas en la planificación y evaluación de proyectos, anticipando su impacto sobre la movilidad y proponiendo soluciones técnicas antes de su construcción.",
+    "Somos una firma de ingeniería especializada en movilidad, tránsito e infraestructura vial, con sede en el Distrito de Medellín y experiencia en el desarrollo de proyectos para entidades públicas y privadas en Colombia e internacionalmente. Desde 2008 hemos participado en más de 1.000 proyectos, integrando la ingeniería de tránsito, la movilidad y el diseño de infraestructura en estudios que las entidades aprueban y los constructores pueden ejecutar.",
   phones: ["3184586533", "3162885102"],
   // Pendiente de confirmar por el cliente cuál número usar para el botón de WhatsApp.
   whatsappNumber: "573184586533",

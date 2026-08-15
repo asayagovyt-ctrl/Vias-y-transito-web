@@ -20,7 +20,7 @@ export default function NosotrosPage() {
       <PageVideoBanner
         eyebrow="Quiénes somos"
         title="Quién firma los estudios de tu proyecto"
-        description="Una firma de ingeniería de Medellín especializada en tránsito, movilidad e infraestructura vial. Desde 2008 resolvemos cómo se va a mover un proyecto antes de que se construya, para entidades públicas y constructoras privadas."
+        description="Somos una firma de ingeniería con sede en Medellín, especializada en estudios de tránsito, movilidad e infraestructura vial. Desde 2008 desarrollamos estudios técnicos para entidades públicas y empresas privadas, evaluando el impacto de los proyectos sobre la red vial y gestionando su aprobación ante las autoridades competentes."
         videoSrc="/videos/nosotros-banner.mp4"
         strongOverlay
         overlayBoost
