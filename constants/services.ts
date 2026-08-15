@@ -92,8 +92,8 @@ export const services: Service[] = [
   },
   {
     id: "senalizacion-vial",
-    title: "Diseño de señalización y seguridad vial",
-    description: "Señalización vial que ordena, guía y protege.",
+    title: "Señalización vial que ordena, guía y protege",
+    description: "Diseño de señalización y seguridad vial.",
     details:
       "Diseñamos la señalización horizontal y vertical y los dispositivos de seguridad vial requeridos, incluyendo demarcación y canalización del tránsito. Cada diseño cumple los manuales vigentes y se entrega con planos y especificaciones técnicas listos para construcción, sin retrasos en la aprobación.",
     highlights: [
