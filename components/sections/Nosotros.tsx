@@ -32,7 +32,7 @@ export function Nosotros() {
       >
         <div className="rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-9">
           <h2 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
-            {company.yearsOfExperience} años acompañando la movilidad del país
+            {company.yearsOfExperience} años de experiencia respaldan nuestros proyectos
           </h2>
           <p className="mb-10 max-w-lg text-base font-normal leading-relaxed text-brand-ink/75">
             {company.aboutIntro}

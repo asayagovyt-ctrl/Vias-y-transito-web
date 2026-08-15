@@ -125,7 +125,7 @@ export default function Home() {
                   Quiénes somos
                 </p>
                 <h2 className="mb-6 text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-                  {company.yearsOfExperience} años acompañando la movilidad del país
+                  {company.yearsOfExperience} años de experiencia respaldan nuestros proyectos
                 </h2>
                 <p className="mb-10 max-w-lg text-base font-normal leading-relaxed text-brand-ink/75">
                   {company.aboutIntro}
