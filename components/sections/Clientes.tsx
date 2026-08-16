@@ -7,7 +7,7 @@ export function Clientes() {
   return (
     <section id="clientes" className="relative overflow-hidden px-6 py-10 sm:px-10 sm:py-16">
       <div className="relative mx-auto max-w-6xl">
-        <div className="flex max-w-md flex-col sm:ml-auto sm:items-end sm:text-right">
+        <div className="mx-auto flex max-w-md flex-col items-center text-center">
           <p className="mb-4 inline-block w-fit rounded-full bg-brand-yellow px-7 py-3 font-sans text-lg font-extrabold uppercase tracking-wide text-brand-ink sm:text-xl">
             Confían en nosotros
           </p>
