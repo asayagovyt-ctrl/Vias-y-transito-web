@@ -7,7 +7,7 @@ import { ExperienceBadge } from "@/components/sections/ExperienceBadge";
 import { company } from "@/constants/company";
 
 export const metadata: Metadata = {
-  title: "Nosotros | Vías y Tránsito SAS",
+  title: "Empresa de ingeniería vial en Colombia | Vías y Tránsito SAS",
   description:
     "18 años acompañando la movilidad del país. Conoce quiénes somos y qué nos distingue en cada proyecto.",
   alternates: { canonical: "/nosotros" },

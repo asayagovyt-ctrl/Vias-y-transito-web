@@ -5,8 +5,10 @@ import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { company } from "@/constants/company";
 
 export const metadata: Metadata = {
-  title: "Contacto | Vías y Tránsito SAS",
+  title: "Tarjeta digital | Vías y Tránsito SAS",
   description: "Información de contacto de Vías y Tránsito SAS.",
+  // Página destino del QR físico: no debe competir en buscadores.
+  robots: { index: false, follow: false },
 };
 
 export default function TarjetaPage() {

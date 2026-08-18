@@ -9,7 +9,7 @@ import { company } from "@/constants/company";
 import { services } from "@/constants/services";
 
 export const metadata: Metadata = {
-  title: "Servicios | Vías y Tránsito SAS",
+  title: "Servicios de ingeniería vial y tránsito | Vías y Tránsito SAS",
   description:
     "Cobertura técnica completa para proyectos viales: diseño geométrico, señalización, estudios de tránsito y movilidad, modelaciones y más.",
   alternates: { canonical: "/servicios" },

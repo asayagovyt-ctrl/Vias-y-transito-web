@@ -5,7 +5,7 @@ import { PageVideoBanner } from "@/components/layout/PageVideoBanner";
 import { Contacto } from "@/components/sections/Contacto";
 
 export const metadata: Metadata = {
-  title: "Contacto | Vías y Tránsito SAS",
+  title: "Contacto y cotizaciones | Vías y Tránsito SAS",
   description:
     "Escríbenos o llámanos directamente y te contactamos a la brevedad para hablar de tu proyecto.",
   alternates: { canonical: "/contacto" },

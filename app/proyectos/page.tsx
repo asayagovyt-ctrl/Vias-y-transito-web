@@ -8,7 +8,7 @@ import { ExperienceBadge } from "@/components/sections/ExperienceBadge";
 import { company } from "@/constants/company";
 
 export const metadata: Metadata = {
-  title: "Proyectos | Vías y Tránsito SAS",
+  title: "Proyectos de diseño vial y movilidad | Vías y Tránsito SAS",
   description:
     "Proyectos reales donde hemos aportado nuestra experiencia técnica en diseño vial, señalización y planes de manejo de tránsito.",
   alternates: { canonical: "/proyectos" },
