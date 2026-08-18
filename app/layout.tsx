@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@/components/layout/Analytics";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { company, siteUrl } from "@/constants/company";
 import "../styles/globals.css";
@@ -62,6 +63,7 @@ export default function RootLayout({
       >
         {children}
         <WhatsAppButton />
+        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
