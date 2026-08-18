@@ -16,10 +16,10 @@ export const projects: Project[] = [
   },
   {
     id: "intercambio-vial-glorieta-aeropuerto-jmc",
-    title: "Intercambio vial Glorieta Aeropuerto JMC",
+    title: "Intersección tipo Trébol Aeropuerto JMC",
     location: "Rionegro, Antioquia",
     description:
-      "Diseñamos el intercambio tipo glorieta que ordena los cruces entre el corredor de acceso al Aeropuerto José María Córdova y las vías urbanas de Rionegro, mejorando la capacidad y seguridad en un punto de alto flujo vehicular.",
+      "Diseñamos la intersección tipo trébol que ordena los cruces entre el corredor de acceso al Aeropuerto José María Córdova y las vías urbanas de Rionegro, mejorando la capacidad y seguridad en un punto de alto flujo vehicular.",
     images: ["/images/PROYECTOS/proyecto-intercambio-glorieta-aeropuerto-jmc-poster.jpg"],
     video: "/images/PROYECTOS/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
     featured: true,
