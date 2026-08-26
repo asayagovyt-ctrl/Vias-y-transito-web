@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   // propio `metadata`, así que su canonical vive aquí; las demás páginas
   // lo sobrescriben con el suyo.
   alternates: { canonical: "/" },
+  // Verificación de propiedad en Google Search Console. Next la renderiza
+  // como <meta name="google-site-verification"> dentro del <head>, que es
+  // donde Google la busca. No borrar: si desaparece, Search Console revoca
+  // el acceso a la propiedad.
+  verification: { google: "H_oo6Sqk3ndX2HhWwdQrFOzSwiZgNMSzG2Q33a0kZqk" },
 };
 
 const jsonLd = {
