@@ -58,14 +58,17 @@ body {
      lo que obligaba a esperar a que cargara el JavaScript: en móvil el titular
      tardaba ~4.4s en volverse visible y el LCP se disparaba a 5.1s. En CSS
      arranca con el primer pintado, sin esperar nada. GSAP sigue encargándose
-     de las transiciones entre diapositivas (ver useFadeInUp). */
+     de las transiciones entre diapositivas (ver useFadeInUp).
+
+     Se anima solo `transform`, nunca la opacidad: un texto en opacidad 0 no
+     cuenta como pintado, así que desvanecer el titular retrasa el FCP y el LCP
+     exactamente igual que lo hacía GSAP. Desplazándolo se conserva el gesto de
+     entrada sin costarle nada a las métricas. */
   @keyframes fade-in-up-hero {
     from {
-      opacity: 0;
       transform: translateY(24px);
     }
     to {
-      opacity: 1;
       transform: translateY(0);
     }
   }
