@@ -81,7 +81,7 @@ export function Hero() {
       />
 
       <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-16 pt-44 sm:min-h-[720px] sm:px-10 sm:pb-14 sm:pt-24">
-        <div ref={contentRef} className="max-w-2xl">
+        <div ref={contentRef} className="animate-hero-enter max-w-2xl">
           <p className="mb-5 inline-block w-fit rounded-full bg-brand-yellow px-6 py-2.5 font-sans text-base font-semibold uppercase tracking-wider text-brand-ink sm:text-xl">
             {slide.eyebrow}
           </p>

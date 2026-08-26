@@ -125,6 +125,17 @@ function ProjectTile({
             src={coverImage}
             alt={project.title}
             fill
+            // La rejilla es de 3 columnas dentro de un contenedor de 1152px, así
+            // que una tarjeta mide ~373px (~762px si ocupa dos columnas). Sin
+            // `sizes`, Next asume el ancho completo de la pantalla y descarga la
+            // versión de 1920px. Con esto sigue sirviendo el doble de píxeles en
+            // pantallas retina, pero deja de traer una imagen 5 veces más grande
+            // de lo que se ve.
+            sizes={
+              wide
+                ? "(min-width: 1024px) 800px, (min-width: 640px) 50vw, 100vw"
+                : "(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
+            }
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
@@ -236,6 +247,7 @@ function ProjectLightbox({ project, onClose }: { project: Project; onClose: () =
                     src={src}
                     alt={`${project.title} — vista ${i + 1}`}
                     fill
+                    sizes="(min-width: 640px) 640px, 100vw"
                     className={project.planPdf ? "object-contain p-3" : "object-cover"}
                   />
                 </div>

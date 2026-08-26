@@ -54,6 +54,44 @@ body {
     animation: fade-in-tile 0.45s ease-out both;
   }
 
+  /* Entrada del hero en CSS puro. Antes la hacía GSAP dentro de un useEffect,
+     lo que obligaba a esperar a que cargara el JavaScript: en móvil el titular
+     tardaba ~4.4s en volverse visible y el LCP se disparaba a 5.1s. En CSS
+     arranca con el primer pintado, sin esperar nada. GSAP sigue encargándose
+     de las transiciones entre diapositivas (ver useFadeInUp). */
+  @keyframes fade-in-up-hero {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-hero-enter > * {
+    animation: fade-in-up-hero 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+  }
+  .animate-hero-enter > *:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .animate-hero-enter > *:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  .animate-hero-enter > *:nth-child(4) {
+    animation-delay: 0.36s;
+  }
+  .animate-hero-enter > *:nth-child(5) {
+    animation-delay: 0.48s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-enter > * {
+      animation: none;
+    }
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0);

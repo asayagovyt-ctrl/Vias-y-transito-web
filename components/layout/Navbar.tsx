@@ -94,6 +94,12 @@ export function Navbar() {
 
       <div
         aria-hidden={!scrolled}
+        // Mientras la barra está oculta sus enlaces seguían siendo alcanzables
+        // con el tabulador: quien navega con teclado o lector de pantalla caía
+        // en enlaces invisibles. `inert` los saca del orden de tabulación y del
+        // árbol de accesibilidad mientras no se ve.
+        // @ts-expect-error -- React 18 no tipa `inert` todavía; el DOM sí lo soporta.
+        inert={scrolled ? undefined : ""}
         className={`fixed inset-x-3 top-3 z-30 transition-all duration-300 ease-out sm:inset-x-6 sm:top-4 ${
           scrolled
             ? "translate-y-0 opacity-100"
