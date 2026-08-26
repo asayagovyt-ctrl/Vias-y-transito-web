@@ -5,20 +5,22 @@ import { useEffect, useRef } from "react";
 type RevealVariant = "slide-up" | "scale-in" | "slide-side";
 
 function hiddenTransform(variant: RevealVariant, index: number): string {
-  if (variant === "slide-up") return "translateY(44px)";
-  if (variant === "scale-in") return "scale(0.9)";
-  return index % 2 === 0 ? "translateX(-64px)" : "translateX(64px)";
+  if (variant === "slide-up") return "translateY(80px) scale(0.96)";
+  if (variant === "scale-in") return "scale(0.85)";
+  return index % 2 === 0 ? "translateX(-110px)" : "translateX(110px)";
 }
 
 const VISIBLE_TRANSFORM: Record<RevealVariant, string> = {
-  "slide-up": "translateY(0)",
+  "slide-up": "translateY(0) scale(1)",
   "scale-in": "scale(1)",
   "slide-side": "translateX(0)",
 };
 
-const DURATION = 0.8;
-const STAGGER = 0.12;
-const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
+const DURATION = 0.85;
+const STAGGER = 0.16;
+// Overshoots very slightly at the end so each card visibly settles into
+// place instead of just fading in.
+const EASING = "cubic-bezier(0.18, 1.12, 0.36, 1)";
 
 /**
  * Reveals the direct children of the container as it scrolls into view,
@@ -77,7 +79,7 @@ export function useScrollReveal<T extends HTMLElement>(variant: RevealVariant = 
       if (pending.size === 0) return;
       for (const child of Array.from(pending)) {
         const rect = child.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.88 && rect.bottom > 0) {
+        if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
           reveal(child);
         }
       }
