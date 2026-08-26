@@ -23,6 +23,10 @@ const differentiatorItems = [
 
 export function Nosotros() {
   const contentRef = useScrollReveal<HTMLDivElement>("slide-side");
+  const asesoriaRef = useScrollReveal<HTMLDivElement>("scale-in");
+  const distingueRef = useScrollReveal<HTMLDivElement>("slide-up");
+  const tecnologiaRef = useScrollReveal<HTMLDivElement>("slide-up");
+  const mapaRef = useScrollReveal<HTMLDivElement>("slide-up");
 
   return (
     <section id="nosotros" className="relative px-6 py-10 sm:px-10 sm:py-16">
@@ -53,27 +57,29 @@ export function Nosotros() {
         <DifferentiatorCarousel className="min-h-[340px] overflow-hidden rounded-2xl border border-brand-ink/8 bg-gradient-to-b from-[#FFF8E6] to-white p-10 shadow-card sm:p-12" />
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-9">
-        <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
-          <div>
-            <h3 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
-              Una buena asesoría puede agilizar y materializar tu proyecto
-            </h3>
-            <p className="text-base font-normal leading-relaxed text-brand-ink/75">
-              Un proyecto inmobiliario o de infraestructura avanza con mayor eficiencia cuando
-              cuenta con el acompañamiento técnico adecuado desde el inicio. Una planificación
-              sólida y estudios especializados reducen riesgos, evitan reprocesos y contribuyen al
-              cumplimiento del cronograma y los requisitos normativos.
-            </p>
-          </div>
-          <div className="rounded-r-xl rounded-l-sm border-l-4 border-brand-yellow bg-gradient-to-br from-[#FFF8E3] to-white p-6">
-            <p className="text-sm font-semibold leading-relaxed text-brand-ink">
-              Llevamos {company.yearsOfExperience} años desarrollando estudios y diseños de
-              ingeniería, y gestionando la aprobación de proyectos ante entidades del orden
-              municipal y nacional. Nuestro conocimiento de la normativa y de los requerimientos
-              técnicos nos permite acompañar cada proyecto con criterios sólidos y una experiencia
-              que respalda nuestros resultados.
-            </p>
+      <div ref={asesoriaRef} className="relative mx-auto mt-12 max-w-6xl">
+        <div className="rounded-2xl border border-brand-ink/8 bg-white p-7 shadow-card sm:p-9">
+          <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-10">
+            <div>
+              <h3 className="mb-4 text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-brand-ink sm:text-3xl">
+                Una buena asesoría puede agilizar y materializar tu proyecto
+              </h3>
+              <p className="text-base font-normal leading-relaxed text-brand-ink/75">
+                Un proyecto inmobiliario o de infraestructura avanza con mayor eficiencia cuando
+                cuenta con el acompañamiento técnico adecuado desde el inicio. Una planificación
+                sólida y estudios especializados reducen riesgos, evitan reprocesos y contribuyen al
+                cumplimiento del cronograma y los requisitos normativos.
+              </p>
+            </div>
+            <div className="rounded-r-xl rounded-l-sm border-l-4 border-brand-yellow bg-gradient-to-br from-[#FFF8E3] to-white p-6">
+              <p className="text-sm font-semibold leading-relaxed text-brand-ink">
+                Llevamos {company.yearsOfExperience} años desarrollando estudios y diseños de
+                ingeniería, y gestionando la aprobación de proyectos ante entidades del orden
+                municipal y nacional. Nuestro conocimiento de la normativa y de los requerimientos
+                técnicos nos permite acompañar cada proyecto con criterios sólidos y una experiencia
+                que respalda nuestros resultados.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -82,7 +88,7 @@ export function Nosotros() {
         <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
           Qué nos distingue
         </h3>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        <div ref={distingueRef} className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {differentiatorItems.map((item) => (
             <div
               key={item.title}
@@ -107,7 +113,7 @@ export function Nosotros() {
           revisoras. Nuestros entregables llegan en el formato que esperan recibir.
         </p>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={tecnologiaRef} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {technologies.map((tech) => (
             <div
               key={tech.name}
@@ -120,7 +126,7 @@ export function Nosotros() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl">
+      <div ref={mapaRef} className="relative mx-auto mt-12 max-w-6xl">
         <p className="mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-sm font-bold uppercase tracking-wide text-brand-ink sm:text-base">
           Visítanos
         </p>
