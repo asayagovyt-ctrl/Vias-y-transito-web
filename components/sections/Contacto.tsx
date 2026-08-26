@@ -2,12 +2,12 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { QRCodeSVG } from "qrcode.react";
-import { company } from "@/constants/company";
+import { company, siteUrl } from "@/constants/company";
 import { services } from "@/constants/services";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 const whatsappLink = `https://wa.me/${company.whatsappNumber}`;
-const tarjetaLink = "https://vias-y-transito-web.vercel.app/tarjeta";
+const tarjetaLink = `${siteUrl}/tarjeta`;
 
 export function Contacto() {
   return (
