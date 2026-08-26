@@ -1,9 +1,10 @@
 import Script from "next/script";
 
-// Google Analytics 4. Queda inactivo hasta que exista el ID de medición
-// (G-XXXXXXX): se configura como NEXT_PUBLIC_GA_ID en Vercel cuando el
-// cliente cree la cuenta de Analytics, sin tocar código.
-const gaId = process.env.NEXT_PUBLIC_GA_ID;
+// Google Analytics 4 de la cuenta de la empresa. El ID de medición es
+// público —viaja en el HTML de cualquier página que lo use—, así que vive
+// aquí y no en un secreto. NEXT_PUBLIC_GA_ID lo sobrescribe si algún día
+// se cambia de propiedad.
+const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "G-Z92Q9PJY2S";
 
 export function Analytics() {
   if (!gaId) return null;
