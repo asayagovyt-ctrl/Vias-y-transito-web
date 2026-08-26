@@ -1,8 +1,9 @@
-// Dominio propio pendiente: mientras no exista, el sitio vive en el
-// subdominio de Vercel. Si se configura NEXT_PUBLIC_SITE_URL (al conectar
-// un dominio propio), sitemap/canonical/OG lo usan automáticamente.
+// Dominio propio del sitio. Vercel resuelve el apex hacia www, así que la
+// versión canónica —la que usan sitemap, canonical, OG, llms.txt y el QR de
+// la tarjeta— lleva www. NEXT_PUBLIC_SITE_URL lo sobrescribe si algún día
+// cambia el dominio.
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vias-y-transito-web.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.viasytransito.com.co";
 
 export const company = {
   name: "Vías y Tránsito",
