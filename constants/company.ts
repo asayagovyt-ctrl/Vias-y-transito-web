@@ -10,7 +10,7 @@ export const company = {
   legalName: "Vías y Tránsito SAS",
   // NIT de la empresa. Al llenarlo aparece automáticamente en la Política de
   // Tratamiento de Datos; mientras esté vacío, esa página simplemente lo omite.
-  nit: "",
+  nit: "900.210.249-2",
   tagline: "Especialistas en vías y transporte",
   foundedYear: 2008,
   yearsOfExperience: new Date().getFullYear() - 2008,
