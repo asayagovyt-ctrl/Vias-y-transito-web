@@ -20,7 +20,7 @@ export const projects: Project[] = [
     location: "Rionegro, Antioquia",
     description:
       "Diseñamos la intersección tipo trébol que ordena los cruces entre el corredor de acceso al Aeropuerto José María Córdova y las vías urbanas de Rionegro, mejorando la capacidad y seguridad en un punto de alto flujo vehicular.",
-    images: ["/images/PROYECTOS/proyecto-intercambio-glorieta-aeropuerto-jmc-poster.jpg"],
+    images: ["/images/PROYECTOS/proyecto-intercambio-glorieta-aeropuerto-jmc-poster.webp"],
     video: "/images/PROYECTOS/proyecto-intercambio-glorieta-aeropuerto-jmc.mp4",
     featured: true,
     category: "Diseño geométrico",
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     location: "Sabaneta - Envigado, Antioquia",
     description:
       "Diseñamos el intercambio vial en el límite entre Sabaneta y Envigado, junto al Centro Comercial Mayorca, para ordenar los giros y reducir la congestión en uno de los puntos de mayor tráfico entre los dos municipios.",
-    images: ["/images/PROYECTOS/proyecto-intercambio-mayorca-sabaneta-envigado-poster.jpg"],
+    images: ["/images/PROYECTOS/proyecto-intercambio-mayorca-sabaneta-envigado-poster.webp"],
     video: "/images/PROYECTOS/proyecto-intercambio-mayorca-sabaneta-envigado.mp4",
     featured: true,
     category: "Diseño geométrico",

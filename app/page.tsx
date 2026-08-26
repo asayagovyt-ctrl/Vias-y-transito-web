@@ -12,6 +12,7 @@ import { ContactoForm } from "@/components/sections/Contacto";
 import { services } from "@/constants/services";
 import { projects } from "@/constants/projects";
 import { company } from "@/constants/company";
+import { LazyMapEmbed } from "@/components/layout/LazyMapEmbed";
 
 export default function Home() {
   const featuredProjects = projects.filter(
@@ -99,6 +100,11 @@ export default function Home() {
                         src={project.images[0]}
                         alt={project.title}
                         fill
+                        // Tres columnas dentro de un contenedor de 1152px: cada
+                        // tarjeta mide ~362px. Sin `sizes` Next asumía el ancho
+                        // completo de la pantalla y bajaba la versión de 1920px
+                        // (321 KB). El srcset mantiene las grandes para retina.
+                        sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
                         className="object-cover"
                       />
                     )}
@@ -174,15 +180,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="relative h-[320px] lg:h-auto lg:min-h-[440px]">
-                <iframe
-                  title="Ubicación de Vías y Tránsito SAS"
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(
-                    company.address
-                  )}&output=embed`}
-                  className="absolute inset-0 h-full w-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+                <LazyMapEmbed query={company.address} />
               </div>
             </div>
           </div>

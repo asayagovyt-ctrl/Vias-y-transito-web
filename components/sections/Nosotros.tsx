@@ -5,6 +5,7 @@ import { company } from "@/constants/company";
 import { technologies } from "@/constants/technologies";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
+import { LazyMapEmbed } from "@/components/layout/LazyMapEmbed";
 
 const differentiatorItems = [
   {
@@ -135,15 +136,7 @@ export function Nosotros() {
         </h3>
 
         <div className="relative h-[420px] overflow-hidden rounded-2xl border border-brand-ink/8 shadow-card sm:h-[520px]">
-          <iframe
-            title="Ubicación de Vías y Tránsito SAS"
-            src={`https://www.google.com/maps?q=${encodeURIComponent(
-              company.address
-            )}&output=embed`}
-            className="absolute inset-0 h-full w-full border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <LazyMapEmbed query={company.address} />
 
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
