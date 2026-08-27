@@ -2,7 +2,6 @@
 
 import { Calendar, Building2, Globe2, type LucideIcon } from "lucide-react";
 import { company } from "@/constants/company";
-import { technologies } from "@/constants/technologies";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 import { DifferentiatorCarousel } from "@/components/sections/DifferentiatorCarousel";
 import { LazyMapEmbed } from "@/components/layout/LazyMapEmbed";
@@ -26,7 +25,6 @@ export function Nosotros() {
   const contentRef = useScrollReveal<HTMLDivElement>("slide-side");
   const asesoriaRef = useScrollReveal<HTMLDivElement>("scale-in");
   const distingueRef = useScrollReveal<HTMLDivElement>("slide-up");
-  const tecnologiaRef = useScrollReveal<HTMLDivElement>("slide-up");
   const mapaRef = useScrollReveal<HTMLDivElement>("slide-up");
 
   return (
@@ -97,31 +95,6 @@ export function Nosotros() {
             >
               <h4 className="font-heading text-lg font-bold text-brand-ink">{item.title}</h4>
               <p className="mt-1.5 text-sm font-normal leading-relaxed text-brand-ink/75">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative mx-auto mt-12 max-w-6xl">
-        <p className="mb-3 inline-block w-fit rounded-full bg-brand-yellow px-5 py-2 font-sans text-sm font-bold uppercase tracking-wide text-brand-ink sm:text-base">
-          Nuestra tecnología
-        </p>
-        <h3 className="mb-4 max-w-2xl text-balance font-heading text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-4xl">
-          Ingeniería con las herramientas que usa la industria
-        </h3>
-        <p className="mb-8 max-w-2xl text-base font-normal leading-relaxed text-brand-ink/75">
-          Modelamos, simulamos y diseñamos con el mismo software que exigen las entidades
-          revisoras. Nuestros entregables llegan en el formato que esperan recibir.
-        </p>
-
-        <div ref={tecnologiaRef} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {technologies.map((tech) => (
-            <div
-              key={tech.name}
-              className="rounded-2xl border-2 border-transparent bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-yellow hover:shadow-card-hover"
-            >
-              <h4 className="font-heading text-lg font-bold text-brand-ink">{tech.name}</h4>
-              <p className="mt-1.5 text-sm font-normal leading-relaxed text-brand-ink/75">{tech.application}</p>
             </div>
           ))}
         </div>
